@@ -69,25 +69,60 @@ public class FinancialTransactionEdit extends javax.swing.JFrame {
 
         viewbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         viewbtn.setText("View");
+        viewbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewbtnActionPerformed(evt);
+            }
+        });
 
         clientsbtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         clientsbtn.setText("Clients");
         clientsbtn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        clientsbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientsbtnActionPerformed(evt);
+            }
+        });
 
         EmployeeRosterbtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         EmployeeRosterbtn.setText("EmployeeRoster");
+        EmployeeRosterbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmployeeRosterbtnActionPerformed(evt);
+            }
+        });
 
         Vendorsbtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Vendorsbtn.setText("Vendors");
+        Vendorsbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VendorsbtnActionPerformed(evt);
+            }
+        });
 
         Cataloguebtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Cataloguebtn.setText("Catalogue");
+        Cataloguebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CataloguebtnActionPerformed(evt);
+            }
+        });
 
         Appointmentsbtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Appointmentsbtn.setText("Appointments");
+        Appointmentsbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AppointmentsbtnActionPerformed(evt);
+            }
+        });
 
         Reservationbtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Reservationbtn.setText("Reservation");
+        Reservationbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReservationbtnActionPerformed(evt);
+            }
+        });
 
         Inprogressbtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Inprogressbtn.setText("Inprogression");
@@ -195,11 +230,21 @@ public class FinancialTransactionEdit extends javax.swing.JFrame {
         insertbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         insertbtn.setText("MaterialTransaction");
         insertbtn.setBorder(null);
+        insertbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insertbtnActionPerformed(evt);
+            }
+        });
 
         deletebtn.setBackground(new java.awt.Color(163, 239, 89));
         deletebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         deletebtn.setText("SalaryTransaction");
         deletebtn.setBorder(null);
+        deletebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletebtnActionPerformed(evt);
+            }
+        });
 
         deletebtn2.setBackground(new java.awt.Color(163, 239, 89));
         deletebtn2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -215,6 +260,11 @@ public class FinancialTransactionEdit extends javax.swing.JFrame {
         deletebtn3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         deletebtn3.setText("ReservationTransaction");
         deletebtn3.setBorder(null);
+        deletebtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletebtn3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -307,23 +357,109 @@ public class FinancialTransactionEdit extends javax.swing.JFrame {
 
     private void InprogressbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InprogressbtnActionPerformed
         // TODO add your handling code here:
+        InprogressionEdit inprogressionEdit=new InprogressionEdit();
+        inprogressionEdit.show();
+        dispose();        
     }//GEN-LAST:event_InprogressbtnActionPerformed
 
     private void MaterialInventorybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaterialInventorybtnActionPerformed
         // TODO add your handling code here:
+        MaterialInventoryEdit materialInventoryEdit=new MaterialInventoryEdit();
+        materialInventoryEdit.show();        
+        dispose();
     }//GEN-LAST:event_MaterialInventorybtnActionPerformed
 
     private void ProjectArchivebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProjectArchivebtnActionPerformed
         // TODO add your handling code here:
+        ProjectArchiveEdit projectArchiveEdit=new ProjectArchiveEdit();
+        projectArchiveEdit.show();
+        dispose();
     }//GEN-LAST:event_ProjectArchivebtnActionPerformed
 
     private void FinancialTransactionsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinancialTransactionsbtnActionPerformed
         // TODO add your handling code here:
+        FinancialTransactionEdit financialTransactionEdit=new FinancialTransactionEdit();
+        financialTransactionEdit.show();
+        dispose();  
     }//GEN-LAST:event_FinancialTransactionsbtnActionPerformed
 
     private void deletebtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebtn2ActionPerformed
         // TODO add your handling code here:
+        InstallmentTransEdit installmentTransEdit = new InstallmentTransEdit();
+        installmentTransEdit.show();
+        dispose();
     }//GEN-LAST:event_deletebtn2ActionPerformed
+
+    private void deletebtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebtn3ActionPerformed
+        // TODO add your handling code here:
+        ReservationTransEdit reservationTransEdit = new ReservationTransEdit();
+        reservationTransEdit.show();
+        dispose();
+    }//GEN-LAST:event_deletebtn3ActionPerformed
+
+    private void deletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebtnActionPerformed
+        // TODO add your handling code here:
+        SalaryTransEdit salaryTransEdit=new SalaryTransEdit();
+        salaryTransEdit.show();
+        dispose();
+    }//GEN-LAST:event_deletebtnActionPerformed
+
+    private void insertbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertbtnActionPerformed
+        // TODO add your handling code here:
+        MaterialTransEdit materialTransEdit=new MaterialTransEdit();
+        materialTransEdit.show();
+        dispose();
+    }//GEN-LAST:event_insertbtnActionPerformed
+
+    private void viewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtnActionPerformed
+        // TODO add your handling code here:
+        AppointmentsView adminView=new AppointmentsView();
+        adminView.show();
+        dispose();
+
+    }//GEN-LAST:event_viewbtnActionPerformed
+
+    private void clientsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsbtnActionPerformed
+        // TODO add your handling code here:
+        ClientEdit clientEdit=new ClientEdit();
+        clientEdit.show();
+        dispose();
+    }//GEN-LAST:event_clientsbtnActionPerformed
+
+    private void EmployeeRosterbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeRosterbtnActionPerformed
+        // TODO add your handling code here:
+        EmployeeRosterEdit employeeRosterEdit=new EmployeeRosterEdit();
+        employeeRosterEdit.show();
+        dispose();
+    }//GEN-LAST:event_EmployeeRosterbtnActionPerformed
+
+    private void VendorsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VendorsbtnActionPerformed
+        // TODO add your handling code here:
+        VendorsEdit vendorsEdit=new VendorsEdit();
+        vendorsEdit.show();
+        dispose();
+    }//GEN-LAST:event_VendorsbtnActionPerformed
+
+    private void CataloguebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CataloguebtnActionPerformed
+        // TODO add your handling code here:
+        CatalogueEdit catalogueEdit=new CatalogueEdit();
+        catalogueEdit.show();
+        dispose();
+    }//GEN-LAST:event_CataloguebtnActionPerformed
+
+    private void AppointmentsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppointmentsbtnActionPerformed
+        // TODO add your handling code here:
+        AppointmentsEdit appointmentsEdit=new AppointmentsEdit();
+        appointmentsEdit.show();
+        dispose();
+    }//GEN-LAST:event_AppointmentsbtnActionPerformed
+
+    private void ReservationbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservationbtnActionPerformed
+        // TODO add your handling code here:
+        ReservationEdit reservationEdit=new ReservationEdit();
+        reservationEdit.show();
+        dispose();
+    }//GEN-LAST:event_ReservationbtnActionPerformed
 
     /**
      * @param args the command line arguments

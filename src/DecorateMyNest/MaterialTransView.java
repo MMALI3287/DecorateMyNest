@@ -67,27 +67,67 @@ public class MaterialTransView extends javax.swing.JFrame {
 
         viewbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         viewbtn.setText("View");
+        viewbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewbtnActionPerformed(evt);
+            }
+        });
 
         clientsbtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         clientsbtn.setText("Admin");
+        clientsbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientsbtnActionPerformed(evt);
+            }
+        });
 
         clientsbtn1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         clientsbtn1.setText("Clients");
+        clientsbtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientsbtn1ActionPerformed(evt);
+            }
+        });
 
         EmployeeRosterbtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         EmployeeRosterbtn.setText("EmployeeRoster");
+        EmployeeRosterbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmployeeRosterbtnActionPerformed(evt);
+            }
+        });
 
         Vendorsbtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Vendorsbtn.setText("Vendors");
+        Vendorsbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VendorsbtnActionPerformed(evt);
+            }
+        });
 
         Cataloguebtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Cataloguebtn.setText("Catalogue");
+        Cataloguebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CataloguebtnActionPerformed(evt);
+            }
+        });
 
         Appointmentsbtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Appointmentsbtn.setText("Appointments");
+        Appointmentsbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AppointmentsbtnActionPerformed(evt);
+            }
+        });
 
         Reservationbtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Reservationbtn.setText("Reservation");
+        Reservationbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReservationbtnActionPerformed(evt);
+            }
+        });
 
         FinancialTransactionsbtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         FinancialTransactionsbtn.setText("Financial Transactions");
@@ -326,18 +366,30 @@ public class MaterialTransView extends javax.swing.JFrame {
 
     private void FinancialTransactionsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinancialTransactionsbtnActionPerformed
         // TODO add your handling code here:
+         FinancialTransactionView financialTransactionView=new FinancialTransactionView();
+        financialTransactionView.show();
+        dispose(); 
     }//GEN-LAST:event_FinancialTransactionsbtnActionPerformed
 
     private void InprogressbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InprogressbtnActionPerformed
         // TODO add your handling code here:
+         InprogressionView inprogressionView=new InprogressionView();
+        inprogressionView.show();
+        dispose();
     }//GEN-LAST:event_InprogressbtnActionPerformed
 
     private void MaterialInventorybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaterialInventorybtnActionPerformed
         // TODO add your handling code here:
+        MaterialInventoryView materialInventoryView=new MaterialInventoryView();
+        materialInventoryView.show();        
+        dispose();
     }//GEN-LAST:event_MaterialInventorybtnActionPerformed
 
     private void ProjectArchivebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProjectArchivebtnActionPerformed
         // TODO add your handling code here:
+        ProjectArchiveView projectArchiveView=new ProjectArchiveView();
+        projectArchiveView.show();
+        dispose();
     }//GEN-LAST:event_ProjectArchivebtnActionPerformed
 
     private void deletebtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebtn2ActionPerformed
@@ -367,6 +419,63 @@ public class MaterialTransView extends javax.swing.JFrame {
         materialTransView.show();
         dispose();
     }//GEN-LAST:event_insertbtnActionPerformed
+
+    private void viewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtnActionPerformed
+        // TODO add your handling code here:
+        AdminView adminView=new AdminView();
+        adminView.show();
+        dispose();
+    }//GEN-LAST:event_viewbtnActionPerformed
+
+    private void clientsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsbtnActionPerformed
+        // TODO add your handling code here:
+        AdminView adminView=new AdminView();
+        adminView.show();
+        dispose();
+    }//GEN-LAST:event_clientsbtnActionPerformed
+
+    private void clientsbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsbtn1ActionPerformed
+        // TODO add your handling code here:
+         ClientView clientView=new ClientView();
+        clientView.show();
+        dispose();
+         
+    }//GEN-LAST:event_clientsbtn1ActionPerformed
+
+    private void EmployeeRosterbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeRosterbtnActionPerformed
+        // TODO add your handling code here:
+         EmployeeRosterView employeeRosterView=new EmployeeRosterView();
+        employeeRosterView.show();
+        dispose();
+    }//GEN-LAST:event_EmployeeRosterbtnActionPerformed
+
+    private void VendorsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VendorsbtnActionPerformed
+        // TODO add your handling code here:
+        VendorsView vendorsView=new VendorsView();
+        vendorsView.show();
+        dispose();
+    }//GEN-LAST:event_VendorsbtnActionPerformed
+
+    private void CataloguebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CataloguebtnActionPerformed
+        // TODO add your handling code here:
+        CatalogueView catalogueView=new CatalogueView();
+        catalogueView.show();
+        dispose();
+    }//GEN-LAST:event_CataloguebtnActionPerformed
+
+    private void AppointmentsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppointmentsbtnActionPerformed
+        // TODO add your handling code here:
+        AppointmentsView appointmentsView=new AppointmentsView();
+        appointmentsView.show();
+        dispose();
+    }//GEN-LAST:event_AppointmentsbtnActionPerformed
+
+    private void ReservationbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservationbtnActionPerformed
+        // TODO add your handling code here:
+        ReservationView reservationView=new ReservationView();
+        reservationView.show();
+        dispose();
+    }//GEN-LAST:event_ReservationbtnActionPerformed
 
     /**
      * @param args the command line arguments
