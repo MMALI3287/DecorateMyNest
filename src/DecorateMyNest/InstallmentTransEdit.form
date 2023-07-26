@@ -123,6 +123,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="View"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewbtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="clientsbtn">
           <Properties>
@@ -131,6 +134,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Clients"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clientsbtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="EmployeeRosterbtn">
           <Properties>
@@ -139,6 +145,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="EmployeeRoster"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmployeeRosterbtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Vendorsbtn">
           <Properties>
@@ -147,6 +156,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Vendors"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VendorsbtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Cataloguebtn">
           <Properties>
@@ -155,6 +167,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Catalogue"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CataloguebtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Appointmentsbtn">
           <Properties>
@@ -163,6 +178,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Appointments"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AppointmentsbtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Reservationbtn">
           <Properties>
@@ -171,6 +189,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Reservation"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ReservationbtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Inprogressbtn">
           <Properties>
@@ -405,6 +426,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="MaterialTransaction"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insertbtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="updatebtn">
           <Properties>
@@ -438,6 +462,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="SalaryTransaction"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deletebtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="insertbtn1">
           <Properties>
@@ -485,6 +512,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="ReservationTransaction"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deletebtn3ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="addresslabel1">
           <Properties>
