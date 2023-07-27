@@ -23,7 +23,6 @@ public class JDBC {
     int q;
     int i;
     int id;
-    int deleteItem;
     boolean Y;
 
     Connection connection = null;
@@ -82,18 +81,6 @@ public class JDBC {
             Logger.getLogger(JDBC.class.getName()).log(Level.SEVERE, null, ex);
         }
         return Y;
-    }
-
-    public void healthSupport() {
-        Timestamp sqldate = new Timestamp(System.currentTimeMillis());
-        try {
-            preparedStatement = connection.prepareStatement("INSERT INTO support (username,time) VALUES (?,?);");
-            preparedStatement.setString(1, Welcome.user);
-            preparedStatement.setTimestamp(2, sqldate);
-            rowsAffected = preparedStatement.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(JDBC.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     /* public void fetchData() {

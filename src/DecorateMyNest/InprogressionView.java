@@ -4,17 +4,41 @@
  */
 package DecorateMyNest;
 
+import javax.swing.table.DefaultTableModel;
+import java.sql.SQLException;
+import java.sql.Date;
 /**
  *
  * @author ponki
  */
 public class InprogressionView extends javax.swing.JFrame {
 
-    /**
-     * Creates new form adiminview
-     */
+    DefaultTableModel model = new DefaultTableModel();
+
     public InprogressionView() {
         initComponents();
+        setRecordsToTable();
+    }
+
+    private void setRecordsToTable() {
+        try {
+            Welcome.jdbc.preparedStatement = Welcome.jdbc.connection.prepareStatement("SELECT * FROM InProgression;");
+            Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+            model = (DefaultTableModel) inProgressionTable.getModel();
+            model.setRowCount(0);
+            while (Welcome.jdbc.resultSet.next()) {
+                int projectID = Welcome.jdbc.resultSet.getInt("ProjectID");
+                int reservationID = Welcome.jdbc.resultSet.getInt("ReservationID");
+                Date startDate = Welcome.jdbc.resultSet.getDate("StartDate");
+                Date endDate = Welcome.jdbc.resultSet.getDate("EndDate");
+                int adminID = Welcome.jdbc.resultSet.getInt("AdminID");
+
+                model.addRow(new Object[]{projectID, reservationID, startDate, endDate, adminID});
+            }
+            inProgressionTable.setModel(model);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
     }
 
     /**
@@ -45,7 +69,7 @@ public class InprogressionView extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         okbtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        clienttable = new javax.swing.JTable();
+        inProgressionTable = new javax.swing.JTable();
         searchbylabel = new javax.swing.JLabel();
         dltbtn = new javax.swing.JButton();
 
@@ -221,18 +245,23 @@ public class InprogressionView extends javax.swing.JFrame {
         okbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         okbtn.setText("OK");
 
-        clienttable.setModel(new javax.swing.table.DefaultTableModel(
+        inProgressionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ProjectID", "ReservationID", "StartDate", "EndDate", "AdminID"
             }
-        ));
-        jScrollPane1.setViewportView(clienttable);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(inProgressionTable);
 
         searchbylabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         searchbylabel.setText("Search By");
@@ -250,17 +279,21 @@ public class InprogressionView extends javax.swing.JFrame {
                 .addComponent(searchbylabel, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(72, 72, 72)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jComboBoxselectcolumn, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(738, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(dltbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1123, Short.MAX_VALUE)
+                                .addComponent(dltbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(42, 42, 42))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jComboBoxselectcolumn, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(738, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -299,91 +332,91 @@ public class InprogressionView extends javax.swing.JFrame {
 
     private void editbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editbtnActionPerformed
         // TODO add your handling code here:
-        ClientEdit clientEdit=new ClientEdit();
+        ClientEdit clientEdit = new ClientEdit();
         clientEdit.show();
         dispose();
     }//GEN-LAST:event_editbtnActionPerformed
 
     private void FinancialTransactionsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinancialTransactionsbtnActionPerformed
         // TODO add your handling code here:
-        FinancialTransactionView financialTransactionView=new FinancialTransactionView();
+        FinancialTransactionView financialTransactionView = new FinancialTransactionView();
         financialTransactionView.show();
-        dispose();        
+        dispose();
     }//GEN-LAST:event_FinancialTransactionsbtnActionPerformed
 
     private void InprogressbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InprogressbtnActionPerformed
         // TODO add your handling code here:
-        InprogressionView inprogressionView=new InprogressionView();
+        InprogressionView inprogressionView = new InprogressionView();
         inprogressionView.show();
         dispose();
     }//GEN-LAST:event_InprogressbtnActionPerformed
 
     private void MaterialInventorybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaterialInventorybtnActionPerformed
         // TODO add your handling code here:
-        MaterialInventoryView materialInventoryView=new MaterialInventoryView();
-        materialInventoryView.show();        
+        MaterialInventoryView materialInventoryView = new MaterialInventoryView();
+        materialInventoryView.show();
         dispose();
     }//GEN-LAST:event_MaterialInventorybtnActionPerformed
 
     private void ProjectArchivebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProjectArchivebtnActionPerformed
         // TODO add your handling code here:
-        ProjectArchiveView projectArchiveView=new ProjectArchiveView();
+        ProjectArchiveView projectArchiveView = new ProjectArchiveView();
         projectArchiveView.show();
         dispose();
     }//GEN-LAST:event_ProjectArchivebtnActionPerformed
 
     private void clientsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsbtnActionPerformed
         // TODO add your handling code here:
-        InprogressionView adminView=new InprogressionView();
+        InprogressionView adminView = new InprogressionView();
         adminView.show();
         dispose();
     }//GEN-LAST:event_clientsbtnActionPerformed
 
     private void clientsbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsbtn1ActionPerformed
         // TODO add your handling code here:
-        ClientView clientView=new ClientView();
+        ClientView clientView = new ClientView();
         clientView.show();
         dispose();
     }//GEN-LAST:event_clientsbtn1ActionPerformed
 
     private void EmployeeRosterbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeRosterbtnActionPerformed
         // TODO add your handling code here:
-        EmployeeRosterView employeeRosterView=new EmployeeRosterView();
+        EmployeeRosterView employeeRosterView = new EmployeeRosterView();
         employeeRosterView.show();
         dispose();
     }//GEN-LAST:event_EmployeeRosterbtnActionPerformed
 
     private void VendorsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VendorsbtnActionPerformed
         // TODO add your handling code here:
-        VendorsView vendorsView=new VendorsView();
+        VendorsView vendorsView = new VendorsView();
         vendorsView.show();
         dispose();
     }//GEN-LAST:event_VendorsbtnActionPerformed
 
     private void CataloguebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CataloguebtnActionPerformed
         // TODO add your handling code here:
-        CatalogueView catalogueView=new CatalogueView();
+        CatalogueView catalogueView = new CatalogueView();
         catalogueView.show();
         dispose();
     }//GEN-LAST:event_CataloguebtnActionPerformed
 
     private void AppointmentsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppointmentsbtnActionPerformed
         // TODO add your handling code here:
-        InprogressionView appointmentsView=new InprogressionView();
+        InprogressionView appointmentsView = new InprogressionView();
         appointmentsView.show();
         dispose();
     }//GEN-LAST:event_AppointmentsbtnActionPerformed
 
     private void ReservationbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservationbtnActionPerformed
         // TODO add your handling code here:
-        ReservationView reservationView=new ReservationView();
+        ReservationView reservationView = new ReservationView();
         reservationView.show();
         dispose();
     }//GEN-LAST:event_ReservationbtnActionPerformed
 
     private void viewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtnActionPerformed
         // TODO add your handling code here:
-        InprogressionView adminView=new InprogressionView();
+        InprogressionView adminView = new InprogressionView();
         adminView.show();
         dispose();
     }//GEN-LAST:event_viewbtnActionPerformed
@@ -442,9 +475,9 @@ public class InprogressionView extends javax.swing.JFrame {
     private javax.swing.JButton Vendorsbtn;
     private javax.swing.JButton clientsbtn;
     private javax.swing.JButton clientsbtn1;
-    private javax.swing.JTable clienttable;
     private javax.swing.JButton dltbtn;
     private javax.swing.JButton editbtn;
+    private javax.swing.JTable inProgressionTable;
     private javax.swing.JComboBox<String> jComboBoxselectcolumn;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

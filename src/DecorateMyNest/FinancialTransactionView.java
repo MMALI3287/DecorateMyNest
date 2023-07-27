@@ -4,18 +4,43 @@
  */
 package DecorateMyNest;
 
+import javax.swing.table.DefaultTableModel;
+import java.sql.SQLException;
+import java.sql.Date;
+
 /**
  *
  * @author ponki
  */
 public class FinancialTransactionView extends javax.swing.JFrame {
 
-    /**
-     * Creates new form vendorview
-     */
+    DefaultTableModel model = new DefaultTableModel();
     public FinancialTransactionView() {
-        initComponents();
+    initComponents();
+    setRecordsToTable();
     }
+
+private void setRecordsToTable() {
+    try {
+        Welcome.jdbc.preparedStatement = Welcome.jdbc.connection.prepareStatement("SELECT * FROM FinancialTransactions;");
+        Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+        model = (DefaultTableModel) financialTransactionTable.getModel();
+        model.setRowCount(0);
+        while (Welcome.jdbc.resultSet.next()) {
+            int transactionID = Welcome.jdbc.resultSet.getInt("TransactionID");
+            Date transactionDate = Welcome.jdbc.resultSet.getDate("TransactionDate");
+            Float amount = Welcome.jdbc.resultSet.getFloat("Amount");
+            String description = Welcome.jdbc.resultSet.getString("Description");
+            int adminID = Welcome.jdbc.resultSet.getInt("AdminID");
+
+            model.addRow(new Object[]{transactionID, transactionDate, amount, description, adminID});
+        }
+        financialTransactionTable.setModel(model);
+    } catch (SQLException ex) {
+        System.out.println(ex);
+    }
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,7 +71,7 @@ public class FinancialTransactionView extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        clienttable = new javax.swing.JTable();
+        financialTransactionTable = new javax.swing.JTable();
         dltbtn = new javax.swing.JButton();
         deletebtn2 = new javax.swing.JButton();
         deletebtn3 = new javax.swing.JButton();
@@ -228,18 +253,23 @@ public class FinancialTransactionView extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setText("OK");
 
-        clienttable.setModel(new javax.swing.table.DefaultTableModel(
+        financialTransactionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "TransactionID", "TransactionDate", "Amount", "Date", "AdminID"
             }
-        ));
-        jScrollPane1.setViewportView(clienttable);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(financialTransactionTable);
 
         dltbtn.setBackground(new java.awt.Color(153, 255, 153));
         dltbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -285,10 +315,6 @@ public class FinancialTransactionView extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(dltbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(269, 269, 269))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(59, 59, 59)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,9 +334,16 @@ public class FinancialTransactionView extends javax.swing.JFrame {
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(65, 65, 65)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(610, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(dltbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(269, 269, 269))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -538,12 +571,12 @@ public class FinancialTransactionView extends javax.swing.JFrame {
     private javax.swing.JButton Vendorsbtn;
     private javax.swing.JButton clientsbtn;
     private javax.swing.JButton clientsbtn1;
-    private javax.swing.JTable clienttable;
     private javax.swing.JButton deletebtn;
     private javax.swing.JButton deletebtn2;
     private javax.swing.JButton deletebtn3;
     private javax.swing.JButton dltbtn;
     private javax.swing.JButton editbtn;
+    private javax.swing.JTable financialTransactionTable;
     private javax.swing.JButton insertbtn;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;

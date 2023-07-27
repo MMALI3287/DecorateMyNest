@@ -257,10 +257,7 @@ public class ClientView extends javax.swing.JFrame {
 
         clienttable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "ClientID", "FirstName", "LastName", "Email", "Phone", "Address"
