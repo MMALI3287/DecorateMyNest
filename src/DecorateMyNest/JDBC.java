@@ -53,13 +53,17 @@ public class JDBC {
             if (resultSet.next()) {
                 lastAdminId = resultSet.getInt("HighestAdminID");
             } else {
-                // If there are no records in the Admins table, set lastAdminId to 0 or any default value
+                // If there are no records in the Admins table, set lastAdminId to 0 or any
+                // default value
                 lastAdminId = 0;
             }
-            
+
             lastAdminId++;
 
-            preparedStatement = connection.prepareStatement("INSERT INTO Admins (AdminID, firstname, lastname, email, phone, password) VALUES (" + lastAdminId + ",'" + firstname + "','" + lastname + "','" + email + "','" + phone + "','" + password + "')");
+            preparedStatement = connection.prepareStatement(
+                    "INSERT INTO Admins (AdminID, firstname, lastname, email, phone, password) VALUES (" + lastAdminId
+                            + ",'" + firstname + "','" + lastname + "','" + email + "','" + phone + "','" + password
+                            + "')");
             rowsAffected = preparedStatement.executeUpdate();
             System.out.println("Inserted Successfully");
         } catch (SQLException ex) {
@@ -83,57 +87,31 @@ public class JDBC {
         return Y;
     }
 
-    /* public void fetchData() {
+    public void appointments(int CID, int EID, Date appDate, Time appTime) {
         try {
-            preparedStatement = connection.prepareStatement("SELECT * FROM book_cot WHERE username=?;");
-            preparedStatement.setString(1, Welcome.user);
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                Welcome.user = resultSet.getString("username");
-                Welcome.cot = resultSet.getString("cot");
-                BookCottage.time = resultSet.getTime("time");
-                System.out.println(Welcome.user);
-                System.out.println(Welcome.cot);
-                System.out.println("" + BookCottage.time);
-            } else
-                System.out.println("Not found");
-            preparedStatement = connection.prepareStatement("SELECT * FROM book_venue WHERE username=?;");
-            preparedStatement.setString(1, Welcome.user);
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                Welcome.user = resultSet.getString("username");
-                Welcome.res = resultSet.getString("venue");
-                BookVenue.time = resultSet.getTime("time");
-                System.out.println(Welcome.user);
-                System.out.println(Welcome.res);
-                System.out.println("" + BookVenue.time);
-            } else
-                System.out.println("Not found");
-            preparedStatement = connection.prepareStatement("SELECT * FROM tour WHERE username=?;");
-            preparedStatement.setString(1, Welcome.user);
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                Welcome.user = resultSet.getString("username");
-                Welcome.loc = resultSet.getString("location");
-                Welcome.des = resultSet.getString("destination");
-                SelectVehicle.car = resultSet.getInt("car");
-                SelectVehicle.suv = resultSet.getInt("suv");
-                SelectVehicle.bus = resultSet.getInt("bus");
-                SelectVehicle.sb = resultSet.getInt("speedBoat");
-                SelectVehicle.yt = resultSet.getInt("yatch");
-                SelectVehicle.price = resultSet.getInt("price");
-                BookCottage.time = resultSet.getTime("time");
-                System.out.println(Welcome.user);
-                System.out.println(Welcome.loc);
-                System.out.println(Welcome.des);
-                System.out.println(SelectVehicle.car
-                        + " " + SelectVehicle.suv + " " + SelectVehicle.bus + " " + SelectVehicle.sb + " "
-                        + SelectVehicle.yt + " " + SelectVehicle.price + " " + BookCottage.time);
+            int lastAppointmentId;
+            String query = "SELECT MAX(AppointmentID) AS HighestAdminID FROM Appointments";
+            preparedStatement = connection.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
-            } else
-                System.out.println("Not found");
+            // Check if there is a result (not null) and retrieve the highest AdminID
+            if (resultSet.next()) {
+                lastAppointmentId = resultSet.getInt("HighestAdminID");
+            } else {
+                // If there are no records in the Admins table, set lastAdminId to 0 or any
+                // default value
+                lastAppointmentId = 0;
+            }
+
+            lastAppointmentId++;
+
+            preparedStatement = connection.prepareStatement(
+                    "INSERT INTO Appointments (AppointmentID, ClientID, EmployeeID, AppointmentDate, AppointmentTime) VALUES ("
+                            + lastAppointmentId + ",'" + CID + "','" + EID + "','" + appDate + "','" + appTime + "')");
+            rowsAffected = preparedStatement.executeUpdate();
+            System.out.println("Inserted Successfully");
         } catch (SQLException ex) {
             Logger.getLogger(JDBC.class.getName()).log(Level.SEVERE, null, ex);
         }
-    } */
+    }
 }

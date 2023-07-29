@@ -23,17 +23,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-              <Component id="jPanel2" max="32767" attributes="0"/>
-          </Group>
+        <Group type="102" alignment="0" attributes="0">
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+          <Component id="jPanel2" max="32767" attributes="0"/>
+        </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
-          <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+        <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+        <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -48,59 +48,59 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="EmployeeRosterbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="Vendorsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="Cataloguebtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="Appointmentsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="Reservationbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="FinancialTransactionsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="Inprogressbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="MaterialInventorybtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="ProjectArchivebtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="clientsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="editbtn" min="-2" pref="96" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="viewbtn" min="-2" pref="96" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace pref="42" max="32767" attributes="0"/>
+            <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                <Component id="EmployeeRosterbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="Vendorsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="Cataloguebtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="Appointmentsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="Reservationbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="FinancialTransactionsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="Inprogressbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="MaterialInventorybtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="ProjectArchivebtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="clientsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Group type="102" alignment="0" attributes="0">
+                  <Component id="editbtn" min="-2" pref="96" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="viewbtn" min="-2" pref="96" max="-2" attributes="0"/>
+                </Group>
               </Group>
+              <EmptySpace pref="42" max="32767" attributes="0"/>
+            </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="editbtn" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="viewbtn" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="106" max="32767" attributes="0"/>
-                  <Component id="clientsbtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="EmployeeRosterbtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="Vendorsbtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="Cataloguebtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="Appointmentsbtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="Reservationbtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="FinancialTransactionsbtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="Inprogressbtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="MaterialInventorybtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="ProjectArchivebtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+            <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                <Component id="editbtn" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                <Component id="viewbtn" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace pref="106" max="32767" attributes="0"/>
+              <Component id="clientsbtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="EmployeeRosterbtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="Vendorsbtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="Cataloguebtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="Appointmentsbtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="Reservationbtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="FinancialTransactionsbtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="Inprogressbtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="MaterialInventorybtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="ProjectArchivebtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+            </Group>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -249,67 +249,67 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="fnamelabel" max="32767" attributes="0"/>
-                          <Component id="lnamelabel" pref="177" max="32767" attributes="0"/>
-                          <Component id="emaillabel" pref="177" max="32767" attributes="0"/>
-                          <Component id="phonelabel" pref="177" max="32767" attributes="0"/>
-                      </Group>
-                      <Component id="insertbtn" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="updatebtn" min="-2" pref="122" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                          <Component id="clearbtn" min="-2" pref="123" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                          <Component id="deletebtn" min="-2" pref="128" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="firstnametxtfield" min="-2" pref="441" max="-2" attributes="0"/>
-                      <Component id="lastnametxtfield" min="-2" pref="441" max="-2" attributes="0"/>
-                      <Component id="emailtxt" min="-2" pref="441" max="-2" attributes="0"/>
-                      <Component id="phonetxt" min="-2" pref="441" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="911" max="32767" attributes="0"/>
+            <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="fnamelabel" max="32767" attributes="0"/>
+                  <Component id="lnamelabel" pref="177" max="32767" attributes="0"/>
+                  <Component id="emaillabel" pref="177" max="32767" attributes="0"/>
+                  <Component id="phonelabel" pref="177" max="32767" attributes="0"/>
+                </Group>
+                <Component id="insertbtn" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                <Group type="102" attributes="0">
+                  <Component id="updatebtn" min="-2" pref="122" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="clearbtn" min="-2" pref="123" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="deletebtn" min="-2" pref="128" max="-2" attributes="0"/>
+                </Group>
+                <Component id="firstnametxtfield" min="-2" pref="441" max="-2" attributes="0"/>
+                <Component id="lastnametxtfield" min="-2" pref="441" max="-2" attributes="0"/>
+                <Component id="emailtxt" min="-2" pref="441" max="-2" attributes="0"/>
+                <Component id="phonetxt" min="-2" pref="441" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="911" max="32767" attributes="0"/>
+            </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="fnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="firstnametxtfield" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="lastnametxtfield" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="emaillabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="emailtxt" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="phonelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="phonetxt" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="insertbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="updatebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="clearbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="deletebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+            <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                <Component id="fnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                <Component id="firstnametxtfield" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                <Component id="lnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                <Component id="lastnametxtfield" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                <Component id="emaillabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                <Component id="emailtxt" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                <Component id="phonelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                <Component id="phonetxt" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                <Component id="insertbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                <Component id="updatebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                <Component id="clearbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                <Component id="deletebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+            </Group>
           </Group>
         </DimensionLayout>
       </Layout>

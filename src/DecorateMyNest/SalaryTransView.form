@@ -23,17 +23,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-              <Component id="jPanel2" max="32767" attributes="0"/>
-          </Group>
+        <Group type="102" alignment="0" attributes="0">
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+          <Component id="jPanel2" max="32767" attributes="0"/>
+        </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" max="32767" attributes="0"/>
-          <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+        <Component id="jPanel1" max="32767" attributes="0"/>
+        <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -48,62 +48,62 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="EmployeeRosterbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="Vendorsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="Cataloguebtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="Appointmentsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="Reservationbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="FinancialTransactionsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="Inprogressbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="MaterialInventorybtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="ProjectArchivebtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="clientsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="editbtn" min="-2" pref="96" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="viewbtn" min="-2" pref="96" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="clientsbtn1" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="42" max="32767" attributes="0"/>
+            <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                <Component id="EmployeeRosterbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="Vendorsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="Cataloguebtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="Appointmentsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="Reservationbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="FinancialTransactionsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="Inprogressbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="MaterialInventorybtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="ProjectArchivebtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Component id="clientsbtn" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                <Group type="102" alignment="0" attributes="0">
+                  <Component id="editbtn" min="-2" pref="96" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="viewbtn" min="-2" pref="96" max="-2" attributes="0"/>
+                </Group>
+                <Component id="clientsbtn1" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace pref="42" max="32767" attributes="0"/>
+            </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="editbtn" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="viewbtn" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="32" max="32767" attributes="0"/>
-                  <Component id="clientsbtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace pref="31" max="32767" attributes="0"/>
-                  <Component id="clientsbtn1" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="EmployeeRosterbtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="Vendorsbtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="Cataloguebtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="Appointmentsbtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="Reservationbtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="FinancialTransactionsbtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="Inprogressbtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="MaterialInventorybtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="ProjectArchivebtn" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+            <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                <Component id="editbtn" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                <Component id="viewbtn" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace pref="32" max="32767" attributes="0"/>
+              <Component id="clientsbtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <Component id="clientsbtn1" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="EmployeeRosterbtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="Vendorsbtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="Cataloguebtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="Appointmentsbtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="Reservationbtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="FinancialTransactionsbtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="Inprogressbtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="MaterialInventorybtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="ProjectArchivebtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+            </Group>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -263,72 +263,72 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="dltbtn" min="-2" pref="145" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="269" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+            <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="dltbtn" min="-2" pref="145" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="269" max="-2" attributes="0"/>
+            </Group>
+            <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                <Group type="102" attributes="0">
+                  <Component id="deletebtn2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="deletebtn3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="deletebtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="insertbtn" min="-2" max="-2" attributes="0"/>
+                </Group>
+                <Group type="102" alignment="0" attributes="0">
+                  <Component id="jLabel1" min="-2" pref="171" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="deletebtn2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                          <Component id="deletebtn3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="deletebtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="insertbtn" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel1" min="-2" pref="171" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jComboBox1" min="-2" pref="236" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                  <Component id="jTextField1" min="-2" pref="303" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jButton1" min="-2" pref="145" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" alignment="0" min="-2" pref="1060" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                    <Group type="102" attributes="0">
+                      <Component id="jComboBox1" min="-2" pref="236" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                      <Component id="jTextField1" min="-2" pref="303" max="-2" attributes="0"/>
+                    </Group>
+                    <Component id="jButton1" min="-2" pref="145" max="-2" attributes="0"/>
+                    <Component id="jScrollPane1" alignment="0" min="-2" pref="1060" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="322" max="32767" attributes="0"/>
+                </Group>
               </Group>
+              <EmptySpace pref="322" max="32767" attributes="0"/>
+            </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="insertbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                              <Component id="deletebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                              <Component id="deletebtn3" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                              <Component id="deletebtn2" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="71" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox1" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
-                              <Component id="jTextField1" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+            <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                    <Component id="insertbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                    <Component id="deletebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                    <Component id="deletebtn3" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                    <Component id="deletebtn2" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="47" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
-                  <Component id="dltbtn" min="-2" pref="47" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="71" max="-2" attributes="0"/>
+                </Group>
+                <Group type="102" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                    <Component id="jComboBox1" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                    <Component id="jTextField1" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                  </Group>
+                </Group>
               </Group>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" pref="47" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+              <Component id="dltbtn" min="-2" pref="47" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+            </Group>
           </Group>
         </DimensionLayout>
       </Layout>
