@@ -44,24 +44,9 @@ public class JDBC {
 
     public void adminRegister(String firstname, String lastname, String email, String phone, String password) {
         try {
-            int lastAdminId;
-            String query = "SELECT MAX(AdminID) AS HighestAdminID FROM Admins";
-            preparedStatement = connection.prepareStatement(query);
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            // Check if there is a result (not null) and retrieve the highest AdminID
-            if (resultSet.next()) {
-                lastAdminId = resultSet.getInt("HighestAdminID");
-            } else {
-                // If there are no records in the Admins table, set lastAdminId to 0 or any
-                // default value
-                lastAdminId = 0;
-            }
-
-            lastAdminId++;
 
             preparedStatement = connection.prepareStatement(
-                    "INSERT INTO Admins (AdminID, firstname, lastname, email, phone, password) VALUES (" + lastAdminId
+                    "INSERT INTO Admins (firstname, lastname, email, phone, password) VALUES (" 
                             + ",'" + firstname + "','" + lastname + "','" + email + "','" + phone + "','" + password
                             + "')");
             rowsAffected = preparedStatement.executeUpdate();
@@ -87,31 +72,5 @@ public class JDBC {
         return Y;
     }
 
-    public void appointments(int CID, int EID, Date appDate, Time appTime) {
-        try {
-            int lastAppointmentId;
-            String query = "SELECT MAX(AppointmentID) AS HighestAdminID FROM Appointments";
-            preparedStatement = connection.prepareStatement(query);
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            // Check if there is a result (not null) and retrieve the highest AdminID
-            if (resultSet.next()) {
-                lastAppointmentId = resultSet.getInt("HighestAdminID");
-            } else {
-                // If there are no records in the Admins table, set lastAdminId to 0 or any
-                // default value
-                lastAppointmentId = 0;
-            }
-
-            lastAppointmentId++;
-
-            preparedStatement = connection.prepareStatement(
-                    "INSERT INTO Appointments (AppointmentID, ClientID, EmployeeID, AppointmentDate, AppointmentTime) VALUES ("
-                            + lastAppointmentId + ",'" + CID + "','" + EID + "','" + appDate + "','" + appTime + "')");
-            rowsAffected = preparedStatement.executeUpdate();
-            System.out.println("Inserted Successfully");
-        } catch (SQLException ex) {
-            Logger.getLogger(JDBC.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+    
 }

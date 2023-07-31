@@ -348,7 +348,7 @@ public class CatalogueEdit extends javax.swing.JFrame {
 
     private void viewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtnActionPerformed
         // TODO add your handling code here:
-        AppointmentsView adminView=new AppointmentsView();
+        AdminView adminView=new AdminView();
         adminView.show();
         dispose();
 
