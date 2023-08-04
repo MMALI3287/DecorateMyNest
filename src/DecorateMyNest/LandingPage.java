@@ -8,12 +8,12 @@ package DecorateMyNest;
  *
  * @author Musaddique Ali
  */
-public class jpanel3 extends javax.swing.JPanel {
+public class LandingPage extends javax.swing.JPanel {
 
     /**
      * Creates new form jpanel3
      */
-    public jpanel3() {
+    public LandingPage() {
         initComponents();
     }
 
