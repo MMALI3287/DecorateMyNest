@@ -4,17 +4,40 @@
  */
 package DecorateMyNest;
 
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Musaddique Ali
  */
 public class ReservationTransViewPanel extends javax.swing.JPanel {
-
+DefaultTableModel model = new DefaultTableModel();
     /**
      * Creates new form AdminViewPanel
      */
     public ReservationTransViewPanel() {
         initComponents();
+        setRecordsToTable();
+    }
+
+    private void setRecordsToTable() {
+        try {
+            Welcome.jdbc.preparedStatement = Welcome.jdbc.connection
+                    .prepareStatement("SELECT * FROM ReservationTransaction;");
+            Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+            model = (DefaultTableModel) reservationTransactionTable.getModel();
+            model.setRowCount(0);
+            while (Welcome.jdbc.resultSet.next()) {
+                int transactionID = Welcome.jdbc.resultSet.getInt("TransactionID");
+                int reservationID = Welcome.jdbc.resultSet.getInt("ReservationID");
+
+                model.addRow(new Object[] { transactionID, reservationID });
+            }
+            reservationTransactionTable.setModel(model);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
     }
 
     /**

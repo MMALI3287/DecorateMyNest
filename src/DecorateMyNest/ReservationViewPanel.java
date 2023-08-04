@@ -4,18 +4,44 @@
  */
 package DecorateMyNest;
 
+import java.sql.Date;
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Musaddique Ali
  */
 public class ReservationViewPanel extends javax.swing.JPanel {
-
+DefaultTableModel model = new DefaultTableModel();
     /**
      * Creates new form AdminViewPanel
      */
     public ReservationViewPanel() {
         initComponents();
-    }
+                setRecordsToTable();
+        }
+
+        private void setRecordsToTable() {
+                try {
+                        Welcome.jdbc.preparedStatement = Welcome.jdbc.connection
+                                        .prepareStatement("SELECT * FROM Reservations;");
+                        Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+                        model = (DefaultTableModel) reservationTable.getModel();
+                        model.setRowCount(0);
+                        while (Welcome.jdbc.resultSet.next()) {
+                                int reservationID = Welcome.jdbc.resultSet.getInt("ReservationID");
+                                int clientID = Welcome.jdbc.resultSet.getInt("ClientID");
+                                int catalogueID = Welcome.jdbc.resultSet.getInt("CatalogueID");
+                                Date reservationDate = Welcome.jdbc.resultSet.getDate("ReservationDate");
+
+                                model.addRow(new Object[] { reservationID, clientID, catalogueID, reservationDate });
+                        }
+                        reservationTable.setModel(model);
+                } catch (SQLException ex) {
+                        System.out.println(ex);
+                }
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.

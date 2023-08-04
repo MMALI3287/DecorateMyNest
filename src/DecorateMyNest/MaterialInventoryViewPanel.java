@@ -4,18 +4,42 @@
  */
 package DecorateMyNest;
 
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Musaddique Ali
  */
 public class MaterialInventoryViewPanel extends javax.swing.JPanel {
-
+DefaultTableModel model = new DefaultTableModel();
     /**
      * Creates new form AdminViewPanel
      */
     public MaterialInventoryViewPanel() {
         initComponents();
-    }
+                setRecordsToTable();
+        }
+
+        private void setRecordsToTable() {
+                try {
+                        Welcome.jdbc.preparedStatement = Welcome.jdbc.connection
+                                        .prepareStatement("SELECT * FROM MaterialInventory;");
+                        Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+                        model = (DefaultTableModel) materialInventoryTable.getModel();
+                        model.setRowCount(0);
+                        while (Welcome.jdbc.resultSet.next()) {
+                                int materialID = Welcome.jdbc.resultSet.getInt("MaterialID");
+                                String materialName = Welcome.jdbc.resultSet.getString("MaterialName");
+                                int bulkAmount = Welcome.jdbc.resultSet.getInt("BulkAmount");
+
+                                model.addRow(new Object[] { materialID, materialName, bulkAmount });
+                        }
+                        materialInventoryTable.setModel(model);
+                } catch (SQLException ex) {
+                        System.out.println(ex);
+                }
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.

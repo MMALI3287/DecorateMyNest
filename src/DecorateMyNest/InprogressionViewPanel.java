@@ -4,18 +4,45 @@
  */
 package DecorateMyNest;
 
+import java.sql.Date;
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Musaddique Ali
  */
 public class InprogressionViewPanel extends javax.swing.JPanel {
-
+DefaultTableModel model = new DefaultTableModel();
     /**
      * Creates new form AdminViewPanel
      */
     public InprogressionViewPanel() {
         initComponents();
-    }
+                setRecordsToTable();
+        }
+
+        private void setRecordsToTable() {
+                try {
+                        Welcome.jdbc.preparedStatement = Welcome.jdbc.connection
+                                        .prepareStatement("SELECT * FROM InProgression;");
+                        Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+                        model = (DefaultTableModel) inProgressionTable.getModel();
+                        model.setRowCount(0);
+                        while (Welcome.jdbc.resultSet.next()) {
+                                int projectID = Welcome.jdbc.resultSet.getInt("ProjectID");
+                                int reservationID = Welcome.jdbc.resultSet.getInt("ReservationID");
+                                Date startDate = Welcome.jdbc.resultSet.getDate("StartDate");
+                                Date endDate = Welcome.jdbc.resultSet.getDate("EndDate");
+                                int adminID = Welcome.jdbc.resultSet.getInt("AdminID");
+
+                                model.addRow(new Object[] { projectID, reservationID, startDate, endDate, adminID });
+                        }
+                        inProgressionTable.setModel(model);
+                } catch (SQLException ex) {
+                        System.out.println(ex);
+                }
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.

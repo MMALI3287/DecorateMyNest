@@ -4,6 +4,9 @@
  */
 package DecorateMyNest;
 
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Musaddique Ali
@@ -13,8 +16,29 @@ public class SalaryTransViewPanel extends javax.swing.JPanel {
     /**
      * Creates new form AdminViewPanel
      */
+    DefaultTableModel model = new DefaultTableModel();
     public SalaryTransViewPanel() {
         initComponents();
+        setSalaryTransactionToTable();
+    }
+
+    private void setSalaryTransactionToTable() {
+        try {
+            Welcome.jdbc.preparedStatement = Welcome.jdbc.connection
+                    .prepareStatement("SELECT * FROM SalaryTransaction;");
+            Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+            model = (DefaultTableModel) salaryTransactionTable.getModel();
+            model.setRowCount(0);
+            while (Welcome.jdbc.resultSet.next()) {
+                int transactionID = Welcome.jdbc.resultSet.getInt("TransactionID");
+                int employeeID = Welcome.jdbc.resultSet.getInt("EmployeeID");
+
+                model.addRow(new Object[] { transactionID, employeeID });
+            }
+            salaryTransactionTable.setModel(model);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
     }
 
     /**

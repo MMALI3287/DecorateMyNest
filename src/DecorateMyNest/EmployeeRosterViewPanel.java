@@ -4,17 +4,45 @@
  */
 package DecorateMyNest;
 
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Musaddique Ali
  */
 public class EmployeeRosterViewPanel extends javax.swing.JPanel {
-
+DefaultTableModel model = new DefaultTableModel();
     /**
      * Creates new form AdminViewPanel
      */
     public EmployeeRosterViewPanel() {
         initComponents();
+        setRecordsToTable();
+    }
+
+    private void setRecordsToTable() {
+        try {
+            Welcome.jdbc.preparedStatement = Welcome.jdbc.connection.prepareStatement("SELECT * FROM EmployeeRoster;");
+            Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+            model = (DefaultTableModel) employeeRosterTable.getModel();
+            model.setRowCount(0);
+            while (Welcome.jdbc.resultSet.next()) {
+                int employeeID = Welcome.jdbc.resultSet.getInt("EmployeeID");
+                String firstName = Welcome.jdbc.resultSet.getString("FirstName");
+                String lastName = Welcome.jdbc.resultSet.getString("LastName");
+                String position = Welcome.jdbc.resultSet.getString("Position");
+                String email = Welcome.jdbc.resultSet.getString("Email");
+                String phone = Welcome.jdbc.resultSet.getString("Phone");
+                int adminID = Welcome.jdbc.resultSet.getInt("AdminID");
+
+                model.addRow(
+                        new Object[] { employeeID, firstName, lastName, position, email, phone, adminID });
+            }
+            employeeRosterTable.setModel(model);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
     }
 
     /**

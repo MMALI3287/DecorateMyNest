@@ -4,17 +4,46 @@
  */
 package DecorateMyNest;
 
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Musaddique Ali
  */
 public class AdminViewPanel extends javax.swing.JPanel {
 
+    
+    DefaultTableModel model = new DefaultTableModel();
+    
     /**
      * Creates new form AdminViewPanel
      */
     public AdminViewPanel() {
         initComponents();
+        setRecordsToTable();
+    }
+
+    private void setRecordsToTable() {
+        try {
+            Welcome.jdbc.preparedStatement = Welcome.jdbc.connection.prepareStatement("SELECT * FROM Admins;");
+            Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+            model = (DefaultTableModel) adminTable.getModel();
+            model.setRowCount(0);
+            while (Welcome.jdbc.resultSet.next()) {
+                int adminID = Welcome.jdbc.resultSet.getInt("AdminID");
+                String FirstName = Welcome.jdbc.resultSet.getString("FirstName");
+                String LastName = Welcome.jdbc.resultSet.getString("LastName");
+                String email = Welcome.jdbc.resultSet.getString("Email");
+                String phone = Welcome.jdbc.resultSet.getString("Phone");
+                String password = Welcome.jdbc.resultSet.getString("Password");
+
+                model.addRow(new Object[] { adminID, FirstName, LastName, email, phone, password });
+            }
+            adminTable.setModel(model);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
     }
 
     /**

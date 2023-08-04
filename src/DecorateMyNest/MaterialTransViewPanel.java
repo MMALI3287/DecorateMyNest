@@ -4,17 +4,42 @@
  */
 package DecorateMyNest;
 
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Musaddique Ali
  */
 public class MaterialTransViewPanel extends javax.swing.JPanel {
-
+DefaultTableModel model = new DefaultTableModel();
     /**
      * Creates new form AdminViewPanel
      */
     public MaterialTransViewPanel() {
         initComponents();
+        setRecordsToTable();
+    }
+
+    private void setRecordsToTable() {
+        try {
+            Welcome.jdbc.preparedStatement = Welcome.jdbc.connection
+                    .prepareStatement("SELECT * FROM MaterialTransaction;");
+            Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+            model = (DefaultTableModel) materialTransactionTable.getModel();
+            model.setRowCount(0);
+            while (Welcome.jdbc.resultSet.next()) {
+                int transactionID = Welcome.jdbc.resultSet.getInt("TransactionID");
+                int materialID = Welcome.jdbc.resultSet.getInt("MaterialID");
+                int quantity = Welcome.jdbc.resultSet.getInt("Quantity");
+                int vendorID = Welcome.jdbc.resultSet.getInt("VendorID");
+
+                model.addRow(new Object[] { transactionID, materialID, quantity, vendorID });
+            }
+            materialTransactionTable.setModel(model);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
     }
 
     /**

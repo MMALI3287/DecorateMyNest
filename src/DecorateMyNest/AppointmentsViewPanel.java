@@ -4,17 +4,44 @@
  */
 package DecorateMyNest;
 
+import java.sql.Date;
+import java.sql.SQLException;
+import java.sql.Time;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Musaddique Ali
  */
 public class AppointmentsViewPanel extends javax.swing.JPanel {
-
+DefaultTableModel model = new DefaultTableModel();
     /**
      * Creates new form AdminViewPanel
      */
     public AppointmentsViewPanel() {
         initComponents();
+        setRecordsToTable();
+    }
+
+    private void setRecordsToTable() {
+        try {
+            Welcome.jdbc.preparedStatement = Welcome.jdbc.connection.prepareStatement("SELECT * FROM Appointments;");
+            Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+            model = (DefaultTableModel) appointmentsTable.getModel();
+            model.setRowCount(0);
+            while (Welcome.jdbc.resultSet.next()) {
+                int appointmentID = Welcome.jdbc.resultSet.getInt("AppointmentID");
+                int clientID = Welcome.jdbc.resultSet.getInt("ClientID");
+                int employeeID = Welcome.jdbc.resultSet.getInt("EmployeeID");
+                Date appointmentDate = Welcome.jdbc.resultSet.getDate("AppointmentDate");
+                Time appointmentTime = Welcome.jdbc.resultSet.getTime("AppointmentTime");
+
+                model.addRow(new Object[] { appointmentID, clientID, employeeID, appointmentDate, appointmentTime });
+            }
+            appointmentsTable.setModel(model);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
     }
 
     /**

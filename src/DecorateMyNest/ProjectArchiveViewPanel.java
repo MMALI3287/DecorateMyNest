@@ -4,18 +4,44 @@
  */
 package DecorateMyNest;
 
+import java.sql.Date;
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Musaddique Ali
  */
 public class ProjectArchiveViewPanel extends javax.swing.JPanel {
-
+DefaultTableModel model = new DefaultTableModel();
     /**
      * Creates new form AdminViewPanel
      */
     public ProjectArchiveViewPanel() {
         initComponents();
-    }
+                setRecordsToTable();
+        }
+
+        private void setRecordsToTable() {
+                try {
+                        Welcome.jdbc.preparedStatement = Welcome.jdbc.connection
+                                        .prepareStatement("SELECT * FROM ProjectArchive;");
+                        Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+                        model = (DefaultTableModel) projectArchiveTable.getModel();
+                        model.setRowCount(0);
+                        while (Welcome.jdbc.resultSet.next()) {
+                                int archiveID = Welcome.jdbc.resultSet.getInt("ArchiveID");
+                                int projectID = Welcome.jdbc.resultSet.getInt("ProjectID");
+                                Date completionDate = Welcome.jdbc.resultSet.getDate("CompletionDate");
+                                String review = Welcome.jdbc.resultSet.getString("Review");
+
+                                model.addRow(new Object[] { archiveID, projectID, completionDate, review });
+                        }
+                        projectArchiveTable.setModel(model);
+                } catch (SQLException ex) {
+                        System.out.println(ex);
+                }
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.

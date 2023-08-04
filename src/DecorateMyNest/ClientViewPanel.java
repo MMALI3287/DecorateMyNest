@@ -4,18 +4,43 @@
  */
 package DecorateMyNest;
 
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Musaddique Ali
  */
 public class ClientViewPanel extends javax.swing.JPanel {
-
+DefaultTableModel model = new DefaultTableModel();
     /**
      * Creates new form AdminViewPanel
      */
     public ClientViewPanel() {
         initComponents();
-    }
+                setRecordsToTable();
+        }
+
+        private void setRecordsToTable() {
+                try {
+                        Welcome.jdbc.preparedStatement = Welcome.jdbc.connection
+                                        .prepareStatement("SELECT * FROM Clients;");
+                        Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+                        model = (DefaultTableModel) clienttable.getModel();
+                        while (Welcome.jdbc.resultSet.next()) {
+                                int clientId = Welcome.jdbc.resultSet.getInt("ClientID");
+                                String fName = Welcome.jdbc.resultSet.getString("FirstName");
+                                String lName = Welcome.jdbc.resultSet.getString("LastName");
+                                String email = Welcome.jdbc.resultSet.getString("Email");
+                                String phone = Welcome.jdbc.resultSet.getString("Phone");
+                                String address = Welcome.jdbc.resultSet.getString("Address");
+                                model.addRow(new Object[] { clientId, fName, lName, email, phone, address });
+                        }
+                        clienttable.setModel(model);
+                } catch (SQLException ex) {
+                        System.out.println(ex);
+                }
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.

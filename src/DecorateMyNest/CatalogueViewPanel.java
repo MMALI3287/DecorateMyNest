@@ -4,17 +4,42 @@
  */
 package DecorateMyNest;
 
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Musaddique Ali
  */
 public class CatalogueViewPanel extends javax.swing.JPanel {
-
+DefaultTableModel model = new DefaultTableModel();
     /**
      * Creates new form AdminViewPanel
      */
     public CatalogueViewPanel() {
         initComponents();
+        setRecordsToTable();
+    }
+
+    private void setRecordsToTable() {
+        try {
+            Welcome.jdbc.preparedStatement = Welcome.jdbc.connection.prepareStatement("SELECT * FROM Catalogue;");
+            Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+            model = (DefaultTableModel) catalogueTable.getModel();
+            model.setRowCount(0);
+            while (Welcome.jdbc.resultSet.next()) {
+                int catalogueID = Welcome.jdbc.resultSet.getInt("CatalogueID");
+                String projectName = Welcome.jdbc.resultSet.getString("ProjectName");
+                String description = Welcome.jdbc.resultSet.getString("Description");
+                float estimatedCost = Welcome.jdbc.resultSet.getFloat("EstimatedCost");
+                String imageURL = Welcome.jdbc.resultSet.getString("ImageURL");
+
+                model.addRow(new Object[] { catalogueID, projectName, description, estimatedCost, imageURL });
+            }
+            catalogueTable.setModel(model);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
     }
 
     /**

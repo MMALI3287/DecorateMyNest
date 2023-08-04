@@ -4,6 +4,9 @@
  */
 package DecorateMyNest;
 
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Musaddique Ali
@@ -13,9 +16,34 @@ public class VendorsViewPanel extends javax.swing.JPanel {
     /**
      * Creates new form AdminViewPanel
      */
+    
+    DefaultTableModel model = new DefaultTableModel();
     public VendorsViewPanel() {
         initComponents();
-    }
+                setVendorsToTable();
+        }
+
+        private void setVendorsToTable() {
+                try {
+                        Welcome.jdbc.preparedStatement = Welcome.jdbc.connection
+                                        .prepareStatement("SELECT * FROM Vendors;");
+                        Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+                        model = (DefaultTableModel) vendorsTable.getModel();
+                        model.setRowCount(0);
+                        while (Welcome.jdbc.resultSet.next()) {
+                                int vendorID = Welcome.jdbc.resultSet.getInt("VendorID");
+                                String vendorName = Welcome.jdbc.resultSet.getString("VendorName");
+                                String contactPerson = Welcome.jdbc.resultSet.getString("ContactPerson");
+                                String phone = Welcome.jdbc.resultSet.getString("Phone");
+                                String email = Welcome.jdbc.resultSet.getString("Email");
+
+                                model.addRow(new Object[] { vendorID, vendorName, contactPerson, phone, email });
+                        }
+                        vendorsTable.setModel(model);
+                } catch (SQLException ex) {
+                        System.out.println(ex);
+                }
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
