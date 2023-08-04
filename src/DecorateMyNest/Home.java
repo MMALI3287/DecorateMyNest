@@ -106,14 +106,7 @@ public class Home extends JFrame {
 
         JMenu FinancialTransactionMenu = new javax.swing.JMenu("FinancialTransaction");
         JMenuItem FinancialTransactionView = new javax.swing.JMenuItem("View");
-        JMenuItem FinancialTransactionEntry = new javax.swing.JMenuItem("Entry");
-        FinancialTransactionMenu.add(FinancialTransactionEntry);
         FinancialTransactionMenu.add(FinancialTransactionView);
-        FinancialTransactionEntry.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                setpane(new FinancialTransactionEditPanel());
-            }
-        });
         FinancialTransactionView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setpane(new FinancialTransactionViewPanel());

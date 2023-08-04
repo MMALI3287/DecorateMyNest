@@ -61,10 +61,6 @@ DefaultTableModel model = new DefaultTableModel();
         jScrollPane1 = new javax.swing.JScrollPane();
         financialTransactionTable = new javax.swing.JTable();
         dltbtn = new javax.swing.JButton();
-        deletebtn2 = new javax.swing.JButton();
-        deletebtn3 = new javax.swing.JButton();
-        deletebtn = new javax.swing.JButton();
-        insertbtn = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Search By");
@@ -97,69 +93,23 @@ DefaultTableModel model = new DefaultTableModel();
         dltbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         dltbtn.setText("Delete");
 
-        deletebtn2.setBackground(new java.awt.Color(163, 239, 89));
-        deletebtn2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        deletebtn2.setText("InstallmentTransaction");
-        deletebtn2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deletebtn2ActionPerformed(evt);
-            }
-        });
-
-        deletebtn3.setBackground(new java.awt.Color(163, 239, 89));
-        deletebtn3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        deletebtn3.setText("ReservationTransaction");
-        deletebtn3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deletebtn3ActionPerformed(evt);
-            }
-        });
-
-        deletebtn.setBackground(new java.awt.Color(163, 239, 89));
-        deletebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        deletebtn.setText("SalaryTransaction");
-        deletebtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deletebtnActionPerformed(evt);
-            }
-        });
-
-        insertbtn.setBackground(new java.awt.Color(163, 239, 89));
-        insertbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        insertbtn.setText("MaterialTransaction");
-        insertbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                insertbtnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(59, 59, 59)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(deletebtn2)
-                        .addGap(18, 18, 18)
-                        .addComponent(deletebtn3)
-                        .addGap(18, 18, 18)
-                        .addComponent(deletebtn)
-                        .addGap(18, 18, 18)
-                        .addComponent(insertbtn))
+                        .addGap(32, 32, 32)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(115, 115, 115)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(65, 65, 65)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(658, Short.MAX_VALUE))
+                        .addGap(115, 115, 115)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(681, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -173,13 +123,7 @@ DefaultTableModel model = new DefaultTableModel();
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deletebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deletebtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deletebtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addContainerGap(132, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -212,12 +156,8 @@ DefaultTableModel model = new DefaultTableModel();
     }// GEN-LAST:event_insertbtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton deletebtn;
-    private javax.swing.JButton deletebtn2;
-    private javax.swing.JButton deletebtn3;
     private javax.swing.JButton dltbtn;
     private javax.swing.JTable financialTransactionTable;
-    private javax.swing.JButton insertbtn;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;

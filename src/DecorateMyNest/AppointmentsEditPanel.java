@@ -27,12 +27,12 @@ public class AppointmentsEditPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         fnamelabel = new javax.swing.JLabel();
-        CID = new javax.swing.JTextField();
+        clientID = new javax.swing.JTextField();
         lnamelabel = new javax.swing.JLabel();
-        EID = new javax.swing.JTextField();
+        employeeID = new javax.swing.JTextField();
         emaillabel = new javax.swing.JLabel();
         phonelabel = new javax.swing.JLabel();
-        appTime = new javax.swing.JTextField();
+        appointmentTime = new javax.swing.JTextField();
         insertbtn = new javax.swing.JButton();
         updatebtn = new javax.swing.JButton();
         clearbtn = new javax.swing.JButton();
@@ -91,9 +91,9 @@ public class AppointmentsEditPanel extends javax.swing.JPanel {
                             .addComponent(phonelabel, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(CID, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE)
-                            .addComponent(EID, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE)
-                            .addComponent(appTime, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE)))
+                            .addComponent(clientID, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE)
+                            .addComponent(employeeID, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE)
+                            .addComponent(appointmentTime, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
@@ -110,17 +110,17 @@ public class AppointmentsEditPanel extends javax.swing.JPanel {
                 .addGap(198, 198, 198)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(clientID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(employeeID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addComponent(emaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(phonelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(appTime, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(appointmentTime, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(160, 160, 160)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -132,7 +132,17 @@ public class AppointmentsEditPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void insertbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertbtnActionPerformed
-        // TODO add your handling code here:
+        if (clientID.getText().equals("") || employeeID.getText().equals("") || appointmentDate.getText().equals("") || appointmentTime.getText().equals("")) {
+    JOptionPane.showMessageDialog(this, "Please Fill-up all fields");
+    return;
+}
+try {
+    Welcome.jdbc.appointmentsInsert(Integer.parseInt(clientID.getText()), Integer.parseInt(employeeID.getText()), appointmentDate.getText(), appointmentTime.getText());
+} catch (Exception e) {
+    System.out.println(e);
+    return;
+}
+
     }//GEN-LAST:event_insertbtnActionPerformed
 
     private void updatebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebtnActionPerformed
@@ -141,12 +151,12 @@ public class AppointmentsEditPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField CID;
-    private javax.swing.JTextField EID;
-    private javax.swing.JTextField appTime;
+    private javax.swing.JTextField appointmentTime;
     private javax.swing.JButton clearbtn;
+    private javax.swing.JTextField clientID;
     private javax.swing.JButton deletebtn;
     private javax.swing.JLabel emaillabel;
+    private javax.swing.JTextField employeeID;
     private javax.swing.JLabel fnamelabel;
     private javax.swing.JButton insertbtn;
     private javax.swing.JLabel lnamelabel;

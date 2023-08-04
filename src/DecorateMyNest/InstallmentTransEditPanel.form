@@ -16,119 +16,92 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-        <Group type="102" alignment="0" attributes="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-            <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                <Component id="fnamelabel" alignment="0" max="32767" attributes="0"/>
-                <Component id="lnamelabel" alignment="0" max="32767" attributes="0"/>
-                <Component id="emaillabel" alignment="0" max="32767" attributes="0"/>
-                <Component id="phonelabel" alignment="0" max="32767" attributes="0"/>
-                <Component id="addresslabel" alignment="0" max="32767" attributes="0"/>
-                <Component id="addresslabel1" alignment="0" max="32767" attributes="0"/>
-                <Component id="addresslabel2" alignment="0" max="32767" attributes="0"/>
-                <Component id="addresslabel3" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                <Component id="firstnametxtfield" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-                <Component id="lastnametxtfield" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-                <Component id="emailtxt" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-                <Component id="phonetxt" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-                <Component id="addresstxt" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-                <Component id="addresstxt1" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-                <Component id="addresstxt2" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-                <Component id="addresstxt3" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="fnamelabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lnamelabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="emaillabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="phonelabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="addresslabel1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="addresslabel2" alignment="0" max="32767" attributes="0"/>
+                          <Component id="addresslabel3" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="adminID" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                          <Component id="transactionDate" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                          <Component id="amount" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                          <Component id="description" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                          <Component id="installmentNum" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                          <Component id="projectID" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                          <Component id="installmentDue" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                      <Component id="insertbtn" min="-2" pref="115" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <Component id="updatebtn" min="-2" pref="122" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="clearbtn" min="-2" pref="123" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="deletebtn1" min="-2" pref="128" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-            </Group>
-            <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                <Group type="102" attributes="0">
-                  <Component id="insertbtn1" min="-2" pref="115" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                  <Component id="updatebtn" min="-2" pref="122" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                  <Component id="clearbtn" min="-2" pref="123" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                  <Component id="deletebtn1" min="-2" pref="128" max="-2" attributes="0"/>
-                </Group>
-                <Group type="102" attributes="0">
-                  <Component id="deletebtn2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                  <Component id="deletebtn3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="deletebtn" min="-2" max="-2" attributes="0"/>
-                </Group>
-              </Group>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-              <Component id="insertbtn" min="-2" max="-2" attributes="0"/>
-            </Group>
+              <EmptySpace pref="1112" max="32767" attributes="0"/>
           </Group>
-          <EmptySpace pref="594" max="32767" attributes="0"/>
-        </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-        <Group type="102" alignment="0" attributes="0">
-          <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="insertbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-            <Component id="deletebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-            <Component id="deletebtn3" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-            <Component id="deletebtn2" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="fnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="adminID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="transactionDate" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="emaillabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="amount" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="phonelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="description" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="addresslabel1" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="installmentNum" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="addresslabel2" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="projectID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="addresslabel3" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="installmentDue" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="updatebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="insertbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="clearbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="deletebtn1" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="103" max="32767" attributes="0"/>
           </Group>
-          <EmptySpace type="separate" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="fnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-            <Component id="firstnametxtfield" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="lnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-            <Component id="lastnametxtfield" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="emaillabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-            <Component id="emailtxt" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="phonelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-            <Component id="phonetxt" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="addresslabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-            <Component id="addresstxt" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="addresslabel1" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-            <Component id="addresstxt1" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="addresslabel2" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-            <Component id="addresstxt2" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="addresslabel3" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-            <Component id="addresstxt3" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="updatebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-            <Component id="insertbtn1" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-            <Component id="clearbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-            <Component id="deletebtn1" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace pref="64" max="32767" attributes="0"/>
-        </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -138,29 +111,29 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="First Name"/>
+        <Property name="text" type="java.lang.String" value="AdminID"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="firstnametxtfield">
+    <Component class="javax.swing.JTextField" name="adminID">
     </Component>
     <Component class="javax.swing.JLabel" name="lnamelabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Lastr Name"/>
+        <Property name="text" type="java.lang.String" value="Transaction Date"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="lastnametxtfield">
+    <Component class="javax.swing.JTextField" name="transactionDate">
     </Component>
-    <Component class="javax.swing.JTextField" name="emailtxt">
+    <Component class="javax.swing.JTextField" name="amount">
     </Component>
     <Component class="javax.swing.JLabel" name="emaillabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Email"/>
+        <Property name="text" type="java.lang.String" value="Amount"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="phonelabel">
@@ -168,34 +141,10 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Phone"/>
+        <Property name="text" type="java.lang.String" value="Description"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="phonetxt">
-    </Component>
-    <Component class="javax.swing.JLabel" name="addresslabel">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="18" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Address"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="addresstxt">
-    </Component>
-    <Component class="javax.swing.JButton" name="insertbtn">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="59" green="ef" red="a3" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="18" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="MaterialTransaction"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insertbtnActionPerformed"/>
-      </Events>
+    <Component class="javax.swing.JTextField" name="description">
     </Component>
     <Component class="javax.swing.JButton" name="updatebtn">
       <Properties>
@@ -219,21 +168,7 @@
         <Property name="text" type="java.lang.String" value="Clear"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="deletebtn">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="59" green="ef" red="a3" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="18" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="SalaryTransaction"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deletebtnActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="insertbtn1">
+    <Component class="javax.swing.JButton" name="insertbtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="d" green="ef" red="f3" type="rgb"/>
@@ -243,6 +178,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Insert"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insertbtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="deletebtn1">
       <Properties>
@@ -255,34 +193,6 @@
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="deletebtn2">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="59" green="ef" red="a3" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="18" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="InstallmentTransaction"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deletebtn2ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="deletebtn3">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="59" green="ef" red="a3" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="18" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="ReservationTransaction"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deletebtn3ActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="addresslabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -291,7 +201,7 @@
         <Property name="text" type="java.lang.String" value="Installment No"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="addresstxt1">
+    <Component class="javax.swing.JTextField" name="installmentNum">
     </Component>
     <Component class="javax.swing.JLabel" name="addresslabel2">
       <Properties>
@@ -301,7 +211,7 @@
         <Property name="text" type="java.lang.String" value="Project ID"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="addresstxt2">
+    <Component class="javax.swing.JTextField" name="projectID">
     </Component>
     <Component class="javax.swing.JLabel" name="addresslabel3">
       <Properties>
@@ -311,7 +221,7 @@
         <Property name="text" type="java.lang.String" value="Installment Due"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="addresstxt3">
+    <Component class="javax.swing.JTextField" name="installmentDue">
     </Component>
   </SubComponents>
 </Form>

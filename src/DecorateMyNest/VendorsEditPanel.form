@@ -16,67 +16,67 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-        <Group type="102" alignment="0" attributes="0">
-          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="0" attributes="0">
-            <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-              <Component id="fnamelabel" alignment="0" max="32767" attributes="0"/>
-              <Component id="lnamelabel" alignment="0" pref="177" max="32767" attributes="0"/>
-              <Component id="emaillabel" alignment="0" pref="177" max="32767" attributes="0"/>
-              <Component id="phonelabel" alignment="0" pref="177" max="32767" attributes="0"/>
-            </Group>
-            <Component id="insertbtn" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="fnamelabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lnamelabel" alignment="0" pref="177" max="32767" attributes="0"/>
+                      <Component id="emaillabel" alignment="0" pref="177" max="32767" attributes="0"/>
+                      <Component id="phonelabel" alignment="0" pref="177" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="insertbtn" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="updatebtn" min="-2" pref="122" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="clearbtn" min="-2" pref="123" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="deletebtn" min="-2" pref="128" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="vendorName" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                  <Component id="contactPerson" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                  <Component id="vendorEmail" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                  <Component id="vendorPhone" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="1193" max="32767" attributes="0"/>
           </Group>
-          <EmptySpace max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="0" attributes="0">
-            <Group type="102" alignment="0" attributes="0">
-              <Component id="updatebtn" min="-2" pref="122" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-              <Component id="clearbtn" min="-2" pref="123" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-              <Component id="deletebtn" min="-2" pref="128" max="-2" attributes="0"/>
-            </Group>
-            <Component id="firstnametxtfield" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-            <Component id="lastnametxtfield" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-            <Component id="emailtxt" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-            <Component id="phonetxt" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace pref="913" max="32767" attributes="0"/>
-        </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-        <Group type="102" alignment="0" attributes="0">
-          <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="fnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-            <Component id="firstnametxtfield" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="fnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="vendorName" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="contactPerson" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="emaillabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="vendorEmail" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="phonelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="vendorPhone" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="insertbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="updatebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="clearbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="deletebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
-          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="lnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-            <Component id="lastnametxtfield" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="emaillabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-            <Component id="emailtxt" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="phonelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-            <Component id="phonetxt" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="insertbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-            <Component id="updatebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-            <Component id="clearbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-            <Component id="deletebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace max="32767" attributes="0"/>
-        </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -89,7 +89,7 @@
         <Property name="text" type="java.lang.String" value="Name"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="firstnametxtfield">
+    <Component class="javax.swing.JTextField" name="vendorName">
     </Component>
     <Component class="javax.swing.JLabel" name="lnamelabel">
       <Properties>
@@ -99,9 +99,9 @@
         <Property name="text" type="java.lang.String" value="Contact"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="lastnametxtfield">
+    <Component class="javax.swing.JTextField" name="contactPerson">
     </Component>
-    <Component class="javax.swing.JTextField" name="emailtxt">
+    <Component class="javax.swing.JTextField" name="vendorEmail">
     </Component>
     <Component class="javax.swing.JLabel" name="emaillabel">
       <Properties>
@@ -119,7 +119,7 @@
         <Property name="text" type="java.lang.String" value="Phone"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="phonetxt">
+    <Component class="javax.swing.JTextField" name="vendorPhone">
     </Component>
     <Component class="javax.swing.JButton" name="insertbtn">
       <Properties>
@@ -131,6 +131,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Insert"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insertbtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="updatebtn">
       <Properties>
