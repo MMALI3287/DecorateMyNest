@@ -12,24 +12,21 @@ import javax.swing.JPanel;
  *
  * @author Musaddique Ali
  */
-public class borderpane {
+public class Home extends JFrame {
 
     JPanel jp;
     jpanel3 jp3;
 
-    public borderpane() {
+    public Home() {
         jp = new JPanel();
         BorderLayout bl = new BorderLayout();
         jp.setLayout(bl);
         jp3 = new jpanel3();
-        buttons btns = new buttons(this);
-        JFrame jf1 = new JFrame();
 
-        jp.add(btns, BorderLayout.WEST);
         jp.add(jp3, BorderLayout.CENTER);
-        jf1.add(jp);
-        jf1.setSize(1300, 1000);
-        jf1.setVisible(true);
+        this.add(jp);
+        this.setSize(1300, 1000);
+        this.setVisible(true);
     }
 
     void setpane(JPanel newjp) {
@@ -39,7 +36,7 @@ public class borderpane {
     }
 
     public static void main(String[] args) {
-        new borderpane();
+        new Home();
 
     }
 

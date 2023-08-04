@@ -10,12 +10,12 @@ package DecorateMyNest;
  */
 public class buttons extends javax.swing.JPanel {
     
-    borderpane bp;
+    Home bp;
     
     /**
      * Creates new form buttons
      */
-    public buttons(borderpane bp) {
+    public buttons(Home bp) {
         initComponents();
         this.bp=bp;
             }

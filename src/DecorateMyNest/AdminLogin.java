@@ -208,8 +208,8 @@ public class AdminLogin extends javax.swing.JFrame {
         if (Welcome.jdbc.adminLogin(user, pass)) {
             Welcome.user = user;
             Welcome.pass = pass;
-            new ClientEdit().setVisible(true);
             dispose();
+            new Home();
         } else {
             JOptionPane.showMessageDialog(this, "Username and Password did not match");
             jUserName.setText("");
