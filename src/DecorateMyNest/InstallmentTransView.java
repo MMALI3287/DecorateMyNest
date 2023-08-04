@@ -489,7 +489,7 @@ public class InstallmentTransView extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
         AdminView adminView = new AdminView();
-        adminView.show();        
+        adminView.show();
     }// GEN-LAST:event_viewbtnActionPerformed
 
     private void clientsbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_clientsbtnActionPerformed

@@ -46,7 +46,7 @@ public class JDBC {
         try {
 
             preparedStatement = connection.prepareStatement(
-                    "INSERT INTO Admins (firstname, lastname, email, phone, password) VALUES (" 
+                    "INSERT INTO Admins (firstname, lastname, email, phone, password) VALUES ("
                             + ",'" + firstname + "','" + lastname + "','" + email + "','" + phone + "','" + password
                             + "')");
             rowsAffected = preparedStatement.executeUpdate();
@@ -72,5 +72,4 @@ public class JDBC {
         return Y;
     }
 
-    
 }

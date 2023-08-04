@@ -280,7 +280,6 @@ public class Home extends JFrame {
         MainMenu.add(ReservationTransMenu);
         MainMenu.add(SalaryTransMenu);
         MainMenu.add(VendorsMenu);
-        
 
         setJMenuBar(MainMenu);
 
