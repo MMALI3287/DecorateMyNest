@@ -1,0 +1,1 @@
+BACKUP DATABASE [DecorateMyNest] TO DISK = N'D:\zZz\Personal\University\3.1\Projects\DecorateMyNest\YourDatabaseName_backup.bak' WITH NOFORMAT, NOINIT, NAME = N'YourDatabaseName-Full Database Backup', SKIP, NOREWIND, NOUNLOAD, STATS = 10;
