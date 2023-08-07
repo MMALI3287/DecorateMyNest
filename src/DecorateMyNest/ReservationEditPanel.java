@@ -4,6 +4,7 @@
  */
 package DecorateMyNest;
 
+import java.sql.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -33,12 +34,16 @@ public class ReservationEditPanel extends javax.swing.JPanel {
         clientID = new javax.swing.JTextField();
         lnamelabel = new javax.swing.JLabel();
         catalogueID = new javax.swing.JTextField();
-        reservationDate = new javax.swing.JTextField();
         emaillabel = new javax.swing.JLabel();
         insertbtn = new javax.swing.JButton();
         updatebtn = new javax.swing.JButton();
         clearbtn = new javax.swing.JButton();
         deletebtn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        Date = new javax.swing.JTextField();
+        Year = new javax.swing.JTextField();
+        Month = new javax.swing.JTextField();
 
         fnamelabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         fnamelabel.setText("Client ID");
@@ -70,6 +75,18 @@ public class ReservationEditPanel extends javax.swing.JPanel {
         deletebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         deletebtn.setText("Delete");
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel3.setText("/");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel4.setText("/");
+
+        Date.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,7 +103,16 @@ public class ReservationEditPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(clientID, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(catalogueID, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(reservationDate, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(79, 79, 79)
@@ -108,11 +134,15 @@ public class ReservationEditPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(catalogueID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(emaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(reservationDate, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(76, 76, 76)
+                    .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3)
+                    .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(79, 79, 79)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,12 +154,12 @@ public class ReservationEditPanel extends javax.swing.JPanel {
 
     private void insertbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertbtnActionPerformed
         // TODO add your handling code here:
-        if (clientID.getText().equals("") || catalogueID.getText().equals("") || reservationDate.getText().equals("")) {
+        if (clientID.getText().equals("") || catalogueID.getText().equals("") || Date.getText().equals("") || Month.getText().equals("") || Year.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Please Fill-up all fields");
             return;
         }
         try {
-            Welcome.jdbc.reservationInsert(Integer.parseInt(clientID.getText()), Integer.parseInt(catalogueID.getText()), reservationDate.getText());
+            Welcome.jdbc.reservationInsert(Integer.parseInt(clientID.getText()), Integer.parseInt(catalogueID.getText()), new Date(Integer.parseInt(Year.getText()),Integer.parseInt(Month.getText()),Integer.parseInt(Date.getText())));
         } catch (Exception e) {
             System.out.println(e);
             return;
@@ -137,7 +167,14 @@ public class ReservationEditPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_insertbtnActionPerformed
 
+    private void DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DateActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Date;
+    private javax.swing.JTextField Month;
+    private javax.swing.JTextField Year;
     private javax.swing.JTextField catalogueID;
     private javax.swing.JButton clearbtn;
     private javax.swing.JTextField clientID;
@@ -145,8 +182,9 @@ public class ReservationEditPanel extends javax.swing.JPanel {
     private javax.swing.JLabel emaillabel;
     private javax.swing.JLabel fnamelabel;
     private javax.swing.JButton insertbtn;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lnamelabel;
-    private javax.swing.JTextField reservationDate;
     private javax.swing.JButton updatebtn;
     // End of variables declaration//GEN-END:variables
 }

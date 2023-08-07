@@ -4,6 +4,7 @@
  */
 package DecorateMyNest;
 
+import java.sql.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,13 +33,17 @@ public class ProjectArchiveEditPanel extends javax.swing.JPanel {
         fnamelabel = new javax.swing.JLabel();
         projectID = new javax.swing.JTextField();
         lnamelabel = new javax.swing.JLabel();
-        completionDate = new javax.swing.JTextField();
         review = new javax.swing.JTextField();
         emaillabel = new javax.swing.JLabel();
         insertbtn = new javax.swing.JButton();
         updatebtn = new javax.swing.JButton();
         clearbtn = new javax.swing.JButton();
         deletebtn = new javax.swing.JButton();
+        Month = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        Date = new javax.swing.JTextField();
+        Year = new javax.swing.JTextField();
 
         fnamelabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         fnamelabel.setText("Project ID");
@@ -70,6 +75,18 @@ public class ProjectArchiveEditPanel extends javax.swing.JPanel {
         deletebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         deletebtn.setText("Delete");
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel3.setText("/");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel4.setText("/");
+
+        Date.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -85,8 +102,17 @@ public class ProjectArchiveEditPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(projectID, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(completionDate, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(review, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(review, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -105,11 +131,15 @@ public class ProjectArchiveEditPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(projectID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(completionDate, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                    .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3)
+                    .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(review, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -123,14 +153,18 @@ public class ProjectArchiveEditPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DateActionPerformed
+
     private void insertbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_insertbtnActionPerformed
         // TODO add your handling code here:
-        if (projectID.getText().equals("") || completionDate.getText().equals("") || review.getText().equals("")) {
+        if (projectID.getText().equals("") || Date.getText().equals("") || Month.getText().equals("") || Year.getText().equals("") || review.getText().equals("")) {
     JOptionPane.showMessageDialog(this, "Please Fill-up all fields");
     return;
 }
 try {
-    Welcome.jdbc.projectArchiveInsert(Integer.parseInt(projectID.getText()), completionDate.getText(), review.getText());
+    Welcome.jdbc.projectArchiveInsert(Integer.parseInt(projectID.getText()), new Date(Integer.parseInt(Year.getText()),Integer.parseInt(Month.getText()),Integer.parseInt(Date.getText())), review.getText());
 } catch (Exception e) {
     System.out.println(e);
     return;
@@ -139,12 +173,16 @@ try {
     }// GEN-LAST:event_insertbtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Date;
+    private javax.swing.JTextField Month;
+    private javax.swing.JTextField Year;
     private javax.swing.JButton clearbtn;
-    private javax.swing.JTextField completionDate;
     private javax.swing.JButton deletebtn;
     private javax.swing.JLabel emaillabel;
     private javax.swing.JLabel fnamelabel;
     private javax.swing.JButton insertbtn;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lnamelabel;
     private javax.swing.JTextField projectID;
     private javax.swing.JTextField review;

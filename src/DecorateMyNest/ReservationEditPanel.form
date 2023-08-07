@@ -29,7 +29,17 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="clientID" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
                           <Component id="catalogueID" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-                          <Component id="reservationDate" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="Date" min="-2" pref="103" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="Month" min="-2" pref="103" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="Year" min="-2" pref="103" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -59,12 +69,16 @@
                   <Component id="lnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
                   <Component id="catalogueID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="emaillabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                  <Component id="reservationDate" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="emaillabel" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="Month" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="Year" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="Date" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="insertbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                   <Component id="updatebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
@@ -96,8 +110,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="catalogueID">
-    </Component>
-    <Component class="javax.swing.JTextField" name="reservationDate">
     </Component>
     <Component class="javax.swing.JLabel" name="emaillabel">
       <Properties>
@@ -153,6 +165,31 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="48" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="/"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="48" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="/"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="Date">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DateActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="Year">
+    </Component>
+    <Component class="javax.swing.JTextField" name="Month">
     </Component>
   </SubComponents>
 </Form>

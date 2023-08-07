@@ -4,6 +4,9 @@
  */
 package DecorateMyNest;
 
+import java.sql.Date;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Musaddique Ali
@@ -40,7 +43,11 @@ public class SalaryTransEditPanel extends javax.swing.JPanel {
         phonelabel = new javax.swing.JLabel();
         emaillabel = new javax.swing.JLabel();
         amount = new javax.swing.JTextField();
-        transactionDate = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        Date = new javax.swing.JTextField();
+        Year = new javax.swing.JTextField();
+        Month = new javax.swing.JTextField();
 
         updatebtn.setBackground(new java.awt.Color(243, 239, 13));
         updatebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -78,6 +85,18 @@ public class SalaryTransEditPanel extends javax.swing.JPanel {
         emaillabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         emaillabel.setText("Amount");
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel3.setText("/");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel4.setText("/");
+
+        Date.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,10 +123,19 @@ public class SalaryTransEditPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(adminID, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(transactionDate, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(amount, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(employeeID, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(employeeID, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(937, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -117,11 +145,15 @@ public class SalaryTransEditPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(adminID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(transactionDate, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                    .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3)
+                    .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(amount, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -144,12 +176,12 @@ public class SalaryTransEditPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void insertbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertbtn1ActionPerformed
-        if (adminID.getText().equals("") || transactionDate.getText().equals("") || amount.getText().equals("") || description.getText().equals("")) {
+        if (adminID.getText().equals("") || Date.getText().equals("") || Month.getText().equals("") || Year.getText().equals("") || amount.getText().equals("") || description.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Please Fill-up all fields");
             return;
         }
         try {
-            Welcome.jdbc.financialTransInsert(Integer.parseInt(adminID.getText()), transactionDate.getText(), Double.parseDouble(amount.getText()), description.getText());
+            Welcome.jdbc.financialTransInsert(Integer.parseInt(adminID.getText()), new Date(Integer.parseInt(Year.getText()),Integer.parseInt(Month.getText()),Integer.parseInt(Date.getText())), Double.parseDouble(amount.getText()), description.getText());
         } catch (Exception e) {
             System.out.println(e);
             return;
@@ -170,8 +202,15 @@ public class SalaryTransEditPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_insertbtn1ActionPerformed
 
+    private void DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DateActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Date;
+    private javax.swing.JTextField Month;
+    private javax.swing.JTextField Year;
     private javax.swing.JLabel addresslabel1;
     private javax.swing.JTextField adminID;
     private javax.swing.JTextField amount;
@@ -182,9 +221,10 @@ public class SalaryTransEditPanel extends javax.swing.JPanel {
     private javax.swing.JTextField employeeID;
     private javax.swing.JLabel fnamelabel;
     private javax.swing.JButton insertbtn1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lnamelabel;
     private javax.swing.JLabel phonelabel;
-    private javax.swing.JTextField transactionDate;
     private javax.swing.JButton updatebtn;
     // End of variables declaration//GEN-END:variables
 }
