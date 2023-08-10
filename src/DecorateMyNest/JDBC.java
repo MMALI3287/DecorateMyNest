@@ -91,7 +91,8 @@ public class JDBC {
         }
     }
 
-    public void EmployeeInsert(String firstname, String lastname, String email, String phone, String position, int adminID) {
+    public void EmployeeInsert(String firstname, String lastname, String email, String phone, String position,
+            int adminID) {
         try {
 
             preparedStatement = connection.prepareStatement(

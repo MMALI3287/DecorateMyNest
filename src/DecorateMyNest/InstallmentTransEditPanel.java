@@ -27,7 +27,9 @@ public class InstallmentTransEditPanel extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         fnamelabel = new javax.swing.JLabel();
@@ -40,7 +42,6 @@ public class InstallmentTransEditPanel extends javax.swing.JPanel {
         updatebtn = new javax.swing.JButton();
         clearbtn = new javax.swing.JButton();
         insertbtn = new javax.swing.JButton();
-        deletebtn1 = new javax.swing.JButton();
         addresslabel1 = new javax.swing.JLabel();
         installmentNum = new javax.swing.JTextField();
         addresslabel2 = new javax.swing.JLabel();
@@ -72,6 +73,11 @@ public class InstallmentTransEditPanel extends javax.swing.JPanel {
         clearbtn.setBackground(new java.awt.Color(243, 239, 13));
         clearbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         clearbtn.setText("Clear");
+        clearbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearbtnActionPerformed(evt);
+            }
+        });
 
         insertbtn.setBackground(new java.awt.Color(243, 239, 13));
         insertbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -81,10 +87,6 @@ public class InstallmentTransEditPanel extends javax.swing.JPanel {
                 insertbtnActionPerformed(evt);
             }
         });
-
-        deletebtn1.setBackground(new java.awt.Color(243, 239, 13));
-        deletebtn1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        deletebtn1.setText("Delete");
 
         addresslabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         addresslabel1.setText("Installment No");
@@ -110,124 +112,198 @@ public class InstallmentTransEditPanel extends javax.swing.JPanel {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(fnamelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lnamelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(emaillabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(phonelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(addresslabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(addresslabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(addresslabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(adminID, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(amount, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(installmentNum, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(projectID, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(installmentDue, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(78, 78, 78)
-                        .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(deletebtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1112, Short.MAX_VALUE))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(95, 95, 95)
+                                                .addGroup(layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
+                                                                false)
+                                                        .addComponent(fnamelabel, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(lnamelabel, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(emaillabel, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(phonelabel, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(addresslabel1,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(addresslabel2,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(addresslabel3,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 177,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(adminID, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(amount, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(description,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 441,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(installmentNum,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 441,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(projectID, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(installmentDue,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 441,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(Date,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 103,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(jLabel4)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(Month,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 103,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(jLabel3)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(Year,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 103,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(140, 140, 140)
+                                                .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(78, 78, 78)
+                                                .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 122,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(48, 48, 48)
+                                                .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(1191, Short.MAX_VALUE)));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(121, 121, 121)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adminID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(amount, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(phonelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addresslabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(installmentNum, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addresslabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(projectID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addresslabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(installmentDue, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(139, 139, 139)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deletebtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(103, Short.MAX_VALUE))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(121, 121, 121)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(adminID, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(24, 24, 24)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel4)
+                                        .addComponent(jLabel3)
+                                        .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(36, 36, 36)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(emaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(amount, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(33, 33, 33)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(phonelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(addresslabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(installmentNum, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(33, 33, 33)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(addresslabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(projectID, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(33, 33, 33)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(addresslabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(installmentDue, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(139, 139, 139)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(103, Short.MAX_VALUE)));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void insertbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertbtnActionPerformed
+    private void clearbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_clearbtnActionPerformed
         // TODO add your handling code here:
-        if (adminID.getText().equals("") ||Date.getText().equals("") || Month.getText().equals("") || Year.getText().equals("") || amount.getText().equals("") || description.getText().equals("")) {
+        installmentNum.setText("");
+        projectID.setText("");
+        installmentDue.setText("");
+        adminID.setText("");
+        Date.setText("");
+        Month.setText("");
+        Year.setText("");
+        amount.setText("");
+        description.setText("");
+    }// GEN-LAST:event_clearbtnActionPerformed
+
+    private void insertbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_insertbtnActionPerformed
+        // TODO add your handling code here:
+        if (adminID.getText().equals("") || Date.getText().equals("") || Month.getText().equals("")
+                || Year.getText().equals("") || amount.getText().equals("") || description.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Please Fill-up all fields");
             return;
         }
         try {
-            Welcome.jdbc.financialTransInsert(Integer.parseInt(adminID.getText()), new Date(Integer.parseInt(Year.getText()),Integer.parseInt(Month.getText()),Integer.parseInt(Date.getText())), Double.parseDouble(amount.getText()), description.getText());
+            Welcome.jdbc.financialTransInsert(Integer.parseInt(adminID.getText()),
+                    new Date(Integer.parseInt(Year.getText()), Integer.parseInt(Month.getText()),
+                            Integer.parseInt(Date.getText())),
+                    Double.parseDouble(amount.getText()), description.getText());
         } catch (Exception e) {
             System.out.println(e);
             return;
         }
-        if (installmentNum.getText().equals("") || projectID.getText().equals("") || installmentDue.getText().equals("")) {
+        if (installmentNum.getText().equals("") || projectID.getText().equals("")
+                || installmentDue.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Please Fill-up all fields");
             return;
         }
         try {
             int highestTransactionID = Welcome.jdbc.getHighestTransactionID();
 
-            Welcome.jdbc.installmentTransactionInsert(highestTransactionID, Integer.parseInt(installmentNum.getText()), Integer.parseInt(projectID.getText()), Integer.parseInt(installmentDue.getText()));
+            Welcome.jdbc.installmentTransactionInsert(highestTransactionID, Integer.parseInt(installmentNum.getText()),
+                    Integer.parseInt(projectID.getText()), Integer.parseInt(installmentDue.getText()));
+            JOptionPane.showMessageDialog(this, "Inserted Successfully");
+            installmentNum.setText("");
+            projectID.setText("");
+            installmentDue.setText("");
+            adminID.setText("");
+            Date.setText("");
+            Month.setText("");
+            Year.setText("");
+            amount.setText("");
+            description.setText("");
+
         } catch (Exception e) {
             System.out.println(e);
             return;
         }
 
-    }//GEN-LAST:event_insertbtnActionPerformed
+    }// GEN-LAST:event_insertbtnActionPerformed
 
-    private void DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateActionPerformed
+    private void DateActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_DateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DateActionPerformed
-
+    }// GEN-LAST:event_DateActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Date;
@@ -239,7 +315,6 @@ public class InstallmentTransEditPanel extends javax.swing.JPanel {
     private javax.swing.JTextField adminID;
     private javax.swing.JTextField amount;
     private javax.swing.JButton clearbtn;
-    private javax.swing.JButton deletebtn1;
     private javax.swing.JTextField description;
     private javax.swing.JLabel emaillabel;
     private javax.swing.JLabel fnamelabel;
