@@ -1,14 +1,17 @@
 package DecorateMyNest;
 
-import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Time;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JDBC {
 
@@ -321,6 +324,42 @@ public class JDBC {
             throw ex;
         }
         return highestTransactionID;
+    }
+
+    public List<String> getColumns(String tableName) {
+        // Create a list to store column names
+        List<String> columnNames = new ArrayList<>();
+        try {
+            DatabaseMetaData metaData = connection.getMetaData();
+            ResultSet columns = metaData.getColumns(null, null, tableName, null);
+
+            // Iterate through the result set to fetch column names
+            while (columns.next()) {
+                String columnName = columns.getString("COLUMN_NAME");
+                columnNames.add(columnName);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return columnNames;
+    }
+
+    public int deleteData(String tableName, int id) {
+        int rowsAffected = 0;
+
+        try {
+            String query = "DELETE FROM " + tableName + " WHERE VendorID = ?";
+            Welcome.jdbc.preparedStatement = Welcome.jdbc.connection.prepareStatement(query);
+            Welcome.jdbc.preparedStatement.setInt(1, id);
+
+            rowsAffected = Welcome.jdbc.preparedStatement.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+
+        return rowsAffected;
     }
 
 }
