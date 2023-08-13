@@ -4,24 +4,27 @@
  */
 package DecorateMyNest;
 
+import java.awt.Window;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
  * @author Musaddique Ali
  */
-public class AdminViewPanel extends javax.swing.JPanel {
+public class SelectAdmin extends javax.swing.JPanel {
 
     DefaultTableModel model = new DefaultTableModel();
 
     /**
      * Creates new form AdminViewPanel
      */
-    public AdminViewPanel() {
+    public SelectAdmin() {
         initComponents();
         setRecordsToTable();
     }
@@ -79,7 +82,7 @@ public class AdminViewPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         adminTable = new javax.swing.JTable();
         searchbylabel = new javax.swing.JLabel();
-        dltbtn = new javax.swing.JButton();
+        adminSelect = new javax.swing.JButton();
 
         jComboBoxselectcolumn.setModel(
                 new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -127,12 +130,12 @@ public class AdminViewPanel extends javax.swing.JPanel {
         searchbylabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         searchbylabel.setText("Search By");
 
-        dltbtn.setBackground(new java.awt.Color(153, 255, 153));
-        dltbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        dltbtn.setText("Delete");
-        dltbtn.addActionListener(new java.awt.event.ActionListener() {
+        adminSelect.setBackground(new java.awt.Color(153, 255, 153));
+        adminSelect.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        adminSelect.setText("Select");
+        adminSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dltbtnActionPerformed(evt);
+                adminSelectActionPerformed(evt);
             }
         });
 
@@ -140,64 +143,51 @@ public class AdminViewPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(55, 55, 55)
-                                .addComponent(searchbylabel, javax.swing.GroupLayout.PREFERRED_SIZE, 191,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(72, 72, 72)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(50, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(adminSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 145,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1130,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(jScrollPane1,
-                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addPreferredGap(
-                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                        1125, Short.MAX_VALUE)
-                                                                .addComponent(dltbtn,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 145,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGap(42, 42, 42))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(jComboBoxselectcolumn,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 236,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(33, 33, 33)
-                                                                .addComponent(jTextField1,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 303,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addContainerGap(740, Short.MAX_VALUE)))));
+                                                .addComponent(searchbylabel, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jComboBoxselectcolumn,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 236,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(46, 46, 46)
+                                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 303,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(37, 37, 37)
+                                                .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(50, 50, 50)));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
+                                .addGap(30, 30, 30)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jComboBoxselectcolumn, javax.swing.GroupLayout.PREFERRED_SIZE, 46,
+                                        .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 52,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jComboBoxselectcolumn, javax.swing.GroupLayout.PREFERRED_SIZE, 46,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(searchbylabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(33, 33, 33)
-                                .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
+                                .addGap(23, 23, 23)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 655,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57,
-                                        Short.MAX_VALUE)
-                                .addComponent(dltbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47,
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(adminSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 47,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24)));
+                                .addContainerGap(34, Short.MAX_VALUE)));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void dltbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_dltbtnActionPerformed
+    private void adminSelectActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_adminSelectActionPerformed
         // TODO add your handling code here:
         int selectedRowIndex = adminTable.getSelectedRow();
 
@@ -206,19 +196,12 @@ public class AdminViewPanel extends javax.swing.JPanel {
             return;
         }
 
-        int id = (int) adminTable.getValueAt(selectedRowIndex, 0);
+        Welcome.jdbc.adminID = (int) adminTable.getValueAt(selectedRowIndex, 0);
 
-        int rowsAffected = Welcome.jdbc.deleteData("Admins", id, "AdminID");
-
-        if (rowsAffected > 0) {
-            JOptionPane.showMessageDialog(this, "Row deleted successfully.");
-
-            DefaultTableModel model = (DefaultTableModel) adminTable.getModel();
-            model.removeRow(selectedRowIndex);
-        } else {
-            JOptionPane.showMessageDialog(this, "Error deleting row.");
-        }
-    }// GEN-LAST:event_dltbtnActionPerformed
+        setVisible(false);
+        Window w = SwingUtilities.getWindowAncestor(this);
+        w.setVisible(false);
+    }// GEN-LAST:event_adminSelectActionPerformed
 
     private void jComboBoxselectcolumnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jComboBoxselectcolumnActionPerformed
         // TODO add your handling code here:
@@ -260,8 +243,8 @@ public class AdminViewPanel extends javax.swing.JPanel {
     }// GEN-LAST:event_okbtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton adminSelect;
     private javax.swing.JTable adminTable;
-    private javax.swing.JButton dltbtn;
     private javax.swing.JComboBox<String> jComboBoxselectcolumn;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;

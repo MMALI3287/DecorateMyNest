@@ -16,52 +16,40 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-        <Group type="102" alignment="0" attributes="0">
-          <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-          <Component id="searchbylabel" min="-2" pref="191" max="-2" attributes="0"/>
-          <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="0" attributes="0">
-            <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
-                <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
-                <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="1125" max="32767" attributes="0"/>
-                  <Component id="dltbtn" min="-2" pref="145" max="-2" attributes="0"/>
-                </Group>
-              </Group>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-            </Group>
-            <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                <Component id="okbtn" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
-                <Group type="102" alignment="0" attributes="0">
-                  <Component id="jComboBoxselectcolumn" min="-2" pref="236" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" pref="303" max="-2" attributes="0"/>
-                </Group>
-              </Group>
-              <EmptySpace pref="740" max="32767" attributes="0"/>
+        <Group type="102" alignment="1" attributes="0">
+          <EmptySpace pref="50" max="32767" attributes="0"/>
+          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+            <Component id="adminSelect" min="-2" pref="145" max="-2" attributes="0"/>
+            <Component id="jScrollPane1" min="-2" pref="1130" max="-2" attributes="0"/>
+            <Group type="102" attributes="0">
+              <Component id="searchbylabel" min="-2" pref="191" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jComboBoxselectcolumn" min="-2" pref="236" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+              <Component id="jTextField1" min="-2" pref="303" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <Component id="okbtn" min="-2" pref="145" max="-2" attributes="0"/>
             </Group>
           </Group>
+          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
         </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
         <Group type="102" alignment="0" attributes="0">
-          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
           <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="jComboBoxselectcolumn" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+            <Component id="okbtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
             <Component id="jTextField1" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+            <Component id="jComboBoxselectcolumn" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
             <Component id="searchbylabel" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
           </Group>
-          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-          <Component id="okbtn" min="-2" pref="47" max="-2" attributes="0"/>
-          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
           <Component id="jScrollPane1" min="-2" pref="655" max="-2" attributes="0"/>
-          <EmptySpace pref="57" max="32767" attributes="0"/>
-          <Component id="dltbtn" min="-2" pref="47" max="-2" attributes="0"/>
-          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+          <EmptySpace max="-2" attributes="0"/>
+          <Component id="adminSelect" min="-2" pref="47" max="-2" attributes="0"/>
+          <EmptySpace pref="34" max="32767" attributes="0"/>
         </Group>
       </Group>
     </DimensionLayout>
@@ -138,7 +126,7 @@
         <Property name="text" type="java.lang.String" value="Search By"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="dltbtn">
+    <Component class="javax.swing.JButton" name="adminSelect">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="ff" red="99" type="rgb"/>
@@ -146,10 +134,10 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Delete"/>
+        <Property name="text" type="java.lang.String" value="Select"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dltbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adminSelectActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

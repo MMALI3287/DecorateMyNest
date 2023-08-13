@@ -4,23 +4,26 @@
  */
 package DecorateMyNest;
 
+import java.awt.Window;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Musaddique Ali
  */
-public class ClientViewPanel extends javax.swing.JPanel {
+public class SelectProject extends javax.swing.JPanel {
     DefaultTableModel model = new DefaultTableModel();
 
     /**
      * Creates new form AdminViewPanel
      */
-    public ClientViewPanel() {
+    public SelectProject() {
         initComponents();
         setRecordsToTable();
     }
@@ -28,23 +31,24 @@ public class ClientViewPanel extends javax.swing.JPanel {
     private void setRecordsToTable() {
         try {
             Welcome.jdbc.preparedStatement = Welcome.jdbc.connection
-                    .prepareStatement("SELECT * FROM Clients;");
+                    .prepareStatement("SELECT * FROM InProgression;");
             Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
-            model = (DefaultTableModel) clienttable.getModel();
+            model = (DefaultTableModel) inProgressionTable.getModel();
+            model.setRowCount(0);
             while (Welcome.jdbc.resultSet.next()) {
-                int clientId = Welcome.jdbc.resultSet.getInt("ClientID");
-                String fName = Welcome.jdbc.resultSet.getString("FirstName");
-                String lName = Welcome.jdbc.resultSet.getString("LastName");
-                String email = Welcome.jdbc.resultSet.getString("Email");
-                String phone = Welcome.jdbc.resultSet.getString("Phone");
-                String address = Welcome.jdbc.resultSet.getString("Address");
-                model.addRow(new Object[] { clientId, fName, lName, email, phone, address });
+                int projectID = Welcome.jdbc.resultSet.getInt("ProjectID");
+                int reservationID = Welcome.jdbc.resultSet.getInt("ReservationID");
+                Date startDate = Welcome.jdbc.resultSet.getDate("StartDate");
+                Date endDate = Welcome.jdbc.resultSet.getDate("EndDate");
+                int adminID = Welcome.jdbc.resultSet.getInt("AdminID");
+
+                model.addRow(new Object[] { projectID, reservationID, startDate, endDate, adminID });
             }
-            clienttable.setModel(model);
+            inProgressionTable.setModel(model);
         } catch (SQLException ex) {
             System.out.println(ex);
         }
-        List<String> columnNamesList = Welcome.jdbc.getColumns("Clients");
+        List<String> columnNamesList = Welcome.jdbc.getColumns("InProgression");
 
         jComboBoxselectcolumn.removeAllItems();
 
@@ -64,16 +68,17 @@ public class ClientViewPanel extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jComboBoxselectcolumn = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
         okbtn = new javax.swing.JButton();
+        adminSelect = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        clienttable = new javax.swing.JTable();
+        inProgressionTable = new javax.swing.JTable();
         searchbylabel = new javax.swing.JLabel();
-        dltbtn = new javax.swing.JButton();
 
         jComboBoxselectcolumn.setModel(
                 new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -87,41 +92,46 @@ public class ClientViewPanel extends javax.swing.JPanel {
             }
         });
 
-        clienttable.setModel(new javax.swing.table.DefaultTableModel(
+        adminSelect.setBackground(new java.awt.Color(153, 255, 153));
+        adminSelect.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        adminSelect.setText("Select");
+        adminSelect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminSelectActionPerformed(evt);
+            }
+        });
+
+        inProgressionTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][] {
 
                 },
                 new String[] {
-                        "ClientID", "FirstName", "LastName", "Email", "Phone", "Address"
+                        "ProjectID", "ReservationID", "StartDate", "EndDate", "AdminID"
                 }) {
             boolean[] canEdit = new boolean[] {
-                    false, false, false, false, true, false
+                    false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit[columnIndex];
             }
         });
-        jScrollPane1.setViewportView(clienttable);
+        jScrollPane1.setViewportView(inProgressionTable);
 
         searchbylabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         searchbylabel.setText("Search By");
-
-        dltbtn.setBackground(new java.awt.Color(153, 255, 153));
-        dltbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        dltbtn.setText("Delete");
-        dltbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dltbtnActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(adminSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 145,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(51, 51, 51))
                         .addGroup(layout.createSequentialGroup()
-                                .addGap(55, 55, 55)
+                                .addGap(286, 286, 286)
                                 .addComponent(searchbylabel, javax.swing.GroupLayout.PREFERRED_SIZE, 191,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(72, 72, 72)
@@ -135,14 +145,9 @@ public class ClientViewPanel extends javax.swing.JPanel {
                                                 .addGap(33, 33, 33)
                                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 303,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 886,
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1045,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(426, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(dltbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(42, 42, 42)));
+                                .addContainerGap(36, Short.MAX_VALUE)));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -157,76 +162,68 @@ public class ClientViewPanel extends javax.swing.JPanel {
                                 .addGap(33, 33, 33)
                                 .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
+                                .addGap(18, 18, 18)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(dltbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47,
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33,
+                                        Short.MAX_VALUE)
+                                .addComponent(adminSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 47,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24)));
+                                .addGap(29, 29, 29)));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void adminSelectActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_adminSelectActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = inProgressionTable.getSelectedRow();
+
+        if (selectedRowIndex == -1) {
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+
+        Welcome.jdbc.projectID = (int) inProgressionTable.getValueAt(selectedRowIndex, 0);
+
+        setVisible(false);
+        Window w = SwingUtilities.getWindowAncestor(this);
+        w.setVisible(false);
+    }// GEN-LAST:event_adminSelectActionPerformed
 
     private void okbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_okbtnActionPerformed
         // TODO add your handling code here:
-        String selectedColumn = (String) jComboBoxselectcolumn.getSelectedItem();
-        String searchTerm = jTextField1.getText();
+        {
+            String selectedColumn = (String) jComboBoxselectcolumn.getSelectedItem();
+            String searchTerm = jTextField1.getText();
 
-        try {
-            String query = "SELECT * FROM Clients WHERE " + selectedColumn + " LIKE ?";
-            Welcome.jdbc.preparedStatement = Welcome.jdbc.connection.prepareStatement(query);
-            Welcome.jdbc.preparedStatement.setString(1, "%" + searchTerm + "%");
+            try {
+                String query = "SELECT * FROM InProgression WHERE " + selectedColumn + " LIKE ?";
+                Welcome.jdbc.preparedStatement = Welcome.jdbc.connection.prepareStatement(query);
+                Welcome.jdbc.preparedStatement.setString(1, "%" + searchTerm + "%");
 
-            Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
-            model.setRowCount(0); // Clear existing data
+                Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+                model.setRowCount(0); // Clear existing data
 
-            while (Welcome.jdbc.resultSet.next()) {
-                int clientID = Welcome.jdbc.resultSet.getInt("ClientID");
-                String firstName = Welcome.jdbc.resultSet.getString("FirstName");
-                String lastName = Welcome.jdbc.resultSet.getString("LastName");
-                String email = Welcome.jdbc.resultSet.getString("Email");
-                String phone = Welcome.jdbc.resultSet.getString("Phone");
-                String address = Welcome.jdbc.resultSet.getString("Address");
+                while (Welcome.jdbc.resultSet.next()) {
+                    int projectID = Welcome.jdbc.resultSet.getInt("ProjectID");
+                    int adminID = Welcome.jdbc.resultSet.getInt("AdminID");
+                    int reservationID = Welcome.jdbc.resultSet.getInt("ReservationID");
+                    String startDate = Welcome.jdbc.resultSet.getString("StartDate");
+                    String endDate = Welcome.jdbc.resultSet.getString("EndDate");
 
-                model.addRow(new Object[] { clientID, firstName, lastName, email, phone, address });
+                    model.addRow(new Object[] { projectID, adminID, reservationID, startDate, endDate });
+                }
+
+                // Update the table model with search results
+                inProgressionTable.setModel(model);
+            } catch (SQLException ex) {
+                System.out.println(ex);
             }
-
-            // Update the table model with search results
-            clienttable.setModel(model);
-        } catch (SQLException ex) {
-            System.out.println(ex);
         }
+
     }// GEN-LAST:event_okbtnActionPerformed
 
-    private void dltbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_dltbtnActionPerformed
-        // TODO add your handling code here:
-        {
-            int selectedRowIndex = clienttable.getSelectedRow();
-
-            if (selectedRowIndex == -1) {
-                JOptionPane.showMessageDialog(this, "Please select a row to delete.");
-                return;
-            }
-
-            int id = (int) clienttable.getValueAt(selectedRowIndex, 0);
-
-            int rowsAffected = Welcome.jdbc.deleteData("Clients", id, "clientID");
-
-            if (rowsAffected > 0) {
-                JOptionPane.showMessageDialog(this, "Row deleted successfully.");
-
-                DefaultTableModel model = (DefaultTableModel) clienttable.getModel();
-                model.removeRow(selectedRowIndex);
-            } else {
-                JOptionPane.showMessageDialog(this, "Error deleting row.");
-            }
-        }
-
-    }// GEN-LAST:event_dltbtnActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable clienttable;
-    private javax.swing.JButton dltbtn;
+    private javax.swing.JButton adminSelect;
+    private javax.swing.JTable inProgressionTable;
     private javax.swing.JComboBox<String> jComboBoxselectcolumn;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;

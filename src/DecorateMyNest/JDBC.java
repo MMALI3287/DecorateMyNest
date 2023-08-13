@@ -26,6 +26,18 @@ public class JDBC {
     ResultSet resultSet = null;
     int rowsAffected;
 
+    int adminID = -1;
+    int appointmentID = -1;
+    int catalogueID = -1;
+    int clientID = -1;
+    int employeeRosterID = -1;
+    int transactionID = -1;
+    int projectID = -1;
+    int materialID = -1;
+    int archiveID = -1;
+    int reservationID = -1;
+    int vendorID = -1;
+
     public JDBC() {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -346,11 +358,11 @@ public class JDBC {
         return columnNames;
     }
 
-    public int deleteData(String tableName, int id) {
+    public int deleteData(String tableName, int id, String colName) {
         int rowsAffected = 0;
 
         try {
-            String query = "DELETE FROM " + tableName + " WHERE VendorID = ?";
+            String query = "DELETE FROM " + tableName + " WHERE " + colName + " = ?";
             Welcome.jdbc.preparedStatement = Welcome.jdbc.connection.prepareStatement(query);
             Welcome.jdbc.preparedStatement.setInt(1, id);
 

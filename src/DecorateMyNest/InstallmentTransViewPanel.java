@@ -216,7 +216,17 @@ public class InstallmentTransViewPanel extends javax.swing.JPanel {
 
             int id = (int) installmentTransactionTable.getValueAt(selectedRowIndex, 0);
 
-            int rowsAffected = Welcome.jdbc.deleteData("InstallmentTransactions", id);
+            int rowsAffected = Welcome.jdbc.deleteData("InstallmentTransaction", id, "TransactionID");
+
+            if (rowsAffected > 0) {
+                JOptionPane.showMessageDialog(this, "Row deleted successfully.");
+
+                DefaultTableModel model = (DefaultTableModel) installmentTransactionTable.getModel();
+                model.removeRow(selectedRowIndex);
+            } else {
+                JOptionPane.showMessageDialog(this, "Error deleting row.");
+            }
+            rowsAffected = Welcome.jdbc.deleteData("FinancialTransactions", id, "TransactionID");
 
             if (rowsAffected > 0) {
                 JOptionPane.showMessageDialog(this, "Row deleted successfully.");

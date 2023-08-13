@@ -4,23 +4,26 @@
  */
 package DecorateMyNest;
 
+import java.awt.Window;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Musaddique Ali
  */
-public class ClientViewPanel extends javax.swing.JPanel {
+public class SelectReservation extends javax.swing.JPanel {
     DefaultTableModel model = new DefaultTableModel();
 
     /**
      * Creates new form AdminViewPanel
      */
-    public ClientViewPanel() {
+    public SelectReservation() {
         initComponents();
         setRecordsToTable();
     }
@@ -28,23 +31,23 @@ public class ClientViewPanel extends javax.swing.JPanel {
     private void setRecordsToTable() {
         try {
             Welcome.jdbc.preparedStatement = Welcome.jdbc.connection
-                    .prepareStatement("SELECT * FROM Clients;");
+                    .prepareStatement("SELECT * FROM Reservations;");
             Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
-            model = (DefaultTableModel) clienttable.getModel();
+            model = (DefaultTableModel) reservationTable.getModel();
+            model.setRowCount(0);
             while (Welcome.jdbc.resultSet.next()) {
-                int clientId = Welcome.jdbc.resultSet.getInt("ClientID");
-                String fName = Welcome.jdbc.resultSet.getString("FirstName");
-                String lName = Welcome.jdbc.resultSet.getString("LastName");
-                String email = Welcome.jdbc.resultSet.getString("Email");
-                String phone = Welcome.jdbc.resultSet.getString("Phone");
-                String address = Welcome.jdbc.resultSet.getString("Address");
-                model.addRow(new Object[] { clientId, fName, lName, email, phone, address });
+                int reservationID = Welcome.jdbc.resultSet.getInt("ReservationID");
+                int clientID = Welcome.jdbc.resultSet.getInt("ClientID");
+                int catalogueID = Welcome.jdbc.resultSet.getInt("CatalogueID");
+                Date reservationDate = Welcome.jdbc.resultSet.getDate("ReservationDate");
+
+                model.addRow(new Object[] { reservationID, clientID, catalogueID, reservationDate });
             }
-            clienttable.setModel(model);
+            reservationTable.setModel(model);
         } catch (SQLException ex) {
             System.out.println(ex);
         }
-        List<String> columnNamesList = Welcome.jdbc.getColumns("Clients");
+        List<String> columnNamesList = Welcome.jdbc.getColumns("Reservations");
 
         jComboBoxselectcolumn.removeAllItems();
 
@@ -64,6 +67,7 @@ public class ClientViewPanel extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -71,9 +75,9 @@ public class ClientViewPanel extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         okbtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        clienttable = new javax.swing.JTable();
+        reservationTable = new javax.swing.JTable();
         searchbylabel = new javax.swing.JLabel();
-        dltbtn = new javax.swing.JButton();
+        adminSelect = new javax.swing.JButton();
 
         jComboBoxselectcolumn.setModel(
                 new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -87,32 +91,32 @@ public class ClientViewPanel extends javax.swing.JPanel {
             }
         });
 
-        clienttable.setModel(new javax.swing.table.DefaultTableModel(
+        reservationTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][] {
 
                 },
                 new String[] {
-                        "ClientID", "FirstName", "LastName", "Email", "Phone", "Address"
+                        "ReservationID", "ClientID", "CatalogueID", "ReservationDate"
                 }) {
             boolean[] canEdit = new boolean[] {
-                    false, false, false, false, true, false
+                    false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit[columnIndex];
             }
         });
-        jScrollPane1.setViewportView(clienttable);
+        jScrollPane1.setViewportView(reservationTable);
 
         searchbylabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         searchbylabel.setText("Search By");
 
-        dltbtn.setBackground(new java.awt.Color(153, 255, 153));
-        dltbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        dltbtn.setText("Delete");
-        dltbtn.addActionListener(new java.awt.event.ActionListener() {
+        adminSelect.setBackground(new java.awt.Color(153, 255, 153));
+        adminSelect.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        adminSelect.setText("Select");
+        adminSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dltbtnActionPerformed(evt);
+                adminSelectActionPerformed(evt);
             }
         });
 
@@ -135,14 +139,14 @@ public class ClientViewPanel extends javax.swing.JPanel {
                                                 .addGap(33, 33, 33)
                                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 303,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 886,
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 778,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(426, Short.MAX_VALUE))
+                                .addContainerGap(534, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(dltbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145,
+                                .addComponent(adminSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 156,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(42, 42, 42)));
+                                .addGap(693, 693, 693)));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -160,77 +164,67 @@ public class ClientViewPanel extends javax.swing.JPanel {
                                 .addGap(50, 50, 50)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(dltbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47,
+                                .addGap(18, 18, 18)
+                                .addComponent(adminSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 52,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24)));
+                                .addContainerGap(7, Short.MAX_VALUE)));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void adminSelectActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_adminSelectActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = reservationTable.getSelectedRow();
+
+        if (selectedRowIndex == -1) {
+            JOptionPane.showMessageDialog(this, "Please select a row.");
+            return;
+        }
+
+        Welcome.jdbc.reservationID = (int) reservationTable.getValueAt(selectedRowIndex, 0);
+
+        setVisible(false);
+        Window w = SwingUtilities.getWindowAncestor(this);
+        w.setVisible(false);
+    }// GEN-LAST:event_adminSelectActionPerformed
 
     private void okbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_okbtnActionPerformed
         // TODO add your handling code here:
-        String selectedColumn = (String) jComboBoxselectcolumn.getSelectedItem();
-        String searchTerm = jTextField1.getText();
+        {
+            String selectedColumn = (String) jComboBoxselectcolumn.getSelectedItem();
+            String searchTerm = jTextField1.getText();
 
-        try {
-            String query = "SELECT * FROM Clients WHERE " + selectedColumn + " LIKE ?";
-            Welcome.jdbc.preparedStatement = Welcome.jdbc.connection.prepareStatement(query);
-            Welcome.jdbc.preparedStatement.setString(1, "%" + searchTerm + "%");
+            try {
+                String query = "SELECT * FROM Reservations WHERE " + selectedColumn + " LIKE ?";
+                Welcome.jdbc.preparedStatement = Welcome.jdbc.connection.prepareStatement(query);
+                Welcome.jdbc.preparedStatement.setString(1, "%" + searchTerm + "%");
 
-            Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
-            model.setRowCount(0); // Clear existing data
+                Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+                model.setRowCount(0); // Clear existing data
 
-            while (Welcome.jdbc.resultSet.next()) {
-                int clientID = Welcome.jdbc.resultSet.getInt("ClientID");
-                String firstName = Welcome.jdbc.resultSet.getString("FirstName");
-                String lastName = Welcome.jdbc.resultSet.getString("LastName");
-                String email = Welcome.jdbc.resultSet.getString("Email");
-                String phone = Welcome.jdbc.resultSet.getString("Phone");
-                String address = Welcome.jdbc.resultSet.getString("Address");
+                while (Welcome.jdbc.resultSet.next()) {
+                    int reservationID = Welcome.jdbc.resultSet.getInt("ReservationID");
+                    int clientID = Welcome.jdbc.resultSet.getInt("ClientID");
+                    int catalogueID = Welcome.jdbc.resultSet.getInt("CatalogueID");
+                    Date reservationDate = Welcome.jdbc.resultSet.getDate("ReservationDate");
 
-                model.addRow(new Object[] { clientID, firstName, lastName, email, phone, address });
+                    model.addRow(new Object[] { reservationID, clientID, catalogueID, reservationDate });
+                }
+
+                // Update the table model with search results
+                reservationTable.setModel(model);
+            } catch (SQLException ex) {
+                System.out.println(ex);
             }
-
-            // Update the table model with search results
-            clienttable.setModel(model);
-        } catch (SQLException ex) {
-            System.out.println(ex);
         }
+
     }// GEN-LAST:event_okbtnActionPerformed
 
-    private void dltbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_dltbtnActionPerformed
-        // TODO add your handling code here:
-        {
-            int selectedRowIndex = clienttable.getSelectedRow();
-
-            if (selectedRowIndex == -1) {
-                JOptionPane.showMessageDialog(this, "Please select a row to delete.");
-                return;
-            }
-
-            int id = (int) clienttable.getValueAt(selectedRowIndex, 0);
-
-            int rowsAffected = Welcome.jdbc.deleteData("Clients", id, "clientID");
-
-            if (rowsAffected > 0) {
-                JOptionPane.showMessageDialog(this, "Row deleted successfully.");
-
-                DefaultTableModel model = (DefaultTableModel) clienttable.getModel();
-                model.removeRow(selectedRowIndex);
-            } else {
-                JOptionPane.showMessageDialog(this, "Error deleting row.");
-            }
-        }
-
-    }// GEN-LAST:event_dltbtnActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable clienttable;
-    private javax.swing.JButton dltbtn;
+    private javax.swing.JButton adminSelect;
     private javax.swing.JComboBox<String> jComboBoxselectcolumn;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton okbtn;
+    private javax.swing.JTable reservationTable;
     private javax.swing.JLabel searchbylabel;
     // End of variables declaration//GEN-END:variables
 }

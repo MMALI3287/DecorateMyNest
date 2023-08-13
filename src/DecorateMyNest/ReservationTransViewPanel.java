@@ -209,7 +209,17 @@ public class ReservationTransViewPanel extends javax.swing.JPanel {
 
             int id = (int) reservationTransactionTable.getValueAt(selectedRowIndex, 0);
 
-            int rowsAffected = Welcome.jdbc.deleteData("ReservationTransactions", id);
+            int rowsAffected = Welcome.jdbc.deleteData("ReservationTransaction", id, "TransactionID");
+
+            if (rowsAffected > 0) {
+                JOptionPane.showMessageDialog(this, "Row deleted successfully.");
+
+                DefaultTableModel model = (DefaultTableModel) reservationTransactionTable.getModel();
+                model.removeRow(selectedRowIndex);
+            } else {
+                JOptionPane.showMessageDialog(this, "Error deleting row.");
+            }
+            rowsAffected = Welcome.jdbc.deleteData("FinancialTransactions", id, "TransactionID");
 
             if (rowsAffected > 0) {
                 JOptionPane.showMessageDialog(this, "Row deleted successfully.");

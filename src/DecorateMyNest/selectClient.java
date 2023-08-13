@@ -4,24 +4,25 @@
  */
 package DecorateMyNest;
 
+import java.awt.Window;
 import java.sql.SQLException;
 import java.util.List;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Musaddique Ali
  */
-public class AdminViewPanel extends javax.swing.JPanel {
-
+public class SelectClient extends javax.swing.JPanel {
     DefaultTableModel model = new DefaultTableModel();
 
     /**
      * Creates new form AdminViewPanel
      */
-    public AdminViewPanel() {
+    public SelectClient() {
         initComponents();
         setRecordsToTable();
     }
@@ -29,26 +30,23 @@ public class AdminViewPanel extends javax.swing.JPanel {
     private void setRecordsToTable() {
         try {
             Welcome.jdbc.preparedStatement = Welcome.jdbc.connection
-                    .prepareStatement("SELECT * FROM Admins;");
+                    .prepareStatement("SELECT * FROM Clients;");
             Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
-            model = (DefaultTableModel) adminTable.getModel();
-            model.setRowCount(0);
+            model = (DefaultTableModel) clienttable.getModel();
             while (Welcome.jdbc.resultSet.next()) {
-                int adminID = Welcome.jdbc.resultSet.getInt("AdminID");
-                String FirstName = Welcome.jdbc.resultSet.getString("FirstName");
-                String LastName = Welcome.jdbc.resultSet.getString("LastName");
+                int clientId = Welcome.jdbc.resultSet.getInt("ClientID");
+                String fName = Welcome.jdbc.resultSet.getString("FirstName");
+                String lName = Welcome.jdbc.resultSet.getString("LastName");
                 String email = Welcome.jdbc.resultSet.getString("Email");
                 String phone = Welcome.jdbc.resultSet.getString("Phone");
-                String password = Welcome.jdbc.resultSet.getString("Password");
-
-                model.addRow(new Object[] { adminID, FirstName, LastName, email, phone, password });
+                String address = Welcome.jdbc.resultSet.getString("Address");
+                model.addRow(new Object[] { clientId, fName, lName, email, phone, address });
             }
-            adminTable.setModel(model);
+            clienttable.setModel(model);
         } catch (SQLException ex) {
             System.out.println(ex);
         }
-
-        List<String> columnNamesList = Welcome.jdbc.getColumns("Admins");
+        List<String> columnNamesList = Welcome.jdbc.getColumns("Clients");
 
         jComboBoxselectcolumn.removeAllItems();
 
@@ -58,7 +56,6 @@ public class AdminViewPanel extends javax.swing.JPanel {
         }
 
         jComboBoxselectcolumn.setModel(comboBoxModel);
-
     }
 
     /**
@@ -77,23 +74,12 @@ public class AdminViewPanel extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         okbtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        adminTable = new javax.swing.JTable();
+        clienttable = new javax.swing.JTable();
         searchbylabel = new javax.swing.JLabel();
-        dltbtn = new javax.swing.JButton();
+        adminSelect = new javax.swing.JButton();
 
         jComboBoxselectcolumn.setModel(
                 new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBoxselectcolumn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxselectcolumnActionPerformed(evt);
-            }
-        });
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         okbtn.setBackground(new java.awt.Color(153, 255, 153));
         okbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -104,35 +90,32 @@ public class AdminViewPanel extends javax.swing.JPanel {
             }
         });
 
-        adminTable.setModel(new javax.swing.table.DefaultTableModel(
+        clienttable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][] {
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null }
+
                 },
                 new String[] {
-                        "AdminID", "FirstName", "LastName", "Email", "Phone", "Password"
+                        "ClientID", "FirstName", "LastName", "Email", "Phone", "Address"
                 }) {
             boolean[] canEdit = new boolean[] {
-                    false, false, false, false, false, false
+                    false, false, false, false, true, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit[columnIndex];
             }
         });
-        jScrollPane1.setViewportView(adminTable);
+        jScrollPane1.setViewportView(clienttable);
 
         searchbylabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         searchbylabel.setText("Search By");
 
-        dltbtn.setBackground(new java.awt.Color(153, 255, 153));
-        dltbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        dltbtn.setText("Delete");
-        dltbtn.addActionListener(new java.awt.event.ActionListener() {
+        adminSelect.setBackground(new java.awt.Color(153, 255, 153));
+        adminSelect.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        adminSelect.setText("Select");
+        adminSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dltbtnActionPerformed(evt);
+                adminSelectActionPerformed(evt);
             }
         });
 
@@ -142,24 +125,13 @@ public class AdminViewPanel extends javax.swing.JPanel {
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(55, 55, 55)
-                                .addComponent(searchbylabel, javax.swing.GroupLayout.PREFERRED_SIZE, 191,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(72, 72, 72)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(adminSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 156,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(jScrollPane1,
-                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addPreferredGap(
-                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                        1125, Short.MAX_VALUE)
-                                                                .addComponent(dltbtn,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 145,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGap(42, 42, 42))
-                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(searchbylabel, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(72, 72, 72)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE,
@@ -171,8 +143,11 @@ public class AdminViewPanel extends javax.swing.JPanel {
                                                                 .addGap(33, 33, 33)
                                                                 .addComponent(jTextField1,
                                                                         javax.swing.GroupLayout.PREFERRED_SIZE, 303,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addContainerGap(740, Short.MAX_VALUE)))));
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(jScrollPane1,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 886,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addContainerGap(107, Short.MAX_VALUE)));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -188,45 +163,29 @@ public class AdminViewPanel extends javax.swing.JPanel {
                                 .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(50, 50, 50)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 655,
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(adminSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 52,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57,
-                                        Short.MAX_VALUE)
-                                .addComponent(dltbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24)));
+                                .addContainerGap(13, Short.MAX_VALUE)));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void dltbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_dltbtnActionPerformed
+    private void adminSelectActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_adminSelectActionPerformed
         // TODO add your handling code here:
-        int selectedRowIndex = adminTable.getSelectedRow();
+        int selectedRowIndex = clienttable.getSelectedRow();
 
         if (selectedRowIndex == -1) {
-            JOptionPane.showMessageDialog(this, "Please select a row to delete.");
+            JOptionPane.showMessageDialog(this, "Please select a row.");
             return;
         }
 
-        int id = (int) adminTable.getValueAt(selectedRowIndex, 0);
+        Welcome.jdbc.clientID = (int) clienttable.getValueAt(selectedRowIndex, 0);
 
-        int rowsAffected = Welcome.jdbc.deleteData("Admins", id, "AdminID");
-
-        if (rowsAffected > 0) {
-            JOptionPane.showMessageDialog(this, "Row deleted successfully.");
-
-            DefaultTableModel model = (DefaultTableModel) adminTable.getModel();
-            model.removeRow(selectedRowIndex);
-        } else {
-            JOptionPane.showMessageDialog(this, "Error deleting row.");
-        }
-    }// GEN-LAST:event_dltbtnActionPerformed
-
-    private void jComboBoxselectcolumnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jComboBoxselectcolumnActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_jComboBoxselectcolumnActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_jTextField1ActionPerformed
+        setVisible(false);
+        Window w = SwingUtilities.getWindowAncestor(this);
+        w.setVisible(false);
+    }// GEN-LAST:event_adminSelectActionPerformed
 
     private void okbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_okbtnActionPerformed
         // TODO add your handling code here:
@@ -234,7 +193,7 @@ public class AdminViewPanel extends javax.swing.JPanel {
         String searchTerm = jTextField1.getText();
 
         try {
-            String query = "SELECT * FROM Admins WHERE " + selectedColumn + " LIKE ?";
+            String query = "SELECT * FROM Clients WHERE " + selectedColumn + " LIKE ?";
             Welcome.jdbc.preparedStatement = Welcome.jdbc.connection.prepareStatement(query);
             Welcome.jdbc.preparedStatement.setString(1, "%" + searchTerm + "%");
 
@@ -242,26 +201,26 @@ public class AdminViewPanel extends javax.swing.JPanel {
             model.setRowCount(0); // Clear existing data
 
             while (Welcome.jdbc.resultSet.next()) {
-                int adminID = Welcome.jdbc.resultSet.getInt("AdminID");
-                String FirstName = Welcome.jdbc.resultSet.getString("FirstName");
-                String LastName = Welcome.jdbc.resultSet.getString("LastName");
+                int clientID = Welcome.jdbc.resultSet.getInt("ClientID");
+                String firstName = Welcome.jdbc.resultSet.getString("FirstName");
+                String lastName = Welcome.jdbc.resultSet.getString("LastName");
                 String email = Welcome.jdbc.resultSet.getString("Email");
                 String phone = Welcome.jdbc.resultSet.getString("Phone");
-                String password = Welcome.jdbc.resultSet.getString("Password");
+                String address = Welcome.jdbc.resultSet.getString("Address");
 
-                model.addRow(new Object[] { adminID, FirstName, LastName, email, phone, password });
+                model.addRow(new Object[] { clientID, firstName, lastName, email, phone, address });
             }
 
             // Update the table model with search results
-            adminTable.setModel(model);
+            clienttable.setModel(model);
         } catch (SQLException ex) {
             System.out.println(ex);
         }
     }// GEN-LAST:event_okbtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable adminTable;
-    private javax.swing.JButton dltbtn;
+    private javax.swing.JButton adminSelect;
+    private javax.swing.JTable clienttable;
     private javax.swing.JComboBox<String> jComboBoxselectcolumn;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;

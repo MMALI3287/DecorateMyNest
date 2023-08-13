@@ -43,12 +43,18 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                <Component id="adminID" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                <Group type="102" alignment="0" attributes="0">
+                  <Component id="adminID" min="-2" pref="441" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="selectAdmin" min="-2" pref="106" max="-2" attributes="0"/>
+                </Group>
                 <Component id="amount" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-                <Component id="description" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-                <Component id="materialID" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
                 <Component id="quantity" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-                <Component id="vendorID" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                <Group type="102" alignment="0" attributes="0">
+                  <Component id="vendorID" min="-2" pref="441" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="selectVendor" min="-2" pref="106" max="-2" attributes="0"/>
+                </Group>
                 <Group type="102" attributes="0">
                   <Component id="Date" min="-2" pref="103" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -60,10 +66,18 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="Year" min="-2" pref="103" max="-2" attributes="0"/>
                 </Group>
+                <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                    <Component id="description" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                    <Component id="materialID" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="selectMaterial" min="-2" pref="106" max="-2" attributes="0"/>
+                </Group>
               </Group>
             </Group>
           </Group>
-          <EmptySpace pref="878" max="32767" attributes="0"/>
+          <EmptySpace pref="754" max="32767" attributes="0"/>
         </Group>
       </Group>
     </DimensionLayout>
@@ -74,6 +88,7 @@
           <Group type="103" groupAlignment="3" attributes="0">
             <Component id="fnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
             <Component id="adminID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+            <Component id="selectAdmin" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
           </Group>
           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
           <Group type="103" groupAlignment="1" attributes="0">
@@ -98,6 +113,7 @@
           <Group type="103" groupAlignment="3" attributes="0">
             <Component id="addresslabel1" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
             <Component id="materialID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+            <Component id="selectMaterial" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
           </Group>
           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
           <Group type="103" groupAlignment="3" attributes="0">
@@ -108,6 +124,7 @@
           <Group type="103" groupAlignment="3" attributes="0">
             <Component id="addresslabel3" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
             <Component id="vendorID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+            <Component id="selectVendor" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
           </Group>
           <EmptySpace type="separate" max="-2" attributes="0"/>
           <Group type="103" groupAlignment="3" attributes="0">
@@ -252,6 +269,30 @@
     <Component class="javax.swing.JTextField" name="Year">
     </Component>
     <Component class="javax.swing.JTextField" name="Month">
+    </Component>
+    <Component class="javax.swing.JButton" name="selectAdmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Select"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectAdminActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="selectVendor">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Select"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectVendorActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="selectMaterial">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Select"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectMaterialActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

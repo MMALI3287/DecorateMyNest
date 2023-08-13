@@ -220,7 +220,7 @@ public class CatalogueViewPanel extends javax.swing.JPanel {
 
             int id = (int) catalogueTable.getValueAt(selectedRowIndex, 0);
 
-            int rowsAffected = Welcome.jdbc.deleteData("FinancialTransactions", id);
+            int rowsAffected = Welcome.jdbc.deleteData("catalogue", id,"catalogueID");
 
             if (rowsAffected > 0) {
                 JOptionPane.showMessageDialog(this, "Row deleted successfully.");

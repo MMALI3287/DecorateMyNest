@@ -4,24 +4,26 @@
  */
 package DecorateMyNest;
 
+import java.awt.Window;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Musaddique Ali
  */
-public class FinancialTransactionViewPanel extends javax.swing.JPanel {
+public class SelectTransaction extends javax.swing.JPanel {
     DefaultTableModel model = new DefaultTableModel();
 
     /**
      * Creates new form AdminViewPanel
      */
-    public FinancialTransactionViewPanel() {
+    public SelectTransaction() {
         initComponents();
         setRecordsToTable();
     }
@@ -67,6 +69,7 @@ public class FinancialTransactionViewPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -76,7 +79,7 @@ public class FinancialTransactionViewPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         financialTransactionTable = new javax.swing.JTable();
-        dltbtn = new javax.swing.JButton();
+        adminSelect = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Search By");
@@ -115,12 +118,12 @@ public class FinancialTransactionViewPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(financialTransactionTable);
 
-        dltbtn.setBackground(new java.awt.Color(153, 255, 153));
-        dltbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        dltbtn.setText("Delete");
-        dltbtn.addActionListener(new java.awt.event.ActionListener() {
+        adminSelect.setBackground(new java.awt.Color(153, 255, 153));
+        adminSelect.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        adminSelect.setText("Select");
+        adminSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dltbtnActionPerformed(evt);
+                adminSelectActionPerformed(evt);
             }
         });
 
@@ -130,31 +133,31 @@ public class FinancialTransactionViewPanel extends javax.swing.JPanel {
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(59, 59, 59)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 171,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(32, 32, 32)
-                                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 145,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(115, 115, 115)
-                                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 236,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(65, 65, 65)
-                                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 303,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(681, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 687,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(adminSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 156,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGap(262, 262, 262)
-                                                .addComponent(jScrollPane1))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addContainerGap(1216, Short.MAX_VALUE)
-                                                .addComponent(dltbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(269, 269, 269)));
+                                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 171,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(32, 32, 32)
+                                                                .addComponent(jButton1,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 145,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(115, 115, 115)
+                                                                .addComponent(jComboBox1,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 236,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(65, 65, 65)
+                                                                .addComponent(jTextField1,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 303,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addContainerGap(681, Short.MAX_VALUE)));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -173,11 +176,27 @@ public class FinancialTransactionViewPanel extends javax.swing.JPanel {
                                 .addGap(48, 48, 48)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(141, 141, 141)
-                                .addComponent(dltbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47,
+                                .addGap(142, 142, 142)
+                                .addComponent(adminSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 52,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(49, 49, 49)));
+                                .addGap(43, 43, 43)));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void adminSelectActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_adminSelectActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = financialTransactionTable.getSelectedRow();
+
+        if (selectedRowIndex == -1) {
+            JOptionPane.showMessageDialog(this, "Please select a row.");
+            return;
+        }
+
+        Welcome.jdbc.transactionID = (int) financialTransactionTable.getValueAt(selectedRowIndex, 0);
+
+        setVisible(false);
+        Window w = SwingUtilities.getWindowAncestor(this);
+        w.setVisible(false);
+    }// GEN-LAST:event_adminSelectActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
@@ -217,34 +236,8 @@ public class FinancialTransactionViewPanel extends javax.swing.JPanel {
 
     }// GEN-LAST:event_jButton1ActionPerformed
 
-    private void dltbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_dltbtnActionPerformed
-        // TODO add your handling code here:
-        {
-            int selectedRowIndex = financialTransactionTable.getSelectedRow();
-
-            if (selectedRowIndex == -1) {
-                JOptionPane.showMessageDialog(this, "Please select a row to delete.");
-                return;
-            }
-
-            int id = (int) financialTransactionTable.getValueAt(selectedRowIndex, 0);
-
-            int rowsAffected = Welcome.jdbc.deleteData("FinancialTransactions", id, "TransactionID");
-
-            if (rowsAffected > 0) {
-                JOptionPane.showMessageDialog(this, "Row deleted successfully.");
-
-                DefaultTableModel model = (DefaultTableModel) financialTransactionTable.getModel();
-                model.removeRow(selectedRowIndex);
-            } else {
-                JOptionPane.showMessageDialog(this, "Error deleting row.");
-            }
-        }
-
-    }// GEN-LAST:event_dltbtnActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton dltbtn;
+    private javax.swing.JButton adminSelect;
     private javax.swing.JTable financialTransactionTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;

@@ -21,17 +21,17 @@
           <Component id="searchbylabel" min="-2" pref="191" max="-2" attributes="0"/>
           <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
           <Group type="103" groupAlignment="0" attributes="0">
-            <Group type="102" alignment="0" attributes="0">
+            <Group type="102" attributes="0">
               <Group type="103" groupAlignment="1" attributes="0">
-                <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+                <Component id="jScrollPane1" alignment="0" pref="677" max="32767" attributes="0"/>
                 <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="1125" max="32767" attributes="0"/>
-                  <Component id="dltbtn" min="-2" pref="145" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="adminSelect" min="-2" pref="156" max="-2" attributes="0"/>
                 </Group>
               </Group>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="635" max="-2" attributes="0"/>
             </Group>
-            <Group type="102" alignment="0" attributes="0">
+            <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                 <Component id="okbtn" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
                 <Group type="102" alignment="0" attributes="0">
@@ -40,7 +40,7 @@
                   <Component id="jTextField1" min="-2" pref="303" max="-2" attributes="0"/>
                 </Group>
               </Group>
-              <EmptySpace pref="740" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
             </Group>
           </Group>
         </Group>
@@ -58,10 +58,10 @@
           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
           <Component id="okbtn" min="-2" pref="47" max="-2" attributes="0"/>
           <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-          <Component id="jScrollPane1" min="-2" pref="655" max="-2" attributes="0"/>
-          <EmptySpace pref="57" max="32767" attributes="0"/>
-          <Component id="dltbtn" min="-2" pref="47" max="-2" attributes="0"/>
-          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+          <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+          <Component id="adminSelect" min="-2" pref="52" max="-2" attributes="0"/>
+          <EmptySpace pref="13" max="32767" attributes="0"/>
         </Group>
       </Group>
     </DimensionLayout>
@@ -78,17 +78,11 @@
           </StringArray>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxselectcolumnActionPerformed"/>
-      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="okbtn">
       <Properties>
@@ -111,16 +105,15 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="adminTable">
+        <Component class="javax.swing.JTable" name="vendorsTable">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="6" rowCount="4">
-                <Column editable="false" title="AdminID" type="java.lang.Object"/>
-                <Column editable="false" title="FirstName" type="java.lang.Object"/>
-                <Column editable="false" title="LastName" type="java.lang.Object"/>
-                <Column editable="false" title="Email" type="java.lang.Object"/>
+              <Table columnCount="5" rowCount="0">
+                <Column editable="false" title="VendorID" type="java.lang.Object"/>
+                <Column editable="false" title="VendorName" type="java.lang.Object"/>
+                <Column editable="false" title="ContactPerson" type="java.lang.Object"/>
                 <Column editable="false" title="Phone" type="java.lang.Object"/>
-                <Column editable="false" title="Password" type="java.lang.Object"/>
+                <Column editable="false" title="Email" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -138,7 +131,7 @@
         <Property name="text" type="java.lang.String" value="Search By"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="dltbtn">
+    <Component class="javax.swing.JButton" name="adminSelect">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="ff" red="99" type="rgb"/>
@@ -146,10 +139,10 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Delete"/>
+        <Property name="text" type="java.lang.String" value="Select"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dltbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adminSelectActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -38,10 +38,18 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                <Component id="adminID" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                <Group type="102" alignment="0" attributes="0">
+                  <Component id="adminID" min="-2" pref="441" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="selectAdmin" min="-2" pref="106" max="-2" attributes="0"/>
+                </Group>
                 <Component id="amount" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
                 <Component id="description" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
-                <Component id="employeeID" min="-2" pref="441" max="-2" attributes="0"/>
+                <Group type="102" attributes="0">
+                  <Component id="employeeID" min="-2" pref="441" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="selectEmployee" min="-2" pref="106" max="-2" attributes="0"/>
+                </Group>
                 <Group type="102" attributes="0">
                   <Component id="Date" min="-2" pref="103" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -56,7 +64,7 @@
               </Group>
             </Group>
           </Group>
-          <EmptySpace pref="937" max="32767" attributes="0"/>
+          <EmptySpace pref="813" max="32767" attributes="0"/>
         </Group>
       </Group>
     </DimensionLayout>
@@ -67,6 +75,7 @@
           <Group type="103" groupAlignment="3" attributes="0">
             <Component id="fnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
             <Component id="adminID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+            <Component id="selectAdmin" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
           </Group>
           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
           <Group type="103" groupAlignment="1" attributes="0">
@@ -91,6 +100,7 @@
           <Group type="103" groupAlignment="3" attributes="0">
             <Component id="addresslabel1" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
             <Component id="employeeID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+            <Component id="selectEmployee" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
           </Group>
           <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
           <Group type="103" groupAlignment="3" attributes="0">
@@ -215,6 +225,22 @@
     <Component class="javax.swing.JTextField" name="Year">
     </Component>
     <Component class="javax.swing.JTextField" name="Month">
+    </Component>
+    <Component class="javax.swing.JButton" name="selectAdmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Select"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectAdminActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="selectEmployee">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Select"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectEmployeeActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

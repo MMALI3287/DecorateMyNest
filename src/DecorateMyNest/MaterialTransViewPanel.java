@@ -201,7 +201,17 @@ public class MaterialTransViewPanel extends javax.swing.JPanel {
 
             int id = (int) materialTransactionTable.getValueAt(selectedRowIndex, 0);
 
-            int rowsAffected = Welcome.jdbc.deleteData("MaterialTransactions", id);
+            int rowsAffected = Welcome.jdbc.deleteData("MaterialTransaction", id, "TransactionID");
+
+            if (rowsAffected > 0) {
+                JOptionPane.showMessageDialog(this, "Row deleted successfully.");
+
+                DefaultTableModel model = (DefaultTableModel) materialTransactionTable.getModel();
+                model.removeRow(selectedRowIndex);
+            } else {
+                JOptionPane.showMessageDialog(this, "Error deleting row.");
+            }
+            rowsAffected = Welcome.jdbc.deleteData("FinancialTransactions", id, "TransactionID");
 
             if (rowsAffected > 0) {
                 JOptionPane.showMessageDialog(this, "Row deleted successfully.");

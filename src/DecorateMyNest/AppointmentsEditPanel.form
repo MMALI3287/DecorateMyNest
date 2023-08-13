@@ -60,6 +60,11 @@
                   </Group>
                 </Group>
               </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                <Component id="selectClient" min="-2" pref="106" max="-2" attributes="0"/>
+                <Component id="selectEmployee" min="-2" pref="106" max="-2" attributes="0"/>
+              </Group>
             </Group>
             <Group type="102" alignment="0" attributes="0">
               <Component id="insertbtn" min="-2" pref="115" max="-2" attributes="0"/>
@@ -69,7 +74,7 @@
               <Component id="clearbtn" min="-2" pref="123" max="-2" attributes="0"/>
             </Group>
           </Group>
-          <EmptySpace pref="937" max="32767" attributes="0"/>
+          <EmptySpace pref="813" max="32767" attributes="0"/>
         </Group>
       </Group>
     </DimensionLayout>
@@ -80,11 +85,13 @@
           <Group type="103" groupAlignment="3" attributes="0">
             <Component id="fnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
             <Component id="clientID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+            <Component id="selectClient" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
           </Group>
           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
           <Group type="103" groupAlignment="3" attributes="0">
             <Component id="lnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
             <Component id="employeeID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+            <Component id="selectEmployee" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
           </Group>
           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
           <Group type="103" groupAlignment="1" attributes="0">
@@ -257,6 +264,22 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton2ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="selectClient">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Select"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectClientActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="selectEmployee">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Select"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectEmployeeActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

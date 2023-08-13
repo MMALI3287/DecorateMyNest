@@ -33,7 +33,11 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                <Component id="reservationID" min="-2" pref="441" max="-2" attributes="0"/>
+                <Group type="102" attributes="0">
+                  <Component id="reservationID" min="-2" pref="441" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="selectReservation" min="-2" pref="106" max="-2" attributes="0"/>
+                </Group>
                 <Group type="102" alignment="0" attributes="0">
                   <Component id="sDate" min="-2" pref="103" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -56,7 +60,11 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="Year" min="-2" pref="103" max="-2" attributes="0"/>
                 </Group>
-                <Component id="adminID" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
+                <Group type="102" alignment="0" attributes="0">
+                  <Component id="adminID" min="-2" pref="441" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="selectAdmin" min="-2" pref="106" max="-2" attributes="0"/>
+                </Group>
               </Group>
             </Group>
             <Group type="102" alignment="0" attributes="0">
@@ -67,7 +75,7 @@
               <Component id="clearbtn" min="-2" pref="123" max="-2" attributes="0"/>
             </Group>
           </Group>
-          <EmptySpace pref="858" max="32767" attributes="0"/>
+          <EmptySpace pref="734" max="32767" attributes="0"/>
         </Group>
       </Group>
     </DimensionLayout>
@@ -78,11 +86,13 @@
           <Group type="103" groupAlignment="3" attributes="0">
             <Component id="fnamelabel1" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
             <Component id="adminID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+            <Component id="selectAdmin" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
           </Group>
           <EmptySpace type="separate" max="-2" attributes="0"/>
           <Group type="103" groupAlignment="3" attributes="0">
             <Component id="fnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
             <Component id="reservationID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+            <Component id="selectReservation" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
           </Group>
           <Group type="103" groupAlignment="0" attributes="0">
             <Group type="102" attributes="0">
@@ -251,6 +261,22 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Admin ID"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="selectAdmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Select"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectAdminActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="selectReservation">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Select"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectReservationActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
