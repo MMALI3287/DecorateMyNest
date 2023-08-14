@@ -33,9 +33,10 @@ public class ReservationEditPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        kGradientPanel1 = new keeptoo.KGradientPanel();
         fnamelabel = new javax.swing.JLabel();
         clientID = new javax.swing.JTextField();
         lnamelabel = new javax.swing.JLabel();
@@ -52,31 +53,43 @@ public class ReservationEditPanel extends javax.swing.JPanel {
         selectClient = new javax.swing.JButton();
         selectCatalogue = new javax.swing.JButton();
 
-        fnamelabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        kGradientPanel1.setkEndColor(new java.awt.Color(204, 153, 0));
+        kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 51));
+
+        fnamelabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         fnamelabel.setText("Client ID");
 
-        lnamelabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        clientID.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        clientID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lnamelabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lnamelabel.setText("Catalouge ID");
 
-        emaillabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        catalogueID.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        catalogueID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        emaillabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         emaillabel.setText("Reservation Date");
 
-        insertbtn.setBackground(new java.awt.Color(243, 239, 13));
-        insertbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        insertbtn.setBackground(new java.awt.Color(255, 249, 242));
+        insertbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         insertbtn.setText("Insert");
+        insertbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         insertbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 insertbtnActionPerformed(evt);
             }
         });
 
-        updatebtn.setBackground(new java.awt.Color(243, 239, 13));
-        updatebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        updatebtn.setBackground(new java.awt.Color(255, 249, 242));
+        updatebtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         updatebtn.setText("Update");
+        updatebtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
-        clearbtn.setBackground(new java.awt.Color(243, 239, 13));
-        clearbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        clearbtn.setBackground(new java.awt.Color(255, 249, 242));
+        clearbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         clearbtn.setText("Clear");
+        clearbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         clearbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearbtnActionPerformed(evt);
@@ -89,128 +102,123 @@ public class ReservationEditPanel extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel4.setText("/");
 
+        Date.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        Date.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Date.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DateActionPerformed(evt);
             }
         });
 
+        Year.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        Year.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        Month.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        Month.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        selectClient.setBackground(new java.awt.Color(255, 249, 242));
+        selectClient.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         selectClient.setText("Select");
+        selectClient.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         selectClient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectClientActionPerformed(evt);
             }
         });
 
+        selectCatalogue.setBackground(new java.awt.Color(255, 249, 242));
+        selectCatalogue.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         selectCatalogue.setText("Select");
+        selectCatalogue.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         selectCatalogue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectCatalogueActionPerformed(evt);
             }
         });
 
+        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
+        kGradientPanel1.setLayout(kGradientPanel1Layout);
+        kGradientPanel1Layout.setHorizontalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(188, 188, 188)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(fnamelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lnamelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(emaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                                .addComponent(clientID, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(selectClient, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                                .addComponent(catalogueID, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(selectCatalogue, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                                .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(24, 24, 24)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                        .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79)
+                        .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56)
+                        .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(980, Short.MAX_VALUE))
+        );
+        kGradientPanel1Layout.setVerticalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clientID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(selectClient, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(catalogueID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(selectCatalogue, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(emaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(79, 79, 79)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(481, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(69, 69, 69)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
-                                                                false)
-                                                        .addComponent(fnamelabel, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(lnamelabel, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                177, Short.MAX_VALUE)
-                                                        .addComponent(emaillabel, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                177, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(clientID,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 441,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(selectClient,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 106,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(catalogueID,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 441,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(selectCatalogue,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 106,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(Date,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 103,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(jLabel4)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(Month,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 103,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(jLabel3)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(Year,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 103,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(79, 79, 79)
-                                                .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 122,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(56, 56, 56)
-                                                .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(1093, Short.MAX_VALUE)));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(198, 198, 198)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(clientID, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(selectClient, javax.swing.GroupLayout.PREFERRED_SIZE, 53,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(33, 33, 33)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(catalogueID, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(selectCatalogue, javax.swing.GroupLayout.PREFERRED_SIZE, 53,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(24, 24, 24)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(emaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel3)
-                                        .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(79, 79, 79)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void selectClientActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_selectClientActionPerformed
@@ -284,6 +292,7 @@ public class ReservationEditPanel extends javax.swing.JPanel {
     private javax.swing.JButton insertbtn;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel lnamelabel;
     private javax.swing.JButton selectCatalogue;
     private javax.swing.JButton selectClient;

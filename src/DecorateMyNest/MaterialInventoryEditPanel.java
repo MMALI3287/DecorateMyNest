@@ -28,137 +28,118 @@ public class MaterialInventoryEditPanel extends javax.swing.JPanel {
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
-        // Code">//GEN-BEGIN:initComponents
-        private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-                fnamelabel = new javax.swing.JLabel();
-                materialName = new javax.swing.JTextField();
-                lnamelabel = new javax.swing.JLabel();
-                bulkAmount = new javax.swing.JTextField();
-                insertbtn = new javax.swing.JButton();
-                updatebtn = new javax.swing.JButton();
-                clearbtn = new javax.swing.JButton();
+        kGradientPanel1 = new keeptoo.KGradientPanel();
+        fnamelabel = new javax.swing.JLabel();
+        materialName = new javax.swing.JTextField();
+        lnamelabel = new javax.swing.JLabel();
+        bulkAmount = new javax.swing.JTextField();
+        insertbtn = new javax.swing.JButton();
+        updatebtn = new javax.swing.JButton();
+        clearbtn = new javax.swing.JButton();
 
-                fnamelabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                fnamelabel.setText("Material Name");
+        kGradientPanel1.setkEndColor(new java.awt.Color(204, 153, 0));
+        kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 51));
 
-                lnamelabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                lnamelabel.setText("Bulk Amount");
+        fnamelabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        fnamelabel.setText("Material Name");
 
-                insertbtn.setBackground(new java.awt.Color(243, 239, 13));
-                insertbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                insertbtn.setText("Insert");
-                insertbtn.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                insertbtnActionPerformed(evt);
-                        }
-                });
+        materialName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        materialName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-                updatebtn.setBackground(new java.awt.Color(243, 239, 13));
-                updatebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                updatebtn.setText("Update");
+        lnamelabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lnamelabel.setText("Bulk Amount");
 
-                clearbtn.setBackground(new java.awt.Color(243, 239, 13));
-                clearbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                clearbtn.setText("Clear");
-                clearbtn.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                clearbtnActionPerformed(evt);
-                        }
-                });
+        bulkAmount.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        bulkAmount.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-                this.setLayout(layout);
-                layout.setHorizontalGroup(
-                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                                .addGap(69, 69, 69)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addGroup(layout.createSequentialGroup()
-                                                                                                .addGroup(layout
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING,
-                                                                                                                                false)
-                                                                                                                .addComponent(fnamelabel,
-                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                                Short.MAX_VALUE)
-                                                                                                                .addComponent(lnamelabel,
-                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                                177,
-                                                                                                                                Short.MAX_VALUE))
-                                                                                                .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addGroup(layout
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                .addComponent(materialName,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                441,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                .addComponent(bulkAmount,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                441,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                                .addGroup(layout.createSequentialGroup()
-                                                                                                .addComponent(insertbtn,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                115,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(42, 42, 42)
-                                                                                                .addComponent(updatebtn,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                122,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(39, 39, 39)
-                                                                                                .addComponent(clearbtn,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                123,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                .addContainerGap(937, Short.MAX_VALUE)));
-                layout.setVerticalGroup(
-                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                                .addGap(198, 198, 198)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(fnamelabel,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                55,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(materialName,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                55,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(33, 33, 33)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(lnamelabel,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                55,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(bulkAmount,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                55,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(342, 342, 342)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(insertbtn,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                48,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(updatebtn,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                48,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(clearbtn,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                48,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addContainerGap(263, Short.MAX_VALUE)));
-        }// </editor-fold>//GEN-END:initComponents
+        insertbtn.setBackground(new java.awt.Color(255, 249, 242));
+        insertbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        insertbtn.setText("Insert");
+        insertbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        insertbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insertbtnActionPerformed(evt);
+            }
+        });
+
+        updatebtn.setBackground(new java.awt.Color(255, 249, 242));
+        updatebtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        updatebtn.setText("Update");
+        updatebtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        clearbtn.setBackground(new java.awt.Color(255, 249, 242));
+        clearbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        clearbtn.setText("Clear");
+        clearbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        clearbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearbtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
+        kGradientPanel1.setLayout(kGradientPanel1Layout);
+        kGradientPanel1Layout.setHorizontalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                        .addGap(208, 208, 208)
+                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(fnamelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(materialName, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bulkAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1090, Short.MAX_VALUE))
+        );
+        kGradientPanel1Layout.setVerticalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(153, 153, 153)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(materialName, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bulkAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(300, 300, 300)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(391, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 643, Short.MAX_VALUE)
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 643, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
 
         private void clearbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_clearbtnActionPerformed
                 // TODO add your handling code here:
@@ -184,13 +165,14 @@ public class MaterialInventoryEditPanel extends javax.swing.JPanel {
 
         }// GEN-LAST:event_insertbtnActionPerformed
 
-        // Variables declaration - do not modify//GEN-BEGIN:variables
-        private javax.swing.JTextField bulkAmount;
-        private javax.swing.JButton clearbtn;
-        private javax.swing.JLabel fnamelabel;
-        private javax.swing.JButton insertbtn;
-        private javax.swing.JLabel lnamelabel;
-        private javax.swing.JTextField materialName;
-        private javax.swing.JButton updatebtn;
-        // End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField bulkAmount;
+    private javax.swing.JButton clearbtn;
+    private javax.swing.JLabel fnamelabel;
+    private javax.swing.JButton insertbtn;
+    private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JLabel lnamelabel;
+    private javax.swing.JTextField materialName;
+    private javax.swing.JButton updatebtn;
+    // End of variables declaration//GEN-END:variables
 }

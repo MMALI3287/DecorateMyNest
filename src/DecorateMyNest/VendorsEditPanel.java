@@ -28,183 +28,139 @@ public class VendorsEditPanel extends javax.swing.JPanel {
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
-        // Code">//GEN-BEGIN:initComponents
-        private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-                fnamelabel = new javax.swing.JLabel();
-                vendorName = new javax.swing.JTextField();
-                lnamelabel = new javax.swing.JLabel();
-                contactPerson = new javax.swing.JTextField();
-                vendorEmail = new javax.swing.JTextField();
-                emaillabel = new javax.swing.JLabel();
-                phonelabel = new javax.swing.JLabel();
-                vendorPhone = new javax.swing.JTextField();
-                insertbtn = new javax.swing.JButton();
-                updatebtn = new javax.swing.JButton();
-                clearbtn = new javax.swing.JButton();
+        kGradientPanel1 = new keeptoo.KGradientPanel();
+        vendorName = new javax.swing.JTextField();
+        lnamelabel = new javax.swing.JLabel();
+        contactPerson = new javax.swing.JTextField();
+        vendorEmail = new javax.swing.JTextField();
+        emaillabel = new javax.swing.JLabel();
+        phonelabel = new javax.swing.JLabel();
+        vendorPhone = new javax.swing.JTextField();
+        insertbtn = new javax.swing.JButton();
+        updatebtn = new javax.swing.JButton();
+        clearbtn = new javax.swing.JButton();
+        fnamelabel = new javax.swing.JLabel();
 
-                fnamelabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                fnamelabel.setText("Name");
+        kGradientPanel1.setkEndColor(new java.awt.Color(204, 153, 0));
+        kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 51));
 
-                lnamelabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                lnamelabel.setText("Contact");
+        vendorName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        vendorName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-                emaillabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                emaillabel.setText("Email");
+        lnamelabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lnamelabel.setText("Contact");
 
-                phonelabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                phonelabel.setText("Phone");
+        contactPerson.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        contactPerson.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-                insertbtn.setBackground(new java.awt.Color(243, 239, 13));
-                insertbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                insertbtn.setText("Insert");
-                insertbtn.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                insertbtnActionPerformed(evt);
-                        }
-                });
+        vendorEmail.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        vendorEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-                updatebtn.setBackground(new java.awt.Color(243, 239, 13));
-                updatebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                updatebtn.setText("Update");
+        emaillabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        emaillabel.setText("Email");
 
-                clearbtn.setBackground(new java.awt.Color(243, 239, 13));
-                clearbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                clearbtn.setText("Clear");
-                clearbtn.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                clearbtnActionPerformed(evt);
-                        }
-                });
+        phonelabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        phonelabel.setText("Phone");
 
-                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-                this.setLayout(layout);
-                layout.setHorizontalGroup(
-                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                                .addGap(69, 69, 69)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addGroup(layout
-                                                                                                .createParallelGroup(
-                                                                                                                javax.swing.GroupLayout.Alignment.LEADING,
-                                                                                                                false)
-                                                                                                .addComponent(fnamelabel,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                Short.MAX_VALUE)
-                                                                                                .addComponent(lnamelabel,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                177,
-                                                                                                                Short.MAX_VALUE)
-                                                                                                .addComponent(emaillabel,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                177,
-                                                                                                                Short.MAX_VALUE)
-                                                                                                .addComponent(phonelabel,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                177,
-                                                                                                                Short.MAX_VALUE))
-                                                                                .addComponent(insertbtn,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                115,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addGroup(layout.createSequentialGroup()
-                                                                                                .addComponent(updatebtn,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                122,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(44, 44, 44)
-                                                                                                .addComponent(clearbtn,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                123,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                .addComponent(vendorName,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                441,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(contactPerson,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                441,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(vendorEmail,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                441,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(vendorPhone,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                441,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addContainerGap(1217, Short.MAX_VALUE)));
-                layout.setVerticalGroup(
-                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                                .addGap(198, 198, 198)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(fnamelabel,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                55,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(vendorName,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                55,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(33, 33, 33)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(lnamelabel,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                55,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(contactPerson,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                55,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(33, 33, 33)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(emaillabel,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                55,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(vendorEmail,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                55,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(33, 33, 33)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(phonelabel,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                55,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(vendorPhone,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                55,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(82, 82, 82)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(insertbtn,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                48,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(updatebtn,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                48,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(clearbtn,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                48,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE)));
-        }// </editor-fold>//GEN-END:initComponents
+        vendorPhone.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        vendorPhone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        insertbtn.setBackground(new java.awt.Color(255, 249, 242));
+        insertbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        insertbtn.setText("Insert");
+        insertbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        insertbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insertbtnActionPerformed(evt);
+            }
+        });
+
+        updatebtn.setBackground(new java.awt.Color(255, 249, 242));
+        updatebtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        updatebtn.setText("Update");
+        updatebtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        clearbtn.setBackground(new java.awt.Color(255, 249, 242));
+        clearbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        clearbtn.setText("Clear");
+        clearbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        clearbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearbtnActionPerformed(evt);
+            }
+        });
+
+        fnamelabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        fnamelabel.setText("Name");
+
+        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
+        kGradientPanel1.setLayout(kGradientPanel1Layout);
+        kGradientPanel1Layout.setHorizontalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(158, 158, 158)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(fnamelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lnamelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(emaillabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(phonelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                        .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(vendorName, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(contactPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vendorEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vendorPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(1140, Short.MAX_VALUE))
+        );
+        kGradientPanel1Layout.setVerticalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(154, 154, 154)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vendorName, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(contactPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vendorEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(phonelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vendorPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(82, 82, 82)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(426, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+    }// </editor-fold>//GEN-END:initComponents
 
         private void clearbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_clearbtnActionPerformed
                 // TODO add your handling code here:
@@ -238,17 +194,18 @@ public class VendorsEditPanel extends javax.swing.JPanel {
 
         }// GEN-LAST:event_insertbtnActionPerformed
 
-        // Variables declaration - do not modify//GEN-BEGIN:variables
-        private javax.swing.JButton clearbtn;
-        private javax.swing.JTextField contactPerson;
-        private javax.swing.JLabel emaillabel;
-        private javax.swing.JLabel fnamelabel;
-        private javax.swing.JButton insertbtn;
-        private javax.swing.JLabel lnamelabel;
-        private javax.swing.JLabel phonelabel;
-        private javax.swing.JButton updatebtn;
-        private javax.swing.JTextField vendorEmail;
-        private javax.swing.JTextField vendorName;
-        private javax.swing.JTextField vendorPhone;
-        // End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton clearbtn;
+    private javax.swing.JTextField contactPerson;
+    private javax.swing.JLabel emaillabel;
+    private javax.swing.JLabel fnamelabel;
+    private javax.swing.JButton insertbtn;
+    private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JLabel lnamelabel;
+    private javax.swing.JLabel phonelabel;
+    private javax.swing.JButton updatebtn;
+    private javax.swing.JTextField vendorEmail;
+    private javax.swing.JTextField vendorName;
+    private javax.swing.JTextField vendorPhone;
+    // End of variables declaration//GEN-END:variables
 }

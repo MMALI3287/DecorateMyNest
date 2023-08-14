@@ -277,7 +277,7 @@ public class Home extends JFrame {
         setJMenuBar(MainMenu);
 
         this.add(jp);
-        this.setSize(1910, 1000);
+        this.setSize(1922, 1035);
         this.setVisible(true);
     }
 

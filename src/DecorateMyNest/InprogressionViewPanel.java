@@ -66,146 +66,124 @@ public class InprogressionViewPanel extends javax.swing.JPanel {
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
-        // Code">//GEN-BEGIN:initComponents
-        private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-                jComboBoxselectcolumn = new javax.swing.JComboBox<>();
-                jTextField1 = new javax.swing.JTextField();
-                okbtn = new javax.swing.JButton();
-                jScrollPane1 = new javax.swing.JScrollPane();
-                inProgressionTable = new javax.swing.JTable();
-                searchbylabel = new javax.swing.JLabel();
-                dltbtn = new javax.swing.JButton();
+        kGradientPanel1 = new keeptoo.KGradientPanel();
+        jComboBoxselectcolumn = new javax.swing.JComboBox<>();
+        jTextField1 = new javax.swing.JTextField();
+        okbtn = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        inProgressionTable = new javax.swing.JTable();
+        searchbylabel = new javax.swing.JLabel();
+        dltbtn = new javax.swing.JButton();
 
-                jComboBoxselectcolumn.setModel(
-                                new javax.swing.DefaultComboBoxModel<>(
-                                                new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        kGradientPanel1.setkEndColor(new java.awt.Color(0, 204, 204));
+        kGradientPanel1.setkStartColor(new java.awt.Color(102, 255, 255));
 
-                okbtn.setBackground(new java.awt.Color(153, 255, 153));
-                okbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                okbtn.setText("OK");
-                okbtn.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                okbtnActionPerformed(evt);
-                        }
-                });
+        jComboBoxselectcolumn.setBackground(new java.awt.Color(255, 255, 250));
+        jComboBoxselectcolumn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jComboBoxselectcolumn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-                inProgressionTable.setModel(new javax.swing.table.DefaultTableModel(
-                                new Object[][] {
+        jTextField1.setBackground(new java.awt.Color(255, 255, 250));
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
-                                },
-                                new String[] {
-                                                "ProjectID", "ReservationID", "StartDate", "EndDate", "AdminID"
-                                }) {
-                        boolean[] canEdit = new boolean[] {
-                                        false, false, false, false, true
-                        };
+        okbtn.setBackground(new java.awt.Color(255, 255, 250));
+        okbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        okbtn.setText("OK");
+        okbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okbtnActionPerformed(evt);
+            }
+        });
 
-                        public boolean isCellEditable(int rowIndex, int columnIndex) {
-                                return canEdit[columnIndex];
-                        }
-                });
-                jScrollPane1.setViewportView(inProgressionTable);
+        inProgressionTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-                searchbylabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                searchbylabel.setText("Search By");
+            },
+            new String [] {
+                "ProjectID", "ReservationID", "StartDate", "EndDate", "AdminID"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true
+            };
 
-                dltbtn.setBackground(new java.awt.Color(153, 255, 153));
-                dltbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                dltbtn.setText("Delete");
-                dltbtn.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                dltbtnActionPerformed(evt);
-                        }
-                });
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(inProgressionTable);
 
-                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-                this.setLayout(layout);
-                layout.setHorizontalGroup(
-                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                                .addGap(55, 55, 55)
-                                                                .addComponent(searchbylabel,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                191,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(72, 72, 72)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addGroup(layout.createSequentialGroup()
-                                                                                                .addGroup(layout
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                                                .addComponent(jScrollPane1,
-                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                .addGroup(layout.createSequentialGroup()
-                                                                                                                                .addPreferredGap(
-                                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                                                                                1125,
-                                                                                                                                                Short.MAX_VALUE)
-                                                                                                                                .addComponent(dltbtn,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                145,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                                                .addGap(42, 42, 42))
-                                                                                .addGroup(layout.createSequentialGroup()
-                                                                                                .addGroup(layout
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                .addComponent(okbtn,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                145,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                .addGroup(layout.createSequentialGroup()
-                                                                                                                                .addComponent(jComboBoxselectcolumn,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                236,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                                .addGap(33, 33, 33)
-                                                                                                                                .addComponent(jTextField1,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                303,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                                                .addContainerGap(740,
-                                                                                                                Short.MAX_VALUE)))));
-                layout.setVerticalGroup(
-                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                                .addGap(32, 32, 32)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(jComboBoxselectcolumn,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                46,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(jTextField1,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                52,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(searchbylabel,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                52,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(33, 33, 33)
-                                                                .addComponent(okbtn,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                47,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(50, 50, 50)
-                                                                .addComponent(jScrollPane1,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE)
-                                                                .addComponent(dltbtn,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                47,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(24, 24, 24)));
-        }// </editor-fold>//GEN-END:initComponents
+        searchbylabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        searchbylabel.setText("Search By");
+
+        dltbtn.setBackground(new java.awt.Color(255, 255, 250));
+        dltbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        dltbtn.setText("Delete");
+        dltbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dltbtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
+        kGradientPanel1.setLayout(kGradientPanel1Layout);
+        kGradientPanel1Layout.setHorizontalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                .addContainerGap(129, Short.MAX_VALUE)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                        .addComponent(searchbylabel, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(208, 208, 208)
+                        .addComponent(jComboBoxselectcolumn, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(174, 174, 174)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(233, 233, 233)
+                        .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1661, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dltbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(132, 132, 132))
+        );
+        kGradientPanel1Layout.setVerticalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                .addContainerGap(128, Short.MAX_VALUE)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(searchbylabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxselectcolumn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(76, 76, 76))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                        .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(90, 90, 90)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(144, 144, 144)
+                .addComponent(dltbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(152, 152, 152))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
 
         private void okbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_okbtnActionPerformed
                 // TODO add your handling code here:
@@ -267,13 +245,14 @@ public class InprogressionViewPanel extends javax.swing.JPanel {
 
         }// GEN-LAST:event_dltbtnActionPerformed
 
-        // Variables declaration - do not modify//GEN-BEGIN:variables
-        private javax.swing.JButton dltbtn;
-        private javax.swing.JTable inProgressionTable;
-        private javax.swing.JComboBox<String> jComboBoxselectcolumn;
-        private javax.swing.JScrollPane jScrollPane1;
-        private javax.swing.JTextField jTextField1;
-        private javax.swing.JButton okbtn;
-        private javax.swing.JLabel searchbylabel;
-        // End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton dltbtn;
+    private javax.swing.JTable inProgressionTable;
+    private javax.swing.JComboBox<String> jComboBoxselectcolumn;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
+    private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JButton okbtn;
+    private javax.swing.JLabel searchbylabel;
+    // End of variables declaration//GEN-END:variables
 }

@@ -16,56 +16,54 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-        <Group type="102" alignment="0" attributes="0">
-          <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-          <Component id="searchbylabel" min="-2" pref="191" max="-2" attributes="0"/>
-          <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="0" attributes="0">
-            <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
-                <Component id="jScrollPane1" alignment="0" pref="600" max="32767" attributes="0"/>
-                <Component id="adminSelect" alignment="1" min="-2" pref="156" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="searchbylabel" min="-2" pref="191" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jComboBoxselectcolumn" min="-2" pref="236" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="jTextField1" min="-2" pref="303" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="okbtn" min="-2" pref="145" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jScrollPane1" min="-2" pref="1010" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="712" max="-2" attributes="0"/>
-            </Group>
-            <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                <Component id="okbtn" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
-                <Group type="102" alignment="0" attributes="0">
-                  <Component id="jComboBoxselectcolumn" min="-2" pref="236" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" pref="303" max="-2" attributes="0"/>
-                </Group>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-            </Group>
+              <EmptySpace pref="135" max="32767" attributes="0"/>
           </Group>
-        </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="adminSelect" min="-2" pref="156" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="542" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-        <Group type="102" alignment="0" attributes="0">
-          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="jComboBoxselectcolumn" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
-            <Component id="jTextField1" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-            <Component id="searchbylabel" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="okbtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                  <Component id="jTextField1" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                  <Component id="jComboBoxselectcolumn" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="searchbylabel" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="adminSelect" min="-2" pref="52" max="-2" attributes="0"/>
+              <EmptySpace pref="61" max="32767" attributes="0"/>
           </Group>
-          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-          <Component id="okbtn" min="-2" pref="47" max="-2" attributes="0"/>
-          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-          <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-          <EmptySpace max="-2" attributes="0"/>
-          <Component id="adminSelect" min="-2" pref="52" max="-2" attributes="0"/>
-          <EmptySpace pref="19" max="32767" attributes="0"/>
-        </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JComboBox" name="jComboBoxselectcolumn">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="0"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
             <StringItem index="0" value="Item 1"/>
@@ -80,6 +78,11 @@
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="1"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="okbtn">
       <Properties>
@@ -87,7 +90,7 @@
           <Color blue="99" green="ff" red="99" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="18" style="1"/>
+          <Font name="Tahoma" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="OK"/>
       </Properties>
@@ -123,7 +126,7 @@
     <Component class="javax.swing.JLabel" name="searchbylabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="18" style="1"/>
+          <Font name="Tahoma" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Search By"/>
       </Properties>
@@ -134,7 +137,7 @@
           <Color blue="99" green="ff" red="99" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="18" style="1"/>
+          <Font name="Tahoma" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Select"/>
       </Properties>
