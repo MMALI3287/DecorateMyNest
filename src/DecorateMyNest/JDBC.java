@@ -385,16 +385,19 @@ public class JDBC {
             Welcome.jdbc.preparedStatement.setInt(1, id);
 
             Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
-
             if (Welcome.jdbc.resultSet.next()) {
                 ResultSetMetaData metaData = Welcome.jdbc.resultSet.getMetaData();
                 int columnCount = metaData.getColumnCount();
 
                 data = new Object[columnCount];
-
+                
                 for (int i = 1; i <= columnCount; i++) {
                     data[i - 1] = Welcome.jdbc.resultSet.getObject(i);
                 }
+                for (int i = 0; i < columnCount - 1; i++) {
+                data[i] = data[i + 1];
+            }
+            data[columnCount - 1] = null;
             }
         } catch (SQLException ex) {
             System.out.println(ex);

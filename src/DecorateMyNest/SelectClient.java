@@ -97,6 +97,8 @@ public class SelectClient extends javax.swing.JPanel {
             }
         });
 
+        clienttable.setBackground(new java.awt.Color(204, 204, 255));
+        clienttable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         clienttable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         clienttable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -114,6 +116,8 @@ public class SelectClient extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        clienttable.setRowHeight(30);
+        clienttable.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(clienttable);
 
         searchbylabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N

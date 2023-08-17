@@ -100,6 +100,8 @@ public class SelectCatalogue extends javax.swing.JPanel {
             }
         });
 
+        catalogueTable.setBackground(new java.awt.Color(204, 204, 255));
+        catalogueTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         catalogueTable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         catalogueTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -117,6 +119,8 @@ public class SelectCatalogue extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        catalogueTable.setRowHeight(30);
+        catalogueTable.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(catalogueTable);
 
         searchbylabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N

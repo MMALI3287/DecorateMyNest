@@ -96,6 +96,8 @@ public class SalaryTransViewPanel extends javax.swing.JPanel {
             }
         });
 
+        salaryTransactionTable.setBackground(new java.awt.Color(204, 255, 255));
+        salaryTransactionTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         salaryTransactionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -112,6 +114,8 @@ public class SalaryTransViewPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        salaryTransactionTable.setRowHeight(30);
+        salaryTransactionTable.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(salaryTransactionTable);
 
         dltbtn.setBackground(new java.awt.Color(153, 255, 153));

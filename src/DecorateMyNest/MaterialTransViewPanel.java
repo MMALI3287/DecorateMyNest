@@ -97,6 +97,8 @@ public class MaterialTransViewPanel extends javax.swing.JPanel {
             }
         });
 
+        materialTransactionTable.setBackground(new java.awt.Color(204, 255, 255));
+        materialTransactionTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         materialTransactionTable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         materialTransactionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -114,6 +116,8 @@ public class MaterialTransViewPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        materialTransactionTable.setRowHeight(30);
+        materialTransactionTable.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(materialTransactionTable);
 
         dltbtn.setBackground(new java.awt.Color(255, 255, 250));

@@ -126,7 +126,8 @@ public class AdminViewPanel extends javax.swing.JPanel {
             }
         });
 
-        adminTable.setBorder(new javax.swing.border.MatteBorder(null));
+        adminTable.setBackground(new java.awt.Color(204, 255, 255));
+        adminTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         adminTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -146,6 +147,8 @@ public class AdminViewPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        adminTable.setRowHeight(30);
+        adminTable.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(adminTable);
 
         searchbylabel.setBackground(new java.awt.Color(242, 248, 255));

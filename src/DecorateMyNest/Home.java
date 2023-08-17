@@ -40,6 +40,7 @@ public class Home extends JFrame {
         JMenu AdminMenu = new JMenu("Admins");
         AdminMenu.setFont(menuFont);
         JMenuItem AdminView = new JMenuItem("View");
+        AdminMenu.add(AdminView);
         AdminView.setFont(menuFont);
         AdminView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,6 +56,8 @@ public class Home extends JFrame {
         ClientMenu.setFont(menuFont);
         ClientMenu.add(ClientEntry);
         ClientMenu.add(ClientView);
+        ClientEntry.setFont(menuFont);
+        ClientView.setFont(menuFont);
         ClientEntry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setpane(new ClientEditPanel());
@@ -74,6 +77,8 @@ public class Home extends JFrame {
         AppointmentsMenu.setFont(menuFont);
         AppointmentsMenu.add(AppointmentsEntry);
         AppointmentsMenu.add(AppointmentsView);
+        AppointmentsEntry.setFont(menuFont);
+        AppointmentsView.setFont(menuFont);
         AppointmentsEntry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setpane(new AppointmentsEditPanel());
@@ -93,6 +98,8 @@ public class Home extends JFrame {
         CatalogueMenu.setFont(menuFont);
         CatalogueMenu.add(CatalogueEntry);
         CatalogueMenu.add(CatalogueView);
+        CatalogueEntry.setFont(menuFont);
+        CatalogueView.setFont(menuFont);
         CatalogueEntry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setpane(new CatalogueEditPanel());
@@ -112,6 +119,8 @@ public class Home extends JFrame {
         EmployeeRosterMenu.setFont(menuFont);
         EmployeeRosterMenu.add(EmployeeRosterEntry);
         EmployeeRosterMenu.add(EmployeeRosterView);
+        EmployeeRosterEntry.setFont(menuFont);
+        EmployeeRosterView.setFont(menuFont);
         EmployeeRosterEntry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setpane(new EmployeeRosterEditPanel());
@@ -128,6 +137,8 @@ public class Home extends JFrame {
         JMenuItem FinancialTransactionView = new javax.swing.JMenuItem("View");
         FinancialTransactionMenu.setFont(menuFont);
         FinancialTransactionMenu.add(FinancialTransactionView);
+        FinancialTransactionView.setFont(menuFont);
+        
         FinancialTransactionView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setpane(new FinancialTransactionViewPanel());
@@ -142,6 +153,8 @@ public class Home extends JFrame {
         InprogressionMenu.setFont(menuFont);
         InprogressionMenu.add(InprogressionEntry);
         InprogressionMenu.add(InprogressionView);
+        InprogressionEntry.setFont(menuFont);
+        InprogressionView.setFont(menuFont);
         InprogressionEntry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setpane(new InprogressionEditPanel());
@@ -159,6 +172,8 @@ public class Home extends JFrame {
         InstallmentTransMenu.setFont(menuFont);
         JMenuItem InstallmentTransEntry = new javax.swing.JMenuItem("Entry");
         InstallmentTransMenu.setFont(menuFont);
+        InstallmentTransEntry.setFont(menuFont);
+        InstallmentTransView.setFont(menuFont);
         InstallmentTransMenu.add(InstallmentTransEntry);
         InstallmentTransMenu.add(InstallmentTransView);
         InstallmentTransEntry.addActionListener(new java.awt.event.ActionListener() {
@@ -180,6 +195,8 @@ public class Home extends JFrame {
          MaterialInventoryMenu.setFont(menuFont);
         MaterialInventoryMenu.add(MaterialInventoryEntry);
         MaterialInventoryMenu.add(MaterialInventoryView);
+        MaterialInventoryEntry.setFont(menuFont);
+        MaterialInventoryView.setFont(menuFont);
         MaterialInventoryEntry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setpane(new MaterialInventoryEditPanel());
@@ -199,6 +216,8 @@ public class Home extends JFrame {
         MaterialTransMenu.setFont(menuFont);
         MaterialTransMenu.add(MaterialTransEntry);
         MaterialTransMenu.add(MaterialTransView);
+        MaterialTransEntry.setFont(menuFont);
+        MaterialTransView.setFont(menuFont);
         MaterialTransEntry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setpane(new MaterialTransEditPanel());
@@ -218,6 +237,8 @@ public class Home extends JFrame {
         ProjectArchiveMenu.setFont(menuFont);
         ProjectArchiveMenu.add(ProjectArchiveEntry);
         ProjectArchiveMenu.add(ProjectArchiveView);
+        ProjectArchiveEntry.setFont(menuFont);
+        ProjectArchiveView.setFont(menuFont);
         ProjectArchiveEntry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setpane(new ProjectArchiveEditPanel());
@@ -237,6 +258,8 @@ public class Home extends JFrame {
         ReservationMenu.setFont(menuFont);
         ReservationMenu.add(ReservationEntry);
         ReservationMenu.add(ReservationView);
+        ReservationEntry.setFont(menuFont);
+        ReservationView.setFont(menuFont);
         ReservationEntry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setpane(new ReservationEditPanel());
@@ -256,6 +279,8 @@ public class Home extends JFrame {
         ReservationTransMenu.setFont(menuFont);
         ReservationTransMenu.add(ReservationTransEntry);
         ReservationTransMenu.add(ReservationTransView);
+        ReservationTransEntry.setFont(menuFont);
+        ReservationTransView.setFont(menuFont);
         ReservationTransEntry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setpane(new ReservationTransEditPanel());
@@ -275,6 +300,8 @@ public class Home extends JFrame {
         SalaryTransMenu.setFont(menuFont);
         SalaryTransMenu.add(SalaryTransEntry);
         SalaryTransMenu.add(SalaryTransView);
+        SalaryTransEntry.setFont(menuFont);
+        SalaryTransView.setFont(menuFont);
         SalaryTransEntry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setpane(new SalaryTransEditPanel());
@@ -294,6 +321,8 @@ public class Home extends JFrame {
         VendorsMenu.setFont(menuFont);
         VendorsMenu.add(VendorsEntry);
         VendorsMenu.add(VendorsView);
+        VendorsEntry.setFont(menuFont);
+        VendorsView.setFont(menuFont);
         VendorsEntry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setpane(new VendorsEditPanel());
@@ -311,16 +340,16 @@ public class Home extends JFrame {
         MainMenu.add(AppointmentsMenu);
         MainMenu.add(CatalogueMenu);
         MainMenu.add(EmployeeRosterMenu);
-        MainMenu.add(FinancialTransactionMenu);
         MainMenu.add(InprogressionMenu);
-        MainMenu.add(InstallmentTransMenu);
         MainMenu.add(MaterialInventoryMenu);
-        MainMenu.add(MaterialTransMenu);
-        MainMenu.add(ProjectArchiveMenu);
         MainMenu.add(ReservationMenu);
+        MainMenu.add(VendorsMenu);
+        MainMenu.add(ProjectArchiveMenu);
+        MainMenu.add(FinancialTransactionMenu);
+        MainMenu.add(InstallmentTransMenu);
         MainMenu.add(ReservationTransMenu);
         MainMenu.add(SalaryTransMenu);
-        MainMenu.add(VendorsMenu);
+        MainMenu.add(MaterialTransMenu);
         
         MainMenu.setFont(menuFont);
 

@@ -99,6 +99,8 @@ public class ReservationTransViewPanel extends javax.swing.JPanel {
             }
         });
 
+        reservationTransactionTable.setBackground(new java.awt.Color(204, 255, 255));
+        reservationTransactionTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         reservationTransactionTable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         reservationTransactionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -116,6 +118,8 @@ public class ReservationTransViewPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        reservationTransactionTable.setRowHeight(30);
+        reservationTransactionTable.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(reservationTransactionTable);
 
         dltbtn.setBackground(new java.awt.Color(255, 255, 250));

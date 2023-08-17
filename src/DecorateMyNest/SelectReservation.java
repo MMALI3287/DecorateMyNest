@@ -98,6 +98,8 @@ public class SelectReservation extends javax.swing.JPanel {
             }
         });
 
+        reservationTable.setBackground(new java.awt.Color(204, 204, 255));
+        reservationTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         reservationTable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         reservationTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -115,6 +117,8 @@ public class SelectReservation extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        reservationTable.setRowHeight(30);
+        reservationTable.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(reservationTable);
 
         searchbylabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N

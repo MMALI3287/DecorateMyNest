@@ -100,6 +100,8 @@ public class SelectVendor extends javax.swing.JPanel {
             }
         });
 
+        vendorsTable.setBackground(new java.awt.Color(204, 204, 255));
+        vendorsTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         vendorsTable.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         vendorsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -118,6 +120,8 @@ public class SelectVendor extends javax.swing.JPanel {
             }
         });
         vendorsTable.setPreferredSize(new java.awt.Dimension(500, 300));
+        vendorsTable.setRowHeight(30);
+        vendorsTable.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(vendorsTable);
 
         searchbylabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N

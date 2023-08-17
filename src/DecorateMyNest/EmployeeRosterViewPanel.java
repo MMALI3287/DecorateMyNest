@@ -103,6 +103,8 @@ public class EmployeeRosterViewPanel extends javax.swing.JPanel {
             }
         });
 
+        employeeRosterTable.setBackground(new java.awt.Color(204, 255, 255));
+        employeeRosterTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         employeeRosterTable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         employeeRosterTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -120,6 +122,8 @@ public class EmployeeRosterViewPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        employeeRosterTable.setRowHeight(30);
+        employeeRosterTable.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(employeeRosterTable);
 
         searchbylabel.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N

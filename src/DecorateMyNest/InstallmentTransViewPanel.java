@@ -101,6 +101,8 @@ public class InstallmentTransViewPanel extends javax.swing.JPanel {
             }
         });
 
+        installmentTransactionTable.setBackground(new java.awt.Color(204, 255, 255));
+        installmentTransactionTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         installmentTransactionTable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         installmentTransactionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -118,6 +120,8 @@ public class InstallmentTransViewPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        installmentTransactionTable.setRowHeight(30);
+        installmentTransactionTable.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(installmentTransactionTable);
 
         dltbtn.setBackground(new java.awt.Color(255, 255, 250));

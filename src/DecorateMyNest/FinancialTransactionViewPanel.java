@@ -108,6 +108,8 @@ public class FinancialTransactionViewPanel extends javax.swing.JPanel {
             }
         });
 
+        financialTransactionTable.setBackground(new java.awt.Color(204, 255, 255));
+        financialTransactionTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         financialTransactionTable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         financialTransactionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -125,6 +127,8 @@ public class FinancialTransactionViewPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        financialTransactionTable.setRowHeight(30);
+        financialTransactionTable.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(financialTransactionTable);
 
         dltbtn.setBackground(new java.awt.Color(255, 255, 250));

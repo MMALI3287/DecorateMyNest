@@ -97,6 +97,8 @@ public class SelectMaterial extends javax.swing.JPanel {
             }
         });
 
+        materialInventoryTable.setBackground(new java.awt.Color(204, 204, 255));
+        materialInventoryTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         materialInventoryTable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         materialInventoryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -114,6 +116,8 @@ public class SelectMaterial extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        materialInventoryTable.setRowHeight(30);
+        materialInventoryTable.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(materialInventoryTable);
 
         searchbylabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N

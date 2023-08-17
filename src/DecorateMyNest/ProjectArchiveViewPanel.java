@@ -98,6 +98,8 @@ public class ProjectArchiveViewPanel extends javax.swing.JPanel {
             }
         });
 
+        projectArchiveTable.setBackground(new java.awt.Color(204, 255, 255));
+        projectArchiveTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         projectArchiveTable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         projectArchiveTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -115,6 +117,9 @@ public class ProjectArchiveViewPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        projectArchiveTable.setRowHeight(30);
+        projectArchiveTable.setShowGrid(false);
+        projectArchiveTable.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(projectArchiveTable);
 
         searchbylabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N

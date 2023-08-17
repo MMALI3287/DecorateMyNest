@@ -99,6 +99,8 @@ public class InprogressionViewPanel extends javax.swing.JPanel {
             }
         });
 
+        inProgressionTable.setBackground(new java.awt.Color(204, 255, 255));
+        inProgressionTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         inProgressionTable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         inProgressionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -116,6 +118,8 @@ public class InprogressionViewPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        inProgressionTable.setRowHeight(30);
+        inProgressionTable.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(inProgressionTable);
 
         searchbylabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
