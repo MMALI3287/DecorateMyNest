@@ -42,10 +42,10 @@
     <Container class="keeptoo.KGradientPanel" name="kGradientPanel1">
       <Properties>
         <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="99" red="cc" type="rgb"/>
+          <Color blue="66" green="cc" red="ff" type="rgb"/>
         </Property>
         <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="33" green="ff" red="ff" type="rgb"/>
+          <Color blue="66" green="ff" red="ff" type="rgb"/>
         </Property>
       </Properties>
 
@@ -53,7 +53,14 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel5" min="-2" pref="43" max="-2" attributes="0"/>
+                      <Component id="jLabel6" min="-2" pref="43" max="-2" attributes="0"/>
+                      <Component id="jLabel7" min="-2" pref="43" max="-2" attributes="0"/>
+                      <Component id="jLabel8" min="-2" pref="43" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="fnamelabel1" min="-2" pref="122" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
@@ -81,59 +88,62 @@
                                   <Component id="sYear" min="-2" pref="103" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
+                                  <Component id="adminID" min="-2" pref="441" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="selectAdmin" min="-2" pref="106" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="Date" min="-2" pref="103" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="Month" min="-2" pref="103" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="Year" min="-2" pref="103" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="adminID" min="-2" pref="441" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="selectAdmin" min="-2" pref="106" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="updatebtn1" min="-2" pref="122" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="Year" min="-2" pref="103" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="clearbtn" min="-2" pref="123" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
+                      <Component id="insertbtn" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="insertbtn" min="-2" pref="115" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                          <Component id="updatebtn" min="-2" pref="122" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="clearbtn" min="-2" pref="123" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
+                          <Component id="select_table" min="-2" pref="241" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="1018" max="32767" attributes="0"/>
+                  <EmptySpace pref="978" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="fnamelabel1" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="adminID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="selectAdmin" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="fnamelabel1" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="adminID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="selectAdmin" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jLabel5" min="-2" pref="57" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="fnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="reservationID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="selectReservation" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="fnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="reservationID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="selectReservation" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jLabel8" min="-2" pref="57" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="sDate" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
@@ -143,6 +153,17 @@
                               <Component id="sYear" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel7" min="-2" pref="57" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                                  <Component id="sDate" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -158,14 +179,16 @@
                           <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="Year" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jLabel6" min="-2" pref="57" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="254" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="insertbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="updatebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="select_table" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="updatebtn1" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                       <Component id="clearbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="277" max="32767" attributes="0"/>
+                  <EmptySpace pref="233" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -174,7 +197,7 @@
         <Component class="javax.swing.JLabel" name="fnamelabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="18" style="1"/>
+              <Font name="Tahoma" size="22" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Reservation ID"/>
           </Properties>
@@ -194,7 +217,7 @@
         <Component class="javax.swing.JLabel" name="lnamelabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="18" style="1"/>
+              <Font name="Tahoma" size="22" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Start Date"/>
           </Properties>
@@ -214,7 +237,7 @@
         <Component class="javax.swing.JLabel" name="emaillabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="18" style="1"/>
+              <Font name="Tahoma" size="22" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="End Date"/>
           </Properties>
@@ -238,7 +261,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insertbtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="updatebtn">
+        <Component class="javax.swing.JButton" name="select_table">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f2" green="f9" red="ff" type="rgb"/>
@@ -246,7 +269,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Update"/>
+            <Property name="text" type="java.lang.String" value="Select Inprogression"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="3"/>
@@ -383,7 +406,7 @@
         <Component class="javax.swing.JLabel" name="fnamelabel1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="18" style="1"/>
+              <Font name="Tahoma" size="22" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Admin ID"/>
           </Properties>
@@ -425,6 +448,50 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectReservationActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="updatebtn1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="f2" green="f9" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Update"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder thickness="3"/>
+              </Border>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="D:\admin.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="D:\end date.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="D:\start date.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="D:\booking.png"/>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

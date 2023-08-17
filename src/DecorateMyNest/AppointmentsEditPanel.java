@@ -58,22 +58,25 @@ public class AppointmentsEditPanel extends javax.swing.JPanel {
         jRadioButton2 = new javax.swing.JRadioButton();
         selectClient = new javax.swing.JButton();
         selectEmployee = new javax.swing.JButton();
+        select_table = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(204, 153, 0));
-        kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 51));
+        kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 102));
+        kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 102));
 
         fnamelabel.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         fnamelabel.setText("Client ID");
 
         clientID.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        clientID.setForeground(new java.awt.Color(255, 255, 255));
         clientID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lnamelabel.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         lnamelabel.setText("Employee ID");
 
         employeeID.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        employeeID.setForeground(new java.awt.Color(255, 255, 255));
         employeeID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         phonelabel.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
@@ -125,11 +128,9 @@ public class AppointmentsEditPanel extends javax.swing.JPanel {
         jLabel4.setText("/");
 
         Year.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Year.setForeground(new java.awt.Color(255, 255, 255));
         Year.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         Date.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Date.setForeground(new java.awt.Color(255, 255, 255));
         Date.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Date.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,11 +139,9 @@ public class AppointmentsEditPanel extends javax.swing.JPanel {
         });
 
         Month.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Month.setForeground(new java.awt.Color(255, 255, 255));
         Month.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         Hour.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Hour.setForeground(new java.awt.Color(255, 255, 255));
         Hour.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Hour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,7 +153,6 @@ public class AppointmentsEditPanel extends javax.swing.JPanel {
         jLabel5.setText(":");
 
         Minute.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Minute.setForeground(new java.awt.Color(255, 255, 255));
         Minute.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         buttonGroup1.add(jRadioButton1);
@@ -195,19 +193,45 @@ public class AppointmentsEditPanel extends javax.swing.JPanel {
             }
         });
 
+        select_table.setBackground(new java.awt.Color(255, 249, 242));
+        select_table.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        select_table.setText("Select Appoinment");
+        select_table.setAlignmentY(9.0F);
+        select_table.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        select_table.setIconTextGap(6);
+        select_table.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select_tableActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\teamwork.png")); // NOI18N
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\clock.png")); // NOI18N
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\customer.png")); // NOI18N
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\calendar.png")); // NOI18N
+
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(89, 89, 89)
+                .addGap(130, 130, 130)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(fnamelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lnamelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(emaillabel, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))
+                                .addComponent(emaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(phonelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(29, 29, 29)
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -233,32 +257,25 @@ public class AppointmentsEditPanel extends javax.swing.JPanel {
                                     .addGap(18, 18, 18)
                                     .addComponent(jLabel3)
                                     .addGap(18, 18, 18)
-                                    .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(selectClient, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(selectEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
                         .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
+                        .addGap(61, 61, 61)
+                        .addComponent(select_table, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(212, 212, 212)
                         .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1044, Short.MAX_VALUE))
+                .addContainerGap(913, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(189, 189, 189)
+                .addGap(190, 190, 190)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(emaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(phonelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(clientID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -282,13 +299,30 @@ public class AppointmentsEditPanel extends javax.swing.JPanel {
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                 .addComponent(jRadioButton1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton2)))))
+                                .addComponent(jRadioButton2))))
+                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(fnamelabel, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(34, 34, 34)
+                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(34, 34, 34)
+                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(emaillabel, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
+                        .addGap(38, 38, 38)
+                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(phonelabel, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(158, 158, 158)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(318, Short.MAX_VALUE))
+                    .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(select_table, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(304, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -328,6 +362,10 @@ public class AppointmentsEditPanel extends javax.swing.JPanel {
         employeeID.setText(Welcome.jdbc.employeeRosterID+"");
         Welcome.jdbc.employeeRosterID=-1;
     }//GEN-LAST:event_selectEmployeeActionPerformed
+
+    private void select_tableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_tableActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_select_tableActionPerformed
 
         private void clearbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_clearbtnActionPerformed
                 // TODO add your handling code here:
@@ -415,9 +453,13 @@ public class AppointmentsEditPanel extends javax.swing.JPanel {
     private javax.swing.JTextField employeeID;
     private javax.swing.JLabel fnamelabel;
     private javax.swing.JButton insertbtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private keeptoo.KGradientPanel kGradientPanel1;
@@ -425,6 +467,7 @@ public class AppointmentsEditPanel extends javax.swing.JPanel {
     private javax.swing.JLabel phonelabel;
     private javax.swing.JButton selectClient;
     private javax.swing.JButton selectEmployee;
+    private javax.swing.JButton select_table;
     private javax.swing.JButton updatebtn;
     // End of variables declaration//GEN-END:variables
 }

@@ -83,8 +83,11 @@ public class SelectAdmin extends javax.swing.JPanel {
         searchbylabel = new javax.swing.JLabel();
         adminSelect = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jComboBoxselectcolumn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jComboBoxselectcolumn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxselectcolumn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 153)));
         jComboBoxselectcolumn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxselectcolumnActionPerformed(evt);
@@ -92,21 +95,25 @@ public class SelectAdmin extends javax.swing.JPanel {
         });
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 153)));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
 
-        okbtn.setBackground(new java.awt.Color(153, 255, 153));
+        okbtn.setBackground(new java.awt.Color(102, 0, 204));
         okbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        okbtn.setForeground(new java.awt.Color(255, 255, 255));
         okbtn.setText("OK");
+        okbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 153)));
         okbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 okbtnActionPerformed(evt);
             }
         });
 
+        adminTable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         adminTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -128,12 +135,14 @@ public class SelectAdmin extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(adminTable);
 
-        searchbylabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        searchbylabel.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         searchbylabel.setText("Search By");
 
-        adminSelect.setBackground(new java.awt.Color(153, 255, 153));
+        adminSelect.setBackground(new java.awt.Color(102, 0, 204));
         adminSelect.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        adminSelect.setForeground(new java.awt.Color(255, 255, 255));
         adminSelect.setText("Select");
+        adminSelect.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 153)));
         adminSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminSelectActionPerformed(evt);
@@ -175,7 +184,7 @@ public class SelectAdmin extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(adminSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

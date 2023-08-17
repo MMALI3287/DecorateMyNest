@@ -30,7 +30,9 @@ public class Welcome extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -44,31 +46,31 @@ public class Welcome extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(1910, 1000));
         jPanel1.setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 153));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(212, 224, 43));
+        jButton1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 28)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(102, 0, 51));
         jButton1.setText("Get Started");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(1735, 950, 150, 32);
+        jButton1.setBounds(860, 590, 190, 60);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/welcome.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\BCBL\\Pictures\\re.png")); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 1910, 1000);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1910, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1910, Short.MAX_VALUE));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

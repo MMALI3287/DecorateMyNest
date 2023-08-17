@@ -43,7 +43,7 @@ public class InprogressionEditPanel extends javax.swing.JPanel {
         sMonth = new javax.swing.JTextField();
         emaillabel = new javax.swing.JLabel();
         insertbtn = new javax.swing.JButton();
-        updatebtn = new javax.swing.JButton();
+        select_table = new javax.swing.JButton();
         clearbtn = new javax.swing.JButton();
         sDate = new javax.swing.JTextField();
         sYear = new javax.swing.JTextField();
@@ -58,25 +58,30 @@ public class InprogressionEditPanel extends javax.swing.JPanel {
         fnamelabel1 = new javax.swing.JLabel();
         selectAdmin = new javax.swing.JButton();
         selectReservation = new javax.swing.JButton();
+        updatebtn1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setFont(new java.awt.Font("Segoe UI", 0, 120)); // NOI18N
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(204, 153, 0));
-        kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 51));
+        kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 102));
+        kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 102));
 
-        fnamelabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        fnamelabel.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         fnamelabel.setText("Reservation ID");
 
         reservationID.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         reservationID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lnamelabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lnamelabel.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         lnamelabel.setText("Start Date");
 
         sMonth.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         sMonth.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        emaillabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        emaillabel.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         emaillabel.setText("End Date");
 
         insertbtn.setBackground(new java.awt.Color(255, 249, 242));
@@ -89,10 +94,10 @@ public class InprogressionEditPanel extends javax.swing.JPanel {
             }
         });
 
-        updatebtn.setBackground(new java.awt.Color(255, 249, 242));
-        updatebtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        updatebtn.setText("Update");
-        updatebtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        select_table.setBackground(new java.awt.Color(255, 249, 242));
+        select_table.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        select_table.setText("Select Inprogression");
+        select_table.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         clearbtn.setBackground(new java.awt.Color(255, 249, 242));
         clearbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -139,7 +144,7 @@ public class InprogressionEditPanel extends javax.swing.JPanel {
         adminID.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         adminID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        fnamelabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        fnamelabel1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         fnamelabel1.setText("Admin ID");
 
         selectAdmin.setBackground(new java.awt.Color(255, 249, 242));
@@ -162,12 +167,31 @@ public class InprogressionEditPanel extends javax.swing.JPanel {
             }
         });
 
+        updatebtn1.setBackground(new java.awt.Color(255, 249, 242));
+        updatebtn1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        updatebtn1.setText("Update");
+        updatebtn1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("D:\\admin.png")); // NOI18N
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\end date.png")); // NOI18N
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\start date.png")); // NOI18N
+
+        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\booking.png")); // NOI18N
+
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(156, 156, 156)
+                .addGap(130, 130, 130)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(fnamelabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
@@ -192,47 +216,48 @@ public class InprogressionEditPanel extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(sYear, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                                .addComponent(adminID, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(selectAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                 .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel4)
                                 .addGap(18, 18, 18)
                                 .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                .addComponent(adminID, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(selectAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(updatebtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(40, 40, 40)
+                                .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1018, Short.MAX_VALUE))
+                        .addGap(164, 164, 164)
+                        .addComponent(select_table, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(978, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(152, 152, 152)
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fnamelabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adminID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(selectAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(reservationID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(selectReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(190, 190, 190)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sDate, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24))
+                    .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(fnamelabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(selectAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(fnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(reservationID, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(selectReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -240,7 +265,15 @@ public class InprogressionEditPanel extends javax.swing.JPanel {
                             .addComponent(jLabel2)
                             .addComponent(jLabel1)
                             .addComponent(sYear, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(21, 21, 21)))
+                        .addGap(21, 21, 21))
+                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(sDate, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(24, 24, 24)))
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(emaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,13 +284,15 @@ public class InprogressionEditPanel extends javax.swing.JPanel {
                         .addComponent(Month, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(Year, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Year, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(254, 254, 254)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(select_table, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updatebtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(277, Short.MAX_VALUE))
+                .addContainerGap(233, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -359,6 +394,10 @@ public class InprogressionEditPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel lnamelabel;
     private javax.swing.JTextField reservationID;
@@ -367,6 +406,7 @@ public class InprogressionEditPanel extends javax.swing.JPanel {
     private javax.swing.JTextField sYear;
     private javax.swing.JButton selectAdmin;
     private javax.swing.JButton selectReservation;
-    private javax.swing.JButton updatebtn;
+    private javax.swing.JButton select_table;
+    private javax.swing.JButton updatebtn1;
     // End of variables declaration//GEN-END:variables
 }

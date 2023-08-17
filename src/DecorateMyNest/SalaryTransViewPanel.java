@@ -76,6 +76,9 @@ public class SalaryTransViewPanel extends javax.swing.JPanel {
         salaryTransactionTable = new javax.swing.JTable();
         dltbtn = new javax.swing.JButton();
 
+        kGradientPanel1.setkEndColor(new java.awt.Color(0, 204, 204));
+        kGradientPanel1.setkStartColor(new java.awt.Color(153, 255, 255));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Search By");
 

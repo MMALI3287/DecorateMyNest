@@ -81,11 +81,14 @@ public class SelectTransaction extends javax.swing.JPanel {
         financialTransactionTable = new javax.swing.JTable();
         adminSelect = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Search By");
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 51)));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -93,10 +96,13 @@ public class SelectTransaction extends javax.swing.JPanel {
         });
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 51)));
 
-        jButton1.setBackground(new java.awt.Color(153, 255, 153));
+        jButton1.setBackground(new java.awt.Color(102, 0, 102));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("OK");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 51)));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -122,9 +128,11 @@ public class SelectTransaction extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(financialTransactionTable);
 
-        adminSelect.setBackground(new java.awt.Color(153, 255, 153));
+        adminSelect.setBackground(new java.awt.Color(102, 0, 102));
         adminSelect.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        adminSelect.setForeground(new java.awt.Color(255, 255, 255));
         adminSelect.setText("Select");
+        adminSelect.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 51)));
         adminSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminSelectActionPerformed(evt);

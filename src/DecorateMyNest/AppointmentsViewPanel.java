@@ -68,6 +68,7 @@ public class AppointmentsViewPanel extends javax.swing.JPanel {
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
+        
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -90,16 +91,21 @@ public class AppointmentsViewPanel extends javax.swing.JPanel {
 
         jTextField1.setBackground(new java.awt.Color(255, 255, 250));
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         okbtn.setBackground(new java.awt.Color(255, 255, 250));
         okbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         okbtn.setText("OK");
+        okbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         okbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 okbtnActionPerformed(evt);
             }
         });
 
+        appointmentsTable.setBackground(new java.awt.Color(204, 255, 255));
+        appointmentsTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        appointmentsTable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         appointmentsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -116,6 +122,12 @@ public class AppointmentsViewPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        appointmentsTable.setAlignmentX(4.0F);
+        appointmentsTable.setAlignmentY(4.0F);
+        appointmentsTable.setRowHeight(30);
+        appointmentsTable.setRowMargin(2);
+        appointmentsTable.setShowGrid(false);
+        appointmentsTable.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(appointmentsTable);
 
         searchbylabel.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N

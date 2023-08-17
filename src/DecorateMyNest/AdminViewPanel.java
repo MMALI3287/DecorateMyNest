@@ -109,7 +109,7 @@ public class AdminViewPanel extends javax.swing.JPanel {
 
         jTextField1.setBackground(new java.awt.Color(242, 248, 255));
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jTextField1.setBorder(null);
+        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -119,7 +119,7 @@ public class AdminViewPanel extends javax.swing.JPanel {
         okbtn.setBackground(new java.awt.Color(242, 248, 255));
         okbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         okbtn.setText("OK");
-        okbtn.setBorder(null);
+        okbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         okbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 okbtnActionPerformed(evt);

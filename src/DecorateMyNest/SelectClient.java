@@ -77,20 +77,27 @@ public class SelectClient extends javax.swing.JPanel {
         searchbylabel = new javax.swing.JLabel();
         adminSelect = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jComboBoxselectcolumn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jComboBoxselectcolumn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxselectcolumn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102)));
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102)));
 
-        okbtn.setBackground(new java.awt.Color(153, 255, 153));
+        okbtn.setBackground(new java.awt.Color(102, 0, 153));
         okbtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        okbtn.setForeground(new java.awt.Color(255, 255, 255));
         okbtn.setText("OK");
+        okbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102)));
         okbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 okbtnActionPerformed(evt);
             }
         });
 
+        clienttable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         clienttable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -112,9 +119,11 @@ public class SelectClient extends javax.swing.JPanel {
         searchbylabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         searchbylabel.setText("Search By");
 
-        adminSelect.setBackground(new java.awt.Color(153, 255, 153));
+        adminSelect.setBackground(new java.awt.Color(102, 0, 153));
         adminSelect.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        adminSelect.setForeground(new java.awt.Color(255, 255, 255));
         adminSelect.setText("Select");
+        adminSelect.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102)));
         adminSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminSelectActionPerformed(evt);

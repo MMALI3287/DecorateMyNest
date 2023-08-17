@@ -35,18 +35,24 @@
     <Container class="keeptoo.KGradientPanel" name="kGradientPanel1">
       <Properties>
         <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="99" red="cc" type="rgb"/>
+          <Color blue="66" green="cc" red="ff" type="rgb"/>
         </Property>
         <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="33" green="ff" red="ff" type="rgb"/>
+          <Color blue="66" green="ff" red="ff" type="rgb"/>
         </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel6" min="-2" pref="46" max="-2" attributes="0"/>
+                      <Component id="jLabel7" min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="jLabel8" min="-2" pref="46" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -79,15 +85,21 @@
                               </Group>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="insertbtn" min="-2" pref="115" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="insertbtn" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
+                                  <Component id="select_table" min="-2" pref="300" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                           <Component id="updatebtn" min="-2" pref="122" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                           <Component id="clearbtn" min="-2" pref="123" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="980" max="32767" attributes="0"/>
+                  <EmptySpace pref="911" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -95,16 +107,22 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="fnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="clientID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="selectClient" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="fnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="clientID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="selectClient" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jLabel8" min="-2" pref="42" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="catalogueID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="selectCatalogue" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel6" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lnamelabel" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="catalogueID" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="selectCatalogue" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -114,12 +132,14 @@
                       <Component id="Year" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
                       <Component id="Date" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel7" min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="insertbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                       <Component id="updatebtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                       <Component id="clearbtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="select_table" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="481" max="32767" attributes="0"/>
               </Group>
@@ -321,6 +341,43 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectCatalogueActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="select_table">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="f2" green="f9" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Select Reservation"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder thickness="3"/>
+              </Border>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="D:\catalogue.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="D:\calendar.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="D:\customer.png"/>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
