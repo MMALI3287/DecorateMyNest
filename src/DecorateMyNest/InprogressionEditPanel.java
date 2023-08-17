@@ -6,6 +6,7 @@ package DecorateMyNest;
 
 import java.awt.Dialog;
 import java.sql.Date;
+import java.util.Calendar;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -98,6 +99,11 @@ public class InprogressionEditPanel extends javax.swing.JPanel {
         select_table.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         select_table.setText("Select Inprogression");
         select_table.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        select_table.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select_tableActionPerformed(evt);
+            }
+        });
 
         clearbtn.setBackground(new java.awt.Color(255, 249, 242));
         clearbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -171,14 +177,11 @@ public class InprogressionEditPanel extends javax.swing.JPanel {
         updatebtn1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         updatebtn1.setText("Update");
         updatebtn1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("D:\\admin.png")); // NOI18N
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\end date.png")); // NOI18N
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\start date.png")); // NOI18N
-
-        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\booking.png")); // NOI18N
+        updatebtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatebtn1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -312,6 +315,83 @@ public class InprogressionEditPanel extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void select_tableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_tableActionPerformed
+        // TODO add your handling code here:
+        JDialog selectDialog = new JDialog(new JFrame(), "Select Project ID", Dialog.ModalityType.APPLICATION_MODAL);
+        selectDialog.add(new SelectProject()); // Replace 'SelectProject' with the appropriate panel or component for selecting a project.
+        selectDialog.setSize(1230, 850);
+        selectDialog.setVisible(true);
+
+        if (Welcome.jdbc.projectID != -1) {
+            Object[] data = Welcome.jdbc.fetchRowDataFromDatabase(Welcome.jdbc.projectID, "ProjectID", "InProgression");
+
+            if (data != null) {
+                adminID.setText(data[1].toString());      // Assuming 'adminID' is the JTextField for the admin ID.
+                reservationID.setText(data[2].toString()); // Assuming 'reservationID' is the JTextField for the reservation ID.
+                // Extract date components
+                Date startDate = (Date) data[3];           // Assuming 'startDate' is the field in the data array.
+                Calendar startCalendar = Calendar.getInstance();
+                startCalendar.setTime(startDate);
+                int startYear = startCalendar.get(Calendar.YEAR);
+                int startMonth = startCalendar.get(Calendar.MONTH) + 1;
+                int startDay = startCalendar.get(Calendar.DAY_OF_MONTH);
+
+                sYear.setText(String.valueOf(startYear)); // Assuming 'startDateYear' is the JTextField for the start year.
+                sMonth.setText(String.valueOf(startMonth)); // Assuming 'startDateMonth' is the JTextField for the start month.
+                sDate.setText(String.valueOf(startDay)); // Assuming 'startDateDay' is the JTextField for the start day.
+
+                // Extract and populate end date similarly
+                Date endDate = (Date) data[4];           // Assuming 'endDate' is the field in the data array.
+                Calendar endCalendar = Calendar.getInstance();
+                endCalendar.setTime(endDate);
+                int endYear = endCalendar.get(Calendar.YEAR);
+                int endMonth = endCalendar.get(Calendar.MONTH) + 1;
+                int endDay = endCalendar.get(Calendar.DAY_OF_MONTH);
+
+                Year.setText(String.valueOf(endYear)); // Assuming 'endDateYear' is the JTextField for the end year.
+                Month.setText(String.valueOf(endMonth)); // Assuming 'endDateMonth' is the JTextField for the end month.
+                Date.setText(String.valueOf(endDay)); // Assuming 'endDateDay' is the JTextField for the end day.
+            }
+        }
+    }//GEN-LAST:event_select_tableActionPerformed
+
+    private void updatebtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebtn1ActionPerformed
+        // TODO add your handling code here:
+        if (reservationID.getText().equals("") || sDate.getText().equals("") || sMonth.getText().equals("")
+                || sYear.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Please Fill-up all fields");
+            return;
+        }
+        Date start = new Date(Integer.parseInt(sYear.getText()) - 1900, Integer.parseInt(sMonth.getText()) - 1,
+                Integer.parseInt(sDate.getText()));
+        Date endDate = new Date(Integer.parseInt(Year.getText()) - 1900, Integer.parseInt(Month.getText()) - 1,
+                Integer.parseInt(Date.getText()));
+try {
+    int result = Welcome.jdbc.inprogressionUpdate(Welcome.jdbc.projectID, Integer.parseInt(adminID.getText()),
+            Integer.parseInt(reservationID.getText()), start, endDate);
+
+    if (result > 0) {
+        JOptionPane.showMessageDialog(this, "Updated successfully.");
+
+        // Clear your input fields related to Inprogression here
+        adminID.setText("");
+        reservationID.setText("");
+        sDate.setText("");
+        sMonth.setText("");
+        sYear.setText("");
+        Date.setText("");
+        Month.setText("");
+        Year.setText("");
+    } else {
+        JOptionPane.showMessageDialog(this, "Error updating row.");
+    }
+
+} catch (Exception e) {
+    System.out.println(e);
+    e.printStackTrace(); // Print the exception details for debugging
+}
+    }//GEN-LAST:event_updatebtn1ActionPerformed
 
     private void selectAdminActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_selectAdminActionPerformed
         // TODO add your handling code here:

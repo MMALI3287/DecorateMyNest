@@ -4,6 +4,9 @@
  */
 package DecorateMyNest;
 
+import java.awt.Dialog;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -41,6 +44,7 @@ public class MaterialInventoryEditPanel extends javax.swing.JPanel {
         clearbtn = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        select_table = new javax.swing.JButton();
 
         kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 102));
         kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 102));
@@ -71,6 +75,11 @@ public class MaterialInventoryEditPanel extends javax.swing.JPanel {
         updatebtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         updatebtn.setText("Update");
         updatebtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        updatebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatebtnActionPerformed(evt);
+            }
+        });
 
         clearbtn.setBackground(new java.awt.Color(255, 249, 242));
         clearbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -82,9 +91,15 @@ public class MaterialInventoryEditPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\bulk amounts.png")); // NOI18N
-
-        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\materialname.png")); // NOI18N
+        select_table.setBackground(new java.awt.Color(255, 249, 242));
+        select_table.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        select_table.setText("Select Material");
+        select_table.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        select_table.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select_tableActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -93,7 +108,7 @@ public class MaterialInventoryEditPanel extends javax.swing.JPanel {
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addContainerGap(146, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -101,18 +116,21 @@ public class MaterialInventoryEditPanel extends javax.swing.JPanel {
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(fnamelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(materialName, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bulkAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
                         .addGap(236, 236, 236)
                         .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1095, Short.MAX_VALUE))
+                        .addGap(35, 35, 35)))
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(materialName, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bulkAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                        .addComponent(select_table, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(6, 6, Short.MAX_VALUE)
+                .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(965, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,7 +154,8 @@ public class MaterialInventoryEditPanel extends javax.swing.JPanel {
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(insertbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updatebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(select_table, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(395, Short.MAX_VALUE))
         );
 
@@ -157,6 +176,50 @@ public class MaterialInventoryEditPanel extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void select_tableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_tableActionPerformed
+        // TODO add your handling code here:
+        JDialog selectDialog = new JDialog(new JFrame(), "Select Material ID", Dialog.ModalityType.APPLICATION_MODAL);
+selectDialog.add(new SelectMaterial()); // Replace 'SelectMaterial' with the appropriate panel or component for selecting a material.
+selectDialog.setSize(1230, 850);
+selectDialog.setVisible(true);
+
+if (Welcome.jdbc.materialID != -1) {
+    Object[] data = Welcome.jdbc.fetchRowDataFromDatabase(Welcome.jdbc.materialID, "MaterialID", "MaterialInventory");
+
+    if (data != null) {
+        materialName.setText(data[1].toString());   // Assuming 'materialName' is the JTextField for the material name.
+        bulkAmount.setText(data[2].toString());     // Assuming 'bulkAmount' is the JTextField for the bulk amount.
+    }
+}
+    }//GEN-LAST:event_select_tableActionPerformed
+
+    private void updatebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebtnActionPerformed
+        // TODO add your handling code here:
+        if (materialName.getText().equals("") || bulkAmount.getText().equals("")) {
+    JOptionPane.showMessageDialog(this, "Please Fill-up all fields");
+    return;
+}
+
+try {
+    int result = Welcome.jdbc.materialInventoryUpdate(Welcome.jdbc.materialID, materialName.getText(),
+            Integer.parseInt(bulkAmount.getText()));
+
+    if (result > 0) {
+        JOptionPane.showMessageDialog(this, "Updated successfully.");
+
+        // Clear your input fields related to MaterialInventory here
+        materialName.setText("");
+        bulkAmount.setText("");
+    } else {
+        JOptionPane.showMessageDialog(this, "Error updating row.");
+    }
+
+} catch (Exception e) {
+    System.out.println(e);
+    e.printStackTrace(); // Print the exception details for debugging
+}
+    }//GEN-LAST:event_updatebtnActionPerformed
 
         private void clearbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_clearbtnActionPerformed
                 // TODO add your handling code here:
@@ -192,6 +255,7 @@ public class MaterialInventoryEditPanel extends javax.swing.JPanel {
     private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel lnamelabel;
     private javax.swing.JTextField materialName;
+    private javax.swing.JButton select_table;
     private javax.swing.JButton updatebtn;
     // End of variables declaration//GEN-END:variables
 }

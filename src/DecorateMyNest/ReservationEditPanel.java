@@ -6,6 +6,7 @@ package DecorateMyNest;
 
 import java.awt.Dialog;
 import java.sql.Date;
+import java.util.Calendar;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -89,6 +90,11 @@ public class ReservationEditPanel extends javax.swing.JPanel {
         updatebtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         updatebtn.setText("Update");
         updatebtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        updatebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatebtnActionPerformed(evt);
+            }
+        });
 
         clearbtn.setBackground(new java.awt.Color(255, 249, 242));
         clearbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -144,12 +150,11 @@ public class ReservationEditPanel extends javax.swing.JPanel {
         select_table.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         select_table.setText("Select Reservation");
         select_table.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\catalogue.png")); // NOI18N
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\calendar.png")); // NOI18N
-
-        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\customer.png")); // NOI18N
+        select_table.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select_tableActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -250,6 +255,68 @@ public class ReservationEditPanel extends javax.swing.JPanel {
                 .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void select_tableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_tableActionPerformed
+        // TODO add your handling code here:
+         JDialog selectDialog = new JDialog(new JFrame(), "Select Reservation ID", Dialog.ModalityType.APPLICATION_MODAL);
+        selectDialog.add(new SelectReservation()); // Replace 'SelectReservation' with the appropriate panel or component for selecting a reservation.
+        selectDialog.setSize(1230, 850);
+        selectDialog.setVisible(true);
+
+        if (Welcome.jdbc.reservationID != -1) {
+            Object[] data = Welcome.jdbc.fetchRowDataFromDatabase(Welcome.jdbc.reservationID, "ReservationID", "Reservations");
+
+            if (data != null) {
+                clientID.setText(data[1].toString());         // Assuming 'clientID' is the JTextField for the client ID.
+                catalogueID.setText(data[2].toString());      // Assuming 'catalogueID' is the JTextField for the catalogue ID.
+
+                // Extract and populate reservation date components
+                Date reservationDate = (Date) data[3];           // Assuming 'reservationDate' is the field in the data array.
+                Calendar reservationCalendar = Calendar.getInstance();
+                reservationCalendar.setTime(reservationDate);
+                int reservationYear = reservationCalendar.get(Calendar.YEAR);
+                int reservationMonth = reservationCalendar.get(Calendar.MONTH) + 1;
+                int reservationDay = reservationCalendar.get(Calendar.DAY_OF_MONTH);
+
+                Year.setText(String.valueOf(reservationYear));   // Assuming 'resYear' is the JTextField for the reservation year.
+                Month.setText(String.valueOf(reservationMonth)); // Assuming 'resMonth' is the JTextField for the reservation month.
+                Date.setText(String.valueOf(reservationDay));    // Assuming 'resDate' is the JTextField for the reservation day.
+            }
+        }
+    }//GEN-LAST:event_select_tableActionPerformed
+
+    private void updatebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebtnActionPerformed
+        // TODO add your handling code here:
+        if (clientID.getText().equals("") || catalogueID.getText().equals("") || Date.getText().equals("")) {
+    JOptionPane.showMessageDialog(this, "Please Fill-up all fields");
+    return;
+}
+
+try {
+    int result = Welcome.jdbc.reservationUpdate(Welcome.jdbc.reservationID, Integer.parseInt(clientID.getText()),
+            Integer.parseInt(catalogueID.getText()), new Date(Integer.parseInt(Year.getText()) - 1900,
+                            Integer.parseInt(Month.getText()) - 1,
+                            Integer.parseInt(Date.getText())));
+
+    if (result > 0) {
+        JOptionPane.showMessageDialog(this, "Updated successfully.");
+
+
+        // Clear your input fields related to Reservation here
+        clientID.setText("");
+        catalogueID.setText("");
+        Date.setText("");
+        Month.setText("");
+        Year.setText("");
+    } else {
+        JOptionPane.showMessageDialog(this, "Error updating row.");
+    }
+
+} catch (Exception e) {
+    System.out.println(e);
+    e.printStackTrace(); // Print the exception details for debugging
+}
+    }//GEN-LAST:event_updatebtnActionPerformed
 
     private void selectClientActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_selectClientActionPerformed
         // TODO add your handling code here:

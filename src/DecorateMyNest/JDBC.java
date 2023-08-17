@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.DatabaseMetaData;
+import java.sql.ResultSetMetaData;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -373,5 +374,172 @@ public class JDBC {
 
         return rowsAffected;
     }
+    
+    
+    public Object[] fetchRowDataFromDatabase(int id,String pKey, String tableName) {
+        Object[] data = null;
+
+        try {
+            String query = "SELECT * FROM " + tableName + " WHERE " + pKey + " = ?";
+            Welcome.jdbc.preparedStatement = Welcome.jdbc.connection.prepareStatement(query);
+            Welcome.jdbc.preparedStatement.setInt(1, id);
+
+            Welcome.jdbc.resultSet = Welcome.jdbc.preparedStatement.executeQuery();
+
+            if (Welcome.jdbc.resultSet.next()) {
+                ResultSetMetaData metaData = Welcome.jdbc.resultSet.getMetaData();
+                int columnCount = metaData.getColumnCount();
+
+                data = new Object[columnCount];
+
+                for (int i = 1; i <= columnCount; i++) {
+                    data[i - 1] = Welcome.jdbc.resultSet.getObject(i);
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+
+        return data;
+
+    }
+    
+    public int vendorsUpdate(int vendorID, String vendorName, String contactPerson, String phone, String email) {
+        try {
+            preparedStatement = connection.prepareStatement(
+                    "UPDATE Vendors SET VendorName = ?, ContactPerson = ?, Phone = ?, Email = ? WHERE VendorID = ?");
+
+            preparedStatement.setString(1, vendorName);
+            preparedStatement.setString(2, contactPerson);
+            preparedStatement.setString(3, phone);
+            preparedStatement.setString(4, email);
+            preparedStatement.setInt(5, vendorID);
+
+            rowsAffected = preparedStatement.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(JDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rowsAffected;
+    }
+
+    public int inprogressionUpdate(int projectID, int adminID, int reservationID, Date startDate, Date endDate) {
+        try {
+            preparedStatement = connection.prepareStatement(
+                    "UPDATE Inprogression SET AdminID = ?, ReservationID = ?, StartDate = ?, EndDate = ? WHERE ProjectID = ?");
+
+            preparedStatement.setInt(1, adminID);
+            preparedStatement.setInt(2, reservationID);
+            preparedStatement.setDate(3, startDate);
+            preparedStatement.setDate(4, endDate);
+            preparedStatement.setInt(5, projectID);
+
+            rowsAffected = preparedStatement.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(JDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rowsAffected;
+    }
+
+    public int reservationUpdate(int reservationID, int clientID, int catalogueID, Date reservationDate) {
+        try {
+            preparedStatement = connection.prepareStatement(
+                    "UPDATE Reservation SET ClientID = ?, CatalogueID = ?, ReservationDate = ? WHERE ReservationID = ?");
+
+            preparedStatement.setInt(1, clientID);
+            preparedStatement.setInt(2, catalogueID);
+            preparedStatement.setDate(3, reservationDate);
+            preparedStatement.setInt(4, reservationID);
+
+            rowsAffected = preparedStatement.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(JDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rowsAffected;
+    }
+
+    public int materialInventoryUpdate(int materialID, String materialName, int bulkAmount) {
+        try {
+            preparedStatement = connection.prepareStatement(
+                    "UPDATE MaterialInventory SET MaterialName = ?, BulkAmount = ? WHERE MaterialID = ?");
+
+            preparedStatement.setString(1, materialName);
+            preparedStatement.setInt(2, bulkAmount);
+            preparedStatement.setInt(3, materialID);
+
+            rowsAffected = preparedStatement.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(JDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rowsAffected;
+    }
+
+    public int employeeRosterUpdate(int employeeID, int adminID, String firstName, String lastName,
+                                    String position, String email, String phone) {
+        try {
+            preparedStatement = connection.prepareStatement(
+                    "UPDATE EmployeeRoster SET AdminID = ?, FirstName = ?, LastName = ?, Position = ?, Email = ?, Phone = ? WHERE EmployeeID = ?");
+
+            preparedStatement.setInt(1, adminID);
+            preparedStatement.setString(2, firstName);
+            preparedStatement.setString(3, lastName);
+            preparedStatement.setString(4, position);
+            preparedStatement.setString(5, email);
+            preparedStatement.setString(6, phone);
+            preparedStatement.setInt(7, employeeID);
+
+            rowsAffected = preparedStatement.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(JDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rowsAffected;
+    }
+
+    public int clientsUpdate(int clientID, String firstName, String lastName, String email,
+                             String phone, String address) {
+        try {
+            preparedStatement = connection.prepareStatement(
+                    "UPDATE Clients SET FirstName = ?, LastName = ?, Email = ?, Phone = ?, Address = ? WHERE ClientID = ?");
+
+            preparedStatement.setString(1, firstName);
+            preparedStatement.setString(2, lastName);
+            preparedStatement.setString(3, email);
+            preparedStatement.setString(4, phone);
+            preparedStatement.setString(5, address);
+            preparedStatement.setInt(6, clientID);
+
+            rowsAffected = preparedStatement.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(JDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rowsAffected;
+    }
+
+    public int catalogueUpdate(int catalogueID, String projectName, String description,
+                               double estimatedCost, String imageURL) {
+        try {
+            preparedStatement = connection.prepareStatement(
+                    "UPDATE Catalogue SET ProjectName = ?, Description = ?, EstimatedCost = ?, ImageURL = ? WHERE CatalogueID = ?");
+
+            preparedStatement.setString(1, projectName);
+            preparedStatement.setString(2, description);
+            preparedStatement.setDouble(3, estimatedCost);
+            preparedStatement.setString(4, imageURL);
+            preparedStatement.setInt(5, catalogueID);
+
+            rowsAffected = preparedStatement.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(JDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rowsAffected;
+    }
+    
+    
 
 }

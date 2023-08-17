@@ -4,6 +4,9 @@
  */
 package DecorateMyNest;
 
+import java.awt.Dialog;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -89,6 +92,11 @@ public class CatalogueEditPanel extends javax.swing.JPanel {
         updatebtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         updatebtn.setText("Update");
         updatebtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        updatebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatebtnActionPerformed(evt);
+            }
+        });
 
         clearbtn.setBackground(new java.awt.Color(255, 249, 242));
         clearbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -104,14 +112,11 @@ public class CatalogueEditPanel extends javax.swing.JPanel {
         select_table.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         select_table.setText("Select Catalogue");
         select_table.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\information.png")); // NOI18N
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\money.png")); // NOI18N
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\photo.png")); // NOI18N
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\project.png")); // NOI18N
+        select_table.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select_tableActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -202,6 +207,55 @@ public class CatalogueEditPanel extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void select_tableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_tableActionPerformed
+        // TODO add your handling code here:
+        JDialog selectDialog = new JDialog(new JFrame(), "Select Catalogue ID", Dialog.ModalityType.APPLICATION_MODAL);
+        selectDialog.add(new SelectCatalogue());
+        selectDialog.setSize(1230, 850);
+        selectDialog.setVisible(true);
+        if (Welcome.jdbc.catalogueID != -1) {
+        Object[] data = Welcome.jdbc.fetchRowDataFromDatabase(Welcome.jdbc.catalogueID,"CatalogueID", "Catalogue");
+        
+        if (data != null) {
+            pName.setText(data[0].toString());
+            description.setText(data[1].toString());
+            cost.setText(data[2].toString());
+            imgURL.setText(data[3].toString());
+        }
+    }
+    }//GEN-LAST:event_select_tableActionPerformed
+
+    private void updatebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebtnActionPerformed
+        // TODO add your handling code here:
+        if (pName.getText().equals("") || description.getText().equals("")
+        || cost.getText().equals("") || imgURL.getText().equals("")) {
+    JOptionPane.showMessageDialog(this, "Please Fill-up all fields");
+    return;
+}
+
+try {
+    int result = Welcome.jdbc.catalogueUpdate(Welcome.jdbc.catalogueID, pName.getText(),
+            description.getText(), Double.parseDouble(cost.getText()),
+            imgURL.getText());
+
+    if (result > 0) {
+        JOptionPane.showMessageDialog(this, "Updated successfully.");
+
+        // Clear your input fields related to Catalogue here
+        pName.setText("");
+        description.setText("");
+        cost.setText("");
+        imgURL.setText("");
+    } else {
+        JOptionPane.showMessageDialog(this, "Error updating row.");
+    }
+
+} catch (Exception e) {
+    System.out.println(e);
+    e.printStackTrace(); // Print the exception details for debugging
+}
+    }//GEN-LAST:event_updatebtnActionPerformed
 
         private void insertbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_insertbtnActionPerformed
                 if (pName.getText().equals("") || description.getText().equals("") || imgURL.getText().equals("")

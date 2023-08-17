@@ -4,6 +4,9 @@
  */
 package DecorateMyNest;
 
+import java.awt.Dialog;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -98,6 +101,11 @@ public class ClientEditPanel extends javax.swing.JPanel {
         select_table.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         select_table.setText("Select Client");
         select_table.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        select_table.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select_tableActionPerformed(evt);
+            }
+        });
 
         clearbtn.setBackground(new java.awt.Color(255, 249, 242));
         clearbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -113,16 +121,11 @@ public class ClientEditPanel extends javax.swing.JPanel {
         updatebtn1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         updatebtn1.setText("Update");
         updatebtn1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\phone-receiver-silhouette.png")); // NOI18N
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\name.png")); // NOI18N
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\mail.png")); // NOI18N
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("D:\\home.png")); // NOI18N
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\name.png")); // NOI18N
+        updatebtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatebtn1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -133,13 +136,10 @@ public class ClientEditPanel extends javax.swing.JPanel {
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
                         .addGap(129, 129, 129)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
@@ -225,6 +225,59 @@ public class ClientEditPanel extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void select_tableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_tableActionPerformed
+        // TODO add your handling code here:
+        JDialog selectDialog = new JDialog(new JFrame(), "Select Client ID", Dialog.ModalityType.APPLICATION_MODAL);
+        selectDialog.add(new SelectClient()); // Make sure to replace 'SelectClient' with the appropriate panel or component for selecting a client.
+        selectDialog.setSize(1230, 850);
+        selectDialog.setVisible(true);
+
+        if (Welcome.jdbc.clientID != -1) {
+            Object[] data = Welcome.jdbc.fetchRowDataFromDatabase(Welcome.jdbc.clientID, "ClientID", "Clients");
+
+            if (data != null) {
+                fName.setText(data[0].toString()); // Assuming 'firstName' is the JTextField for the first name.
+                lName.setText(data[1].toString()); // Assuming 'lastName' is the JTextField for the last name.
+                email.setText(data[2].toString());    // Assuming 'email' is the JTextField for the email.
+                phone.setText(data[3].toString());    // Assuming 'phone' is the JTextField for the phone.
+                address.setText(data[4].toString());  // Assuming 'address' is the JTextField for the address.
+            }
+        }
+    }//GEN-LAST:event_select_tableActionPerformed
+
+    private void updatebtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebtn1ActionPerformed
+        // TODO add your handling code here:
+        if (fName.getText().equals("") || lName.getText().equals("")
+        || email.getText().equals("") || phone.getText().equals("")
+        || address.getText().equals("")) {
+    JOptionPane.showMessageDialog(this, "Please Fill-up all fields");
+    return;
+}
+
+try {
+    int result = Welcome.jdbc.clientsUpdate(Welcome.jdbc.clientID, fName.getText(),
+            lName.getText(), email.getText(), phone.getText(),
+            address.getText());
+
+    if (result > 0) {
+        JOptionPane.showMessageDialog(this, "Updated successfully.");
+
+        // Clear your input fields related to Clients here
+        fName.setText("");
+        lName.setText("");
+        email.setText("");
+        phone.setText("");
+        address.setText("");
+    } else {
+        JOptionPane.showMessageDialog(this, "Error updating row.");
+    }
+
+} catch (Exception e) {
+    System.out.println(e);
+    e.printStackTrace(); // Print the exception details for debugging
+}
+    }//GEN-LAST:event_updatebtn1ActionPerformed
 
         private void insertbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_insertbtnActionPerformed
                 if (fName.getText().equals("") || lName.getText().equals("") || email.getText().equals("")

@@ -106,6 +106,11 @@ public class EmployeeRosterEditPanel extends javax.swing.JPanel {
         select_table.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         select_table.setText("Select Employee Roster");
         select_table.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        select_table.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select_tableActionPerformed(evt);
+            }
+        });
 
         clearbtn.setBackground(new java.awt.Color(255, 249, 242));
         clearbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -137,18 +142,11 @@ public class EmployeeRosterEditPanel extends javax.swing.JPanel {
         updatebtn1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         updatebtn1.setText("Update");
         updatebtn1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\name.png")); // NOI18N
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\name.png")); // NOI18N
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\mail.png")); // NOI18N
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\market-positioning.png")); // NOI18N
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("D:\\admin.png")); // NOI18N
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\phone-receiver-silhouette.png")); // NOI18N
+        updatebtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatebtn1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -157,14 +155,11 @@ public class EmployeeRosterEditPanel extends javax.swing.JPanel {
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(4, 4, 4))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
@@ -173,9 +168,7 @@ public class EmployeeRosterEditPanel extends javax.swing.JPanel {
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, 0)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
@@ -275,6 +268,60 @@ public class EmployeeRosterEditPanel extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void select_tableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_tableActionPerformed
+        // TODO add your handling code here:
+        JDialog selectDialog = new JDialog(new JFrame(), "Select Employee ID", Dialog.ModalityType.APPLICATION_MODAL);
+        selectDialog.add(new SelectEmployee()); // Replace 'SelectEmployee' with the appropriate panel or component for selecting an employee.
+        selectDialog.setSize(1230, 850);
+        selectDialog.setVisible(true);
+
+        if (Welcome.jdbc.employeeRosterID != -1) {
+            Object[] data = Welcome.jdbc.fetchRowDataFromDatabase(Welcome.jdbc.employeeRosterID, "EmployeeID", "EmployeeRoster");
+
+            if (data != null) {
+                fName.setText(data[2].toString());   // Assuming 'firstName' is the JTextField for the first name.
+                lName.setText(data[3].toString());    // Assuming 'lastName' is the JTextField for the last name.
+                position.setText(data[4].toString());    // Assuming 'position' is the JTextField for the position.
+                email.setText(data[5].toString());       // Assuming 'email' is the JTextField for the email.
+                phone.setText(data[6].toString());       // Assuming 'phone' is the JTextField for the phone.
+            }
+        }
+    }//GEN-LAST:event_select_tableActionPerformed
+
+    private void updatebtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebtn1ActionPerformed
+        // TODO add your handling code here:
+        if (fName.getText().equals("") || lName.getText().equals("") || position.getText().equals("")
+                || email.getText().equals("") || phone.getText().equals("")||adminID.getText().equals("")) {
+    JOptionPane.showMessageDialog(this, "Please Fill-up all fields");
+    return;
+}
+
+try {
+    int result = Welcome.jdbc.employeeRosterUpdate(Welcome.jdbc.employeeRosterID, Integer.parseInt(adminID.getText()),
+            fName.getText(), lName.getText(), position.getText(), email.getText(),
+            phone.getText());
+
+    if (result > 0) {
+        JOptionPane.showMessageDialog(this, "Updated successfully.");
+
+
+        // Clear your input fields related to EmployeeRoster here
+        fName.setText("");
+        lName.setText("");
+        position.setText("");
+        email.setText("");
+        phone.setText("");
+        adminID.setText("");
+    } else {
+        JOptionPane.showMessageDialog(this, "Error updating row.");
+    }
+
+} catch (Exception e) {
+    System.out.println(e);
+    e.printStackTrace(); // Print the exception details for debugging
+}
+    }//GEN-LAST:event_updatebtn1ActionPerformed
 
     private void selectAdminActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_selectAdminActionPerformed
         // TODO add your handling code here:

@@ -4,6 +4,9 @@
  */
 package DecorateMyNest;
 
+import java.awt.Dialog;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -88,6 +91,11 @@ public class VendorsEditPanel extends javax.swing.JPanel {
         updatebtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         updatebtn.setText("Update");
         updatebtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        updatebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatebtnActionPerformed(evt);
+            }
+        });
 
         clearbtn.setBackground(new java.awt.Color(255, 249, 242));
         clearbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -106,14 +114,11 @@ public class VendorsEditPanel extends javax.swing.JPanel {
         select_table.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         select_table.setText("Select Vendors");
         select_table.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\name.png")); // NOI18N
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\mail.png")); // NOI18N
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\phone-receiver-silhouette.png")); // NOI18N
-
-        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\contact.png")); // NOI18N
+        select_table.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select_tableActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -186,8 +191,6 @@ public class VendorsEditPanel extends javax.swing.JPanel {
                 .addContainerGap(390, Short.MAX_VALUE))
         );
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("D:\\admin.png")); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -214,6 +217,56 @@ public class VendorsEditPanel extends javax.swing.JPanel {
                     .addContainerGap(489, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void select_tableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_tableActionPerformed
+        // TODO add your handling code here:
+        JDialog selectDialog = new JDialog(new JFrame(), "Select Vendor ID", Dialog.ModalityType.APPLICATION_MODAL);
+        selectDialog.add(new SelectVendor()); // Replace 'SelectVendor' with the appropriate panel or component for selecting a vendor.
+        selectDialog.setSize(1230, 850);
+        selectDialog.setVisible(true);
+
+        if (Welcome.jdbc.vendorID != -1) {
+            Object[] data = Welcome.jdbc.fetchRowDataFromDatabase(Welcome.jdbc.vendorID, "VendorID", "Vendors");
+
+            if (data != null) {
+                vendorName.setText(data[1].toString());        // Assuming 'vendorName' is the JTextField for the vendor name.
+                contactPerson.setText(data[2].toString());     // Assuming 'contactPerson' is the JTextField for the contact person.
+                vendorPhone.setText(data[3].toString());             // Assuming 'phone' is the JTextField for the phone.
+                vendorEmail.setText(data[4].toString());             // Assuming 'email' is the JTextField for the email.
+            }
+        }
+    }//GEN-LAST:event_select_tableActionPerformed
+
+    private void updatebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebtnActionPerformed
+        // TODO add your handling code here:
+        if (vendorName.getText().equals("") || contactPerson.getText().equals("") || vendorPhone.getText().equals("")
+        || vendorEmail.getText().equals("")) {
+    JOptionPane.showMessageDialog(this, "Please Fill-up all fields");
+    return;
+}
+
+try {
+    int result = Welcome.jdbc.vendorsUpdate(Welcome.jdbc.vendorID, vendorName.getText(), contactPerson.getText(),
+            vendorPhone.getText(), vendorEmail.getText());
+
+    if (result > 0) {
+        JOptionPane.showMessageDialog(this, "Updated successfully.");
+
+
+        // Clear your input fields related to Vendors here
+        vendorName.setText("");
+        contactPerson.setText("");
+        vendorPhone.setText("");
+        vendorEmail.setText("");
+    } else {
+        JOptionPane.showMessageDialog(this, "Error updating row.");
+    }
+
+} catch (Exception e) {
+    System.out.println(e);
+    e.printStackTrace(); // Print the exception details for debugging
+}
+    }//GEN-LAST:event_updatebtnActionPerformed
 
         private void clearbtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_clearbtnActionPerformed
                 // TODO add your handling code here:
