@@ -226,6 +226,7 @@ public class AdminLogin extends javax.swing.JFrame {
             new Home();
         } else {
             JOptionPane.showMessageDialog(this, "Username and Password did not match, Double check them");
+            // shows only if the password and confirm password does not match
             jUserName.setText("");
             jPassword.setText("");
             return;
